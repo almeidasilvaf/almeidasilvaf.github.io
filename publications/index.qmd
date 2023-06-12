@@ -1,6 +1,8 @@
 ---
 title: "My publications"
 toc: false
+execute: 
+  freeze: false
 ---
 
 ```{r}
