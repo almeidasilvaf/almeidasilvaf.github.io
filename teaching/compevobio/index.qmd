@@ -5,7 +5,7 @@ description: |
 date: "2023-05-01"
 author: "Fabrício Almeida-Silva"
 draft: false
-image: CompEvoBio.png
+image: compevobio.jpg
 categories:
   - evolutionary biology
   - r
