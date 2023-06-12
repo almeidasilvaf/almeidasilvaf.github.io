@@ -1,0 +1,345 @@
+[
+  {
+    "objectID": "talks/eurobioc2022/index.html",
+    "href": "talks/eurobioc2022/index.html",
+    "title": "Inference and analysis of synteny networks with syntenet",
+    "section": "",
+    "text": "Click here to access the slide presentations."
+  },
+  {
+    "objectID": "talks/eurobioc2022/index.html#overview",
+    "href": "talks/eurobioc2022/index.html#overview",
+    "title": "Inference and analysis of synteny networks with syntenet",
+    "section": "",
+    "text": "Click here to access the slide presentations."
+  },
+  {
+    "objectID": "talks/index.html",
+    "href": "talks/index.html",
+    "title": "Talks I’ve given",
+    "section": "",
+    "text": "Inference and analysis of synteny networks with syntenet\n\n\n\n\n\nWorkshop at #EuroBioc2022, the European Bioconductor annual conference\n\n\n\n\n\n\nSep 14, 2022\n\n\nFabrício Almeida-Silva\n\n\n\n\n\n\n  \n\n\n\n\nBioinformatics in Modern Biology: computational genomics as a tool to unravel the soybean genome and gene regulation\n\n\n\n\n\nInvited speaker\n\n\n\n\n\n\nNov 22, 2021\n\n\nFabrício Almeida-Silva\n\n\n\n\n\n\n  \n\n\n\n\nPrioritizing soybean resistance genes against fungal diseases by integrating GWAS and gene coexpression networks\n\n\n\n\n\nOral session at the 2021’s Plant Genomes in a Changing Environment conference\n\n\n\n\n\n\nOct 19, 2021\n\n\nFabrício Almeida-Silva\n\n\n\n\n\n\n  \n\n\n\n\ncageminer: mining candidate genes by integrating GWAS and gene coexpression networks\n\n\n\n\n\nLightning Talk at #Bioc2021, the Bioconductor annual conference\n\n\n\n\n\n\nAug 6, 2021\n\n\nFabrício Almeida-Silva\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "talks/bioc2021/index.html",
+    "href": "talks/bioc2021/index.html",
+    "title": "cageminer: mining candidate genes by integrating GWAS and gene coexpression networks",
+    "section": "",
+    "text": "Click here to access the slide presentation."
+  },
+  {
+    "objectID": "talks/bioc2021/index.html#overview",
+    "href": "talks/bioc2021/index.html#overview",
+    "title": "cageminer: mining candidate genes by integrating GWAS and gene coexpression networks",
+    "section": "",
+    "text": "Click here to access the slide presentation."
+  },
+  {
+    "objectID": "talks/sbv2021/index.html",
+    "href": "talks/sbv2021/index.html",
+    "title": "Bioinformatics in Modern Biology: computational genomics as a tool to unravel the soybean genome and gene regulation",
+    "section": "",
+    "text": "Click here to access the slide presentation."
+  },
+  {
+    "objectID": "talks/sbv2021/index.html#overview",
+    "href": "talks/sbv2021/index.html#overview",
+    "title": "Bioinformatics in Modern Biology: computational genomics as a tool to unravel the soybean genome and gene regulation",
+    "section": "",
+    "text": "Click here to access the slide presentation."
+  },
+  {
+    "objectID": "talks/pgce2021/index.html",
+    "href": "talks/pgce2021/index.html",
+    "title": "Prioritizing soybean resistance genes against fungal diseases by integrating GWAS and gene coexpression networks",
+    "section": "",
+    "text": "Click here to access the slide presentation."
+  },
+  {
+    "objectID": "talks/pgce2021/index.html#overview",
+    "href": "talks/pgce2021/index.html#overview",
+    "title": "Prioritizing soybean resistance genes against fungal diseases by integrating GWAS and gene coexpression networks",
+    "section": "",
+    "text": "Click here to access the slide presentation."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Hi, I’m Fabrício!",
+    "section": "",
+    "text": "I am a predoctoral fellow at the VIB-UGent Center for Plant Systems Biology (🇧🇪), supervised by Dr. Yves Van de Peer. I am particularly interested in using and developing network-based approaches to explore the evolution of (polyploid) plant genomes and regulatory networks."
+  },
+  {
+    "objectID": "publications/index.html",
+    "href": "publications/index.html",
+    "title": "My publications",
+    "section": "",
+    "text": "17. Almeida-Silva, F., & Venancio, TM. (2023). Discovering and prioritizing candidate resistance genes against soybean pests by integrating GWAS and gene coexpression networks. Gene. 860, 147231\n16. Irineu, LESS., Soares, CP., Soares, TS., Almeida, FA., Almeida-Silva, F., & … (2023). Multiomic Approaches Reveal Hormonal Modulation and Nitrogen Uptake and Assimilation in the Initial Growth of Maize Inoculated with Herbaspirillum seropedicae. Plants. 12 (1), 48\n15. Cao, Y., Almeida-Silva, F., Zhang, WP., Ding, YM., Bai, D., Bai, WN., Zhang, BW., & … (2023). Genomic Insights into Adaptation to Karst Limestone and Incipient Speciation in East Asian Platycarya spp. (Juglandaceae). Molecular Biology and Evolution.\n14. Almeida-Silva, F., Pedrosa-Silva, F., & Venancio, TM. (2023). The Soybean Expression Atlas v2: a comprehensive database of over 5000 RNA-seq samples. bioRxiv. 2023.04. 28.538661\n13. Almeida-Silva, F., & Peer, Y Van de. (2023). Assessing the quality of comparative genomics data and results with the cogeqc R/Bioconductor package. bioRxiv. 2023.04. 14.536860\n12. Almeida-Silva, F., & Peer, Y Van de. (2023). Whole-genome duplications and the long-term evolution of gene regulatory networks in angiosperms. bioRxiv. 2023.03. 13.532351"
+  },
+  {
+    "objectID": "publications/index.html#section",
+    "href": "publications/index.html#section",
+    "title": "My publications",
+    "section": "",
+    "text": "17. Almeida-Silva, F., & Venancio, TM. (2023). Discovering and prioritizing candidate resistance genes against soybean pests by integrating GWAS and gene coexpression networks. Gene. 860, 147231\n16. Irineu, LESS., Soares, CP., Soares, TS., Almeida, FA., Almeida-Silva, F., & … (2023). Multiomic Approaches Reveal Hormonal Modulation and Nitrogen Uptake and Assimilation in the Initial Growth of Maize Inoculated with Herbaspirillum seropedicae. Plants. 12 (1), 48\n15. Cao, Y., Almeida-Silva, F., Zhang, WP., Ding, YM., Bai, D., Bai, WN., Zhang, BW., & … (2023). Genomic Insights into Adaptation to Karst Limestone and Incipient Speciation in East Asian Platycarya spp. (Juglandaceae). Molecular Biology and Evolution.\n14. Almeida-Silva, F., Pedrosa-Silva, F., & Venancio, TM. (2023). The Soybean Expression Atlas v2: a comprehensive database of over 5000 RNA-seq samples. bioRxiv. 2023.04. 28.538661\n13. Almeida-Silva, F., & Peer, Y Van de. (2023). Assessing the quality of comparative genomics data and results with the cogeqc R/Bioconductor package. bioRxiv. 2023.04. 14.536860\n12. Almeida-Silva, F., & Peer, Y Van de. (2023). Whole-genome duplications and the long-term evolution of gene regulatory networks in angiosperms. bioRxiv. 2023.03. 13.532351"
+  },
+  {
+    "objectID": "publications/index.html#section-1",
+    "href": "publications/index.html#section-1",
+    "title": "My publications",
+    "section": "2022",
+    "text": "2022\n11. Almeida-Silva, F., & Venancio, TM. (2022). Pathogenesis-related protein 1 (PR-1) genes in soybean: Genome-wide identification, structural analysis and expression profiling under multiple biotic and abiotic stresses. Gene. 809, 146013\n10. Almeida-Silva, F., & Venancio, TM. (2022). BioNERO: an all-in-one R/Bioconductor package for comprehensive and easy biological network reconstruction. Functional & Integrative Genomics. 22 (1), 131-136\n9. Almeida-Silva, F., & Venancio, TM. (2022). cageminer: an R/Bioconductor package to prioritize candidate genes by integrating genome-wide association studies and gene coexpression networks. in silico Plants. 4 (2), diac018\n8. Turquetti-Moraes, DK., Moharana, KC., Almeida-Silva, F., Pedrosa-Silva, F., & … (2022). Integrating omics approaches to discover and prioritize candidate genes involved in oil biosynthesis in soybean. Gene. 808, 145976\n7. Almeida-Silva, F., Zhao, T., Ullrich, KK., Schranz, ME., & Peer, Y Van de. (2022). syntenet: an R/Bioconductor package for the inference and analysis of synteny networks. Bioinformatics, btac. c806\n6. Almeida-Silva, F., & Venancio, TM. (2022). Mining high-confidence candidate genes with cageminer. dim. 3892, 45"
+  },
+  {
+    "objectID": "publications/index.html#section-2",
+    "href": "publications/index.html#section-2",
+    "title": "My publications",
+    "section": "2021",
+    "text": "2021\n5. Almeida-Silva, F., & Venancio, TM. (2021). Integration of genome-wide association studies and gene coexpression networks unveils promising soybean resistance genes against five common fungal pathogens. Scientific Reports. 11 (1), 24453\n4. Sangi, S., Araújo, PM., Coelho, FS., Gazara, RK., Almeida-Silva, F., & … (2021). Genome-Wide Analysis of the COBRA-Like Gene Family Supports Gene Expansion through Whole-Genome Duplication in Soybean (Glycine max). Plants. 10 (1), 167\n3. Almeida-Silva, F., Moharana, KC., & Venancio, TM. (2021). The state of the art in soybean transcriptomics resources and gene coexpression networks. in silico Plants. 3 (1), diab005"
+  },
+  {
+    "objectID": "publications/index.html#section-3",
+    "href": "publications/index.html#section-3",
+    "title": "My publications",
+    "section": "2020",
+    "text": "2020\n2. Moharana, KC., Almeida-Silva, F., Gazara, RK., Pedrosa-Silva, F., Coelho, FS., & … (2020). Systematic analysis of 1,298 RNA-Seq samples and construction of a comprehensive soybean (Glycine max) expression atlas.. The Plant Journal: for Cell and Molecular Biology.\n1. Almeida-Silva, F., Moharana, KC., Machado, FB., & Venancio, TM. (2020). Exploring the complexity of soybean (Glycine max) transcriptional regulation using global gene co-expression networks. Planta. 252, 1-12"
+  },
+  {
+    "objectID": "software/SoyPestGCN/index.html",
+    "href": "software/SoyPestGCN/index.html",
+    "title": "SoyPestGCN",
+    "section": "",
+    "text": "SoyPestGCN is an R package that contains a Shiny app to let users explore a gene coexpression network inferred from RNA-seq data of soybean tissues infested with pests (i.e., insects and nematodes). The Shiny app is also available online at https://soypestgcn.venanciogroup.uenf.br."
+  },
+  {
+    "objectID": "software/SoyPestGCN/index.html#summary",
+    "href": "software/SoyPestGCN/index.html#summary",
+    "title": "SoyPestGCN",
+    "section": "",
+    "text": "SoyPestGCN is an R package that contains a Shiny app to let users explore a gene coexpression network inferred from RNA-seq data of soybean tissues infested with pests (i.e., insects and nematodes). The Shiny app is also available online at https://soypestgcn.venanciogroup.uenf.br."
+  },
+  {
+    "objectID": "software/BioNERO/index.html",
+    "href": "software/BioNERO/index.html",
+    "title": "BioNERO",
+    "section": "",
+    "text": "BioNERO is an R/Bioconductor package that aims to facilitate network analyses by integrating all standard analysis steps, including data preprocessing, inference of gene regulatory and coexpression network from expression data, functional analyses, and network intra and interspecies network comparisons."
+  },
+  {
+    "objectID": "software/BioNERO/index.html#summary",
+    "href": "software/BioNERO/index.html#summary",
+    "title": "BioNERO",
+    "section": "",
+    "text": "BioNERO is an R/Bioconductor package that aims to facilitate network analyses by integrating all standard analysis steps, including data preprocessing, inference of gene regulatory and coexpression network from expression data, functional analyses, and network intra and interspecies network comparisons."
+  },
+  {
+    "objectID": "software/cageminer/index.html",
+    "href": "software/cageminer/index.html",
+    "title": "cageminer",
+    "section": "",
+    "text": "cageminer aims to integrate GWAS-derived SNPs and coexpression networks to mine candidate genes associated with a particular phenotype. For that, users must define a set of guide genes, which are known genes involved in the studied phenotype. Additionally, the mined candidates can be given a score that favor candidates that are hubs and/or transcription factors. The scores can then be used to rank and select the top n most promising genes for downstream experiments."
+  },
+  {
+    "objectID": "software/cageminer/index.html#summary",
+    "href": "software/cageminer/index.html#summary",
+    "title": "cageminer",
+    "section": "",
+    "text": "cageminer aims to integrate GWAS-derived SNPs and coexpression networks to mine candidate genes associated with a particular phenotype. For that, users must define a set of guide genes, which are known genes involved in the studied phenotype. Additionally, the mined candidates can be given a score that favor candidates that are hubs and/or transcription factors. The scores can then be used to rank and select the top n most promising genes for downstream experiments."
+  },
+  {
+    "objectID": "software/syntenet/index.html",
+    "href": "software/syntenet/index.html",
+    "title": "syntenet",
+    "section": "",
+    "text": "The goal of syntenet is to infer synteny networks from whole-genome protein sequence data and analyze them. Anchor pairs from synteny analyses are treated as an undirected unweighted graph (i.e., a synteny network), and users can perform:\n\nSynteny detection using a native implementation of the MCScanX algorithm, a C++ program that has been modified and ported to R with Rcpp. This way, users do not need to install MCScanX beforehand, because syntenet has its own implementation of the same algorithm.\nSynteny network inference by treating anchor pairs as edges of a graph;\nNetwork clustering using the Infomap algorithm;\nPhylogenomic profiling, which consists in identifying which species contain which clusters. This analysis can reveal highly conserved synteny clusters and taxon-specific ones (e.g., family- and order-specific clusters);\nMicrosynteny-based phylogeny reconstruction with maximum likelihood, which can be achieved by inferring a phylogeny from a binary matrix of phylogenomic profiles with IQTREE."
+  },
+  {
+    "objectID": "software/syntenet/index.html#summary",
+    "href": "software/syntenet/index.html#summary",
+    "title": "syntenet",
+    "section": "",
+    "text": "The goal of syntenet is to infer synteny networks from whole-genome protein sequence data and analyze them. Anchor pairs from synteny analyses are treated as an undirected unweighted graph (i.e., a synteny network), and users can perform:\n\nSynteny detection using a native implementation of the MCScanX algorithm, a C++ program that has been modified and ported to R with Rcpp. This way, users do not need to install MCScanX beforehand, because syntenet has its own implementation of the same algorithm.\nSynteny network inference by treating anchor pairs as edges of a graph;\nNetwork clustering using the Infomap algorithm;\nPhylogenomic profiling, which consists in identifying which species contain which clusters. This analysis can reveal highly conserved synteny clusters and taxon-specific ones (e.g., family- and order-specific clusters);\nMicrosynteny-based phylogeny reconstruction with maximum likelihood, which can be achieved by inferring a phylogeny from a binary matrix of phylogenomic profiles with IQTREE."
+  },
+  {
+    "objectID": "software/index.html",
+    "href": "software/index.html",
+    "title": "Software & Data Products",
+    "section": "",
+    "text": "syntenet\n\n\nAn R/Bioconductor package for the inference and analysis of synteny networks\n\n\n\nFabrício Almeida-Silva\n\n\nDec 27, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nplanttfhunter\n\n\nAn R/Bioconductor package to identify and classify plant transcription factors from protein sequence data\n\n\n\nFabrício Almeida-Silva\n\n\nDec 27, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmagrene\n\n\nAn R/Bioconductor package to analyze motifs in gene regulatory networks\n\n\n\nFabrício Almeida-Silva\n\n\nDec 27, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ndoubletrouble\n\n\nAn R/Bioconductor package to identify and classify duplicated genes from whole-genome protein sequence data\n\n\n\nFabrício Almeida-Silva\n\n\nDec 27, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ncogeqc\n\n\nAn R/Bioconductor package to for data quality checks and parameter selection in comparative genomics\n\n\n\nFabrício Almeida-Silva\n\n\nDec 27, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSoyPestGCN\n\n\nAn R/Shiny package and web app to explore soybean-pest interactions at the transcriptional level\n\n\n\nFabrício Almeida-Silva\n\n\nJun 6, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ncageminer\n\n\nAn R/Bioconductor package to mine candidate genes by integrating GWAS and gene coexpression networks”\n\n\n\nFabrício Almeida-Silva\n\n\nAug 7, 2021\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSoyFungiGCN\n\n\nAn R/Shiny package and web app to explore soybean-fungi interactions at the transcriptional level\n\n\n\nFabrício Almeida-Silva\n\n\nAug 7, 2021\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBioNERO\n\n\nAn R/Bioconductor package for easy and comprehensive network reconstruction\n\n\n\nFabrício Almeida-Silva\n\n\nAug 7, 2021\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "software/cogeqc/index.html",
+    "href": "software/cogeqc/index.html",
+    "title": "cogeqc",
+    "section": "",
+    "text": "The goal of cogeqc is to facilitate systematic quality checks on standard comparative genomics analyses to help researchers detect issues and select the most suitable parameters for each data set. Currently, cogeqc can be used to assess:\n\nGenome assembly quality: users can assess genome completeness using Best Universal Single-Copy Orthologs (BUSCOs). cogeqc allows users to run BUSCO from the comfort of an R session and explore summary statistics with publication-ready plots.\nOrthogroup inference: orthogroups are assessed based on the percentage of shared protein domains in all ortogroups. The rationale for this approach is that genes in the same orthogroup evolved from a common ancestor, so the percentage of conserved protein domains in an orthogroup should be as high as possible.\nSynteny detection: synteny detection is assessed using network-based approaches, namely the clustering coefficient and degree of a synteny network."
+  },
+  {
+    "objectID": "software/cogeqc/index.html#summary",
+    "href": "software/cogeqc/index.html#summary",
+    "title": "cogeqc",
+    "section": "",
+    "text": "The goal of cogeqc is to facilitate systematic quality checks on standard comparative genomics analyses to help researchers detect issues and select the most suitable parameters for each data set. Currently, cogeqc can be used to assess:\n\nGenome assembly quality: users can assess genome completeness using Best Universal Single-Copy Orthologs (BUSCOs). cogeqc allows users to run BUSCO from the comfort of an R session and explore summary statistics with publication-ready plots.\nOrthogroup inference: orthogroups are assessed based on the percentage of shared protein domains in all ortogroups. The rationale for this approach is that genes in the same orthogroup evolved from a common ancestor, so the percentage of conserved protein domains in an orthogroup should be as high as possible.\nSynteny detection: synteny detection is assessed using network-based approaches, namely the clustering coefficient and degree of a synteny network."
+  },
+  {
+    "objectID": "software/planttfhunter/index.html",
+    "href": "software/planttfhunter/index.html",
+    "title": "planttfhunter",
+    "section": "",
+    "text": "The goal of planttfhunter is to identify plant transcription factors from protein sequence data and classify them into families and subfamilies using the classification scheme implemented in PlantTFDB."
+  },
+  {
+    "objectID": "software/planttfhunter/index.html#summary",
+    "href": "software/planttfhunter/index.html#summary",
+    "title": "planttfhunter",
+    "section": "",
+    "text": "The goal of planttfhunter is to identify plant transcription factors from protein sequence data and classify them into families and subfamilies using the classification scheme implemented in PlantTFDB."
+  },
+  {
+    "objectID": "software/doubletrouble/index.html",
+    "href": "software/doubletrouble/index.html",
+    "title": "doubletrouble",
+    "section": "",
+    "text": "The major goal of doubletrouble is to identify duplicated genes from whole-genome protein sequences and classify them based on their modes of duplication. The simplest classification scheme has two duplication modes:\n\nWhole-genome duplication (WGD);\nSmall-scale duplication (SSD)\n\nFor a more detailed view of the duplication modes, users can also choose to split SSD into subcategories, so the available duplication modes will be:\n\nWhole-genome duplication (WGD);\nTandem duplication (TD);\nProximal duplication (PD);\nTransposed duplication (TRD);\nDispersed duplication (DD).\n\nBesides classifying gene pairs, users can also classify genes, so that each gene is assigned a unique mode of duplication.\nUsers can also calculate substitution rates per substitution site (i.e., Ka and Ks) from duplicate pairs, find peaks in Ks distributions with Gaussian Mixture Models (GMMs), and classify gene pairs into age groups based on Ks peaks."
+  },
+  {
+    "objectID": "software/doubletrouble/index.html#summary",
+    "href": "software/doubletrouble/index.html#summary",
+    "title": "doubletrouble",
+    "section": "",
+    "text": "The major goal of doubletrouble is to identify duplicated genes from whole-genome protein sequences and classify them based on their modes of duplication. The simplest classification scheme has two duplication modes:\n\nWhole-genome duplication (WGD);\nSmall-scale duplication (SSD)\n\nFor a more detailed view of the duplication modes, users can also choose to split SSD into subcategories, so the available duplication modes will be:\n\nWhole-genome duplication (WGD);\nTandem duplication (TD);\nProximal duplication (PD);\nTransposed duplication (TRD);\nDispersed duplication (DD).\n\nBesides classifying gene pairs, users can also classify genes, so that each gene is assigned a unique mode of duplication.\nUsers can also calculate substitution rates per substitution site (i.e., Ka and Ks) from duplicate pairs, find peaks in Ks distributions with Gaussian Mixture Models (GMMs), and classify gene pairs into age groups based on Ks peaks."
+  },
+  {
+    "objectID": "software/SoyFungiGCN/index.html",
+    "href": "software/SoyFungiGCN/index.html",
+    "title": "SoyFungiGCN",
+    "section": "",
+    "text": "SoyFungiGCN is an R package that contains a Shiny app to let users explore a gene coexpression network inferred from RNA-seq data of soybean tissues infected with phytopathogenic fungi. The Shiny app is also available online at https://soyfungigcn.venanciogroup.uenf.br."
+  },
+  {
+    "objectID": "software/SoyFungiGCN/index.html#summary",
+    "href": "software/SoyFungiGCN/index.html#summary",
+    "title": "SoyFungiGCN",
+    "section": "",
+    "text": "SoyFungiGCN is an R package that contains a Shiny app to let users explore a gene coexpression network inferred from RNA-seq data of soybean tissues infected with phytopathogenic fungi. The Shiny app is also available online at https://soyfungigcn.venanciogroup.uenf.br."
+  },
+  {
+    "objectID": "software/magrene/index.html",
+    "href": "software/magrene/index.html",
+    "title": "magrene",
+    "section": "",
+    "text": "The goal of magrene is to identify and analyze graph motifs containing duplicated genes in gene regulatory networks (GRNs). Possible motifs include V, PPI V, lambda, delta, and bifans.\nMotif frequencies can be analyzed in the context of gene duplications to explore the impact of small-scale and whole-genome duplications on gene regulatory networks.\nAdditionally, GRNs can be tested for motif enrichment by comparing motif frequencies to a null distribution generated from degree-preserving simulated GRNs.\nFinally, users can calculate the interaction similarity between gene pairs based on the Sorensen-Dice similarity index."
+  },
+  {
+    "objectID": "software/magrene/index.html#summary",
+    "href": "software/magrene/index.html#summary",
+    "title": "magrene",
+    "section": "",
+    "text": "The goal of magrene is to identify and analyze graph motifs containing duplicated genes in gene regulatory networks (GRNs). Possible motifs include V, PPI V, lambda, delta, and bifans.\nMotif frequencies can be analyzed in the context of gene duplications to explore the impact of small-scale and whole-genome duplications on gene regulatory networks.\nAdditionally, GRNs can be tested for motif enrichment by comparing motif frequencies to a null distribution generated from degree-preserving simulated GRNs.\nFinally, users can calculate the interaction similarity between gene pairs based on the Sorensen-Dice similarity index."
+  },
+  {
+    "objectID": "teaching/index.html",
+    "href": "teaching/index.html",
+    "title": "Teaching",
+    "section": "",
+    "text": "Introduction to Computational Evolutionary Biology\n\n\nA hands-on introduction to Computational Evolutionary Biology. These materials are used in the Master’s courses Evolutionary Biology and Bioinformatics 2 at UGent.\n\n\n\nFabrício Almeida-Silva\n\n\nMay 1, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProcessing and visualizing data in the tidyverse\n\n\nA gentle introduction to data analyses using tidyverse packages.\n\n\n\nFabrício Almeida-Silva\n\n\nMay 29, 2021\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "teaching/compevobio/index.html",
+    "href": "teaching/compevobio/index.html",
+    "title": "Introduction to Computational Evolutionary Biology",
+    "section": "",
+    "text": "This book aims to provide learners with a hands-on introduction to Computational Evolutionary Biology, and the materials here are used in the practical lessons of the courses C003709A - Evolutionary Biology and C000500A - Bioinformatics 2 at Universiteit Gent, taught by Dr. Yves Van de Peer and Fabricio Almeida-Silva.\nCourse materials:\n\nGitHub repo\nBook"
+  },
+  {
+    "objectID": "teaching/compevobio/index.html#overview",
+    "href": "teaching/compevobio/index.html#overview",
+    "title": "Introduction to Computational Evolutionary Biology",
+    "section": "",
+    "text": "This book aims to provide learners with a hands-on introduction to Computational Evolutionary Biology, and the materials here are used in the practical lessons of the courses C003709A - Evolutionary Biology and C000500A - Bioinformatics 2 at Universiteit Gent, taught by Dr. Yves Van de Peer and Fabricio Almeida-Silva.\nCourse materials:\n\nGitHub repo\nBook"
+  },
+  {
+    "objectID": "blog/index.html",
+    "href": "blog/index.html",
+    "title": "My blog",
+    "section": "",
+    "text": "Here, I write about R, Bioconductor, open science, reproducible research, and more.\n\n\n\n\n\n\n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nWhere can I publish a paper describing my Bioconductor package?\n\n\n\n\n\nCheck out where Bioc developers have published their papers\n\n\n\n\n\n\nJun 12, 2023\n\n\nFabrício Almeida-Silva\n\n\n\n\n\n\n  \n\n\n\n\nUpgrading R version with all your packages\n\n\n\n\n\nLearn how to do a painless upgrade of your R version\n\n\n\n\n\n\nMay 6, 2022\n\n\nFabrício Almeida-Silva\n\n\n\n\n\n\n  \n\n\n\n\nPushing Docker images to Docker Hub\n\n\n\n\n\nKeeping your images in a Docker Hub repo will make your life easier\n\n\n\n\n\n\nDec 1, 2021\n\n\nFabrício Almeida-Silva\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "blog/2021-12-01-push_image_dockerhub/index.html",
+    "href": "blog/2021-12-01-push_image_dockerhub/index.html",
+    "title": "Pushing Docker images to Docker Hub",
+    "section": "",
+    "text": "This post assumes you already have an account on Docker Hub. If you don’t, sign up for free before going any further.\nOnce you have a Docker Hub account, log in and create the repository where you want to store the image. You can do that by clicking the Create Repository button.\n\n\n\n\n\n\n\n\n\n\n\nTo push an image to Docker Hub, you will need to have it on your machine. An image can be built from instructions in a Dockerfile or using Docker Compose. Personally, I like to create images from Dockerfiles, where I define my desired OS with all softwares and packages I need. Assuming you alrady have a Dockerfile, cd to the directory where the Dockerfile is and run:\n\ndocker build -t username/reponame .\n\nHere, username and reponame are your Docker Hub’s user name and the name of the repository where you want to store the image.\n\n\n\nTo push your image, you must be logged in. To log in, run:\n\ndocker login\n\nYou will be asked to type your user name and password, and then you’re all set. Finally, push the image with:\n\ndocker push username/reponame:tag\n\nNote that the :tag is not mandatory. If you omit it, a tag latest will be automatically assigned. You would want to assign a custom tag if you’re pushing a specific version of your image. For example, suppose I want to push the version 2.0 of an image to my soyfungigcn repo. To do that, I would run:\n\ndocker push almeidasilvaf/soyfungigcn:2.0\n\nAnd that’s it! In the future, if you want to use that same image on a different machine, all you need to do is run:\n\ndocker pull username/reponame\n\nThis will download the latest version of the image to your machine. You can also specify a specific version to download by setting a :tag after the repository name."
+  },
+  {
+    "objectID": "blog/2021-12-01-push_image_dockerhub/index.html#pushing-docker-images-to-docker-hub",
+    "href": "blog/2021-12-01-push_image_dockerhub/index.html#pushing-docker-images-to-docker-hub",
+    "title": "Pushing Docker images to Docker Hub",
+    "section": "",
+    "text": "This post assumes you already have an account on Docker Hub. If you don’t, sign up for free before going any further.\nOnce you have a Docker Hub account, log in and create the repository where you want to store the image. You can do that by clicking the Create Repository button.\n\n\n\n\n\n\n\n\n\n\n\nTo push an image to Docker Hub, you will need to have it on your machine. An image can be built from instructions in a Dockerfile or using Docker Compose. Personally, I like to create images from Dockerfiles, where I define my desired OS with all softwares and packages I need. Assuming you alrady have a Dockerfile, cd to the directory where the Dockerfile is and run:\n\ndocker build -t username/reponame .\n\nHere, username and reponame are your Docker Hub’s user name and the name of the repository where you want to store the image.\n\n\n\nTo push your image, you must be logged in. To log in, run:\n\ndocker login\n\nYou will be asked to type your user name and password, and then you’re all set. Finally, push the image with:\n\ndocker push username/reponame:tag\n\nNote that the :tag is not mandatory. If you omit it, a tag latest will be automatically assigned. You would want to assign a custom tag if you’re pushing a specific version of your image. For example, suppose I want to push the version 2.0 of an image to my soyfungigcn repo. To do that, I would run:\n\ndocker push almeidasilvaf/soyfungigcn:2.0\n\nAnd that’s it! In the future, if you want to use that same image on a different machine, all you need to do is run:\n\ndocker pull username/reponame\n\nThis will download the latest version of the image to your machine. You can also specify a specific version to download by setting a :tag after the repository name."
+  },
+  {
+    "objectID": "blog/2022-01-03-bioc_publications/index.html",
+    "href": "blog/2022-01-03-bioc_publications/index.html",
+    "title": "Where can I publish a paper describing my Bioconductor package?",
+    "section": "",
+    "text": "When I developed BioNERO, my first R/Bioconductor package, I didn’t know to which journals I could submit the paper describing it. Since then, I’ve seen many other R developers that have faced the same issue. To help solve this problem, here I will guide you on how to do some web scraping to find out the main journals where Bioc developers publish papers describing their packages."
+  },
+  {
+    "objectID": "blog/2022-01-03-bioc_publications/index.html#motivation",
+    "href": "blog/2022-01-03-bioc_publications/index.html#motivation",
+    "title": "Where can I publish a paper describing my Bioconductor package?",
+    "section": "",
+    "text": "When I developed BioNERO, my first R/Bioconductor package, I didn’t know to which journals I could submit the paper describing it. Since then, I’ve seen many other R developers that have faced the same issue. To help solve this problem, here I will guide you on how to do some web scraping to find out the main journals where Bioc developers publish papers describing their packages."
+  },
+  {
+    "objectID": "blog/2022-01-03-bioc_publications/index.html#extracting-citation-information-from-bioconductors-browsable-code-base",
+    "href": "blog/2022-01-03-bioc_publications/index.html#extracting-citation-information-from-bioconductors-browsable-code-base",
+    "title": "Where can I publish a paper describing my Bioconductor package?",
+    "section": "Extracting citation information from Bioconductor’s browsable code base",
+    "text": "Extracting citation information from Bioconductor’s browsable code base\nBioconductor offers a browsable code base that lets users explore git repositories and search code in all Bioconductor packages. If we go to the Code Search page and search journal f:CITATION, we will get a list of all CITATION files (where developers include citation information for their packages) that include the string “journal”.\nKnowing that, we can do some web scraping using the rvest package to extract such information for all packages and parse it into a nicely-formatted data frame.\n\n# Load required packages\nlibrary(tidyverse)\nlibrary(rvest)\n\n# Get URL of the search \"journal f:CITATION\"\nurl &lt;- \"https://code.bioconductor.org/search/search?q=journal%20f%3aCITATION\"\nn &lt;- 2000 # number of files to show\n\n# Get list of tables containing journal names\njournal_list &lt;- rvest::read_html(paste0(url, \"&num=\", n)) |&gt;\n    rvest::html_table()\n\n# Parse list of data frames into a large, tidy list\njournal_df &lt;- Reduce(rbind, lapply(seq_along(journal_list), function(x) {\n    \n    df &lt;- journal_list[[x]]\n    \n    # Package name\n    pkg &lt;- gsub(\":.*\", \"\", names(df)[1])\n    \n    names(df) &lt;- \"entries\"\n    df &lt;- as.data.frame(df) |&gt; \n        # 1) Keep only rows containing 'journal=' or 'journal ='\n        filter(str_detect(entries, \"journal\\\\s*=\")) |&gt;\n        # 2) Get journal name (remove quotation marks, whitespace, commas, etc)\n        mutate(\n            journal = str_replace_all(entries, \".*=\", \"\"),\n            journal = str_replace_all(journal, '\\\\\\\"', ''),\n            journal = str_replace_all(journal, \"'\", ''),\n            journal = str_replace_all(journal, \"\\\\.\", \"\"),\n            journal = str_squish(journal),\n            journal = str_to_upper(journal),\n            journal = str_replace_all(journal, \",$\", \"\"),\n            journal = str_replace_all(journal, \"\\\\)\", \"\"),\n            journal = str_replace_all(journal, \"\\\\(\", \"\"),\n            journal = str_replace_all(journal, \"\\\\{\", \"\"),\n            journal = str_replace_all(journal, \"\\\\}\", \"\")\n        ) |&gt;\n        select(journal)\n    \n    # Add a column named `package` containing package name\n    if(nrow(df) &gt; 0) {\n        df &lt;- df |&gt;\n            mutate(package = pkg)\n    }\n    \n    return(df)\n}))\n\n# Taking a look at the first rows\nhead(journal_df)\n\n             journal           package\n1     BIOINFORMATICS        cytomapper\n2 SCIENTIFIC REPORTS      IsoCorrectoR\n3     BIOINFORMATICS             Rtpca\n4     BIOINFORMATICS transcriptogramer\n5     BIOINFORMATICS               ACE\n6     BIOINFORMATICS          limmaGUI\n\n\nNow, because CITATION files are created manually by developers, a big (and expected) problem is the lack of standardization. This leads to different developers referring to the same journal by different names (e.g., Nature Methods and Nat Methods, Nucleic Acids Research and NAR, etc). You can see that yourself by executing sort(unique(journal_df$journal)). While I can never expect to fix this problem completely (especially if you are reading this post in the future and new packages have been added), below is my attempt to fix most of the inconsistencies. I will probably miss some strange exceptions, but I guess I can live with it, right?\n\n# 'Journals' to remove (these are not actually journals)\nto_remove &lt;- c(\n    \"\", \"07\", \"1\", \"10\", as.character(2010:2023), \"2022-2032\",\n    \"IN REVIEW\", \"IN PREPARATION\", \"JOURNAL\", \"MANUSCRIPT IN PREPARATION\",\n    \"TBA\", \"TBD\", \"UNDER REVIEW\", \"UNIVERSITY OF REGENSBURG\",\n    \"BIOCONDUCTOR\", \"SUBMITTED\", \"MEDRXIV\", \"BIORXIV\", \"PREPRINT\", \"ARXIV\"\n)\n\n# Standardize names\njournal_df_clean &lt;- journal_df |&gt;\n    filter(!journal %in% to_remove) |&gt;\n    mutate(\n        journal = str_replace_all(journal, c(\n            \"ALBANY NY.*\" = \"\",\n            \"ALGORITHMS MOL BIO\" = \"ALGORITHMS FOR MOLECULAR BIOLOGY\",\n            \"ANAL CHEM\" = \"ANALYTICAL CHEMISTRY\",\n            \"ANN APPL STAT\" = \"ANNALS OF APPLIED STATISTICS\",\n            \"PREPRINT.*\" = \"\",\n            \"BIONFORMATICS JOURNAL\" = \"BIOINFORMATICS\",\n            \"OXFORD, ENGLAND\" = \"\",\n            \"ACCEPTED\" = \"\",\n            \"BMC SYST BIOL\" = \"BMC SYSTEMS BIOLOGY\",\n            \"COMPUT METHODS PROGRAMS BIOMED\" = \"COMPUTER METHODS AND PROGRAMS IN BIOMEDICINE\",\n            \"CYTOMETRY A\" = \"CYTOMETRY PART A\",\n            \"EPIGENETICS CHROMATIN\" = \"EPIGENETICS & CHROMATIN\",\n            \"F1000.*\" = \"F1000RESEARCH\",\n            \"FRONT BIOL\" = \"FRONTIERS IN BIOLOGY\",\n            \"GENOME BIOL$\" = \"GENOME BIOLOGY\",\n            \"GENOME RES$\" = \"GENOME RESEARCH\",\n            \", CODE SNIPPETS\" = \"\",\n            \", SERIES B\" = \"\",\n            \"J MACH LEARN RES\" = \"JOURNAL OF MACHINE LEARNING RESEARCH\",\n            \"METHODS MOL BIO\" = \"METHODS IN MOLECULAR BIOLOGY\",\n            \"MOL SYST BIOL\" = \"MOLECULAR SYSTEMS BIOLOGY\",\n            \"NAT BIOTECH.*\" = \"NATURE BIOTECHNOLOGY\",\n            \"NAT COMM.*\" = \"NATURE COMMUNICATIONS\",\n            \"NAT GENET\" = \"NATURE GENETICS\",\n            \"NAT IMMUNOL\" = \"NATURE IMMUNOLOGY\",\n            \"NAT METH\" = \"NATURE METHODS\",\n            \"NPG SYST BIOL APPL\" = \"NPG SYSTEMS BIOLOGY AND APPLICATIONS\",\n            \" GKV873\" = \"\",\n            \"NUCL ACIDS RES\" = \"NUCLEIC ACIDS RESEARCH\",\n            \"NUCLEIC ACIDS RES\" = \"NUCLEIC ACIDS RESEARCH\",\n            \"DATABASE ISSUE\" = \"\",\n            \"OXFORD BIOINFORMATICS\" = \"BIOINFORMATICS\",\n            \"PLOS COMPUT BIOL\" = \"PLOS COMPUTATIONAL BIOLOGY\",\n            \"PLOS COMPUTAT BIOL\" = \"PLOS COMPUTATIONAL BIOLOGY\",\n            \"PROC NATL ACAD SCI.*\" = \"PNAS\",\n            \"PROCEEDINGS OF THE NATIONAL ACADEMY OF SCIENCES.*\" = \"PNAS\",\n            \"STAT APPL GENET MOL BIOL\" = \"STATISTICAL APPLICATIONS IN GENETICS AND MOLECULAR BIOLOGY\"\n        )\n        ),\n        journal = str_squish(journal)\n    )\n\n# Taking a look at the first rows\nhead(journal_df_clean)\n\n             journal           package\n1     BIOINFORMATICS        cytomapper\n2 SCIENTIFIC REPORTS      IsoCorrectoR\n3     BIOINFORMATICS             Rtpca\n4     BIOINFORMATICS transcriptogramer\n5     BIOINFORMATICS               ACE\n6     BIOINFORMATICS          limmaGUI\n\n\nThe final data frame of packages and journals where they published their papers can be explored below:"
+  },
+  {
+    "objectID": "blog/2022-01-03-bioc_publications/index.html#summary-stats",
+    "href": "blog/2022-01-03-bioc_publications/index.html#summary-stats",
+    "title": "Where can I publish a paper describing my Bioconductor package?",
+    "section": "Summary stats",
+    "text": "Summary stats\nNow, let’s count the frequency of packages in each journal and show the top 20 journals based number of the number of papers associated with Bioc packages.\n\n# Get top 20 journals in number of papers associated with Bioc pkgs\ncitation_stats &lt;- journal_df_clean %&gt;%\n    count(journal) %&gt;%\n    arrange(-n) %&gt;%\n    slice_head(n = 20)\n\ncitation_stats\n\n                        journal   n\n1                BIOINFORMATICS 303\n2            BMC BIOINFORMATICS 101\n3                GENOME BIOLOGY  61\n4   NUCLEIC ACIDS RESEARCHEARCH  60\n5                 F1000RESEARCH  34\n6                NATURE METHODS  30\n7                  BMC GENOMICS  25\n8         NATURE COMMUNICATIONS  24\n9    PLOS COMPUTATIONAL BIOLOGY  22\n10                     PLOS ONE  22\n11              GENOME RESEARCH  13\n12         ANALYTICAL CHEMISTRY  11\n13       NUCLEIC ACIDS RESEARCH  11\n14                BIOSTATISTICS  10\n15  BRIEFINGS IN BIOINFORMATICS   9\n16         NATURE BIOTECHNOLOGY   9\n17 JOURNAL OF PROTEOME RESEARCH   8\n18    MOLECULAR SYSTEMS BIOLOGY   8\n19              NATURE GENETICS   8\n20                         PNAS   8\n\n\nExploring it visually:\n\n# Read figure with Bioc logo\nbioc_logo &lt;- png::readPNG(\n    here::here(\"blog\", \"2022-01-03-bioc_publications\", \"featured-bioc.png\"), \n    native = TRUE\n)\n\n# Define plotting params\nlast_updated &lt;- format(Sys.Date(), \"%Y-%m-%d\")\nxmax &lt;- max(citation_stats$n) + 30\nxmax &lt;- round(xmax / 10) * 10\n\n# Plot data\nggplot(citation_stats, aes(x = n, y = reorder(journal, n))) +\n    geom_col() +\n    geom_text(aes(label = n), hjust = -0.3) +\n    xlim(0, xmax) +\n    labs(\n        title = \"Where are papers associated with BioC packages published?\",\n        subtitle = paste0(\"Last update: \", last_updated),\n        x = \"Number of papers\", y = \"\"\n    ) +\n    theme_bw() +\n    patchwork::inset_element(\n        bioc_logo,\n        left = 0.5,\n        top = 0.55,\n        right = 0.95,\n        bottom = 0.3\n    ) +\n    theme_void()\n\n\n\n\nAnd voilà! In case you want to explore the whole table, here it is:"
+  },
+  {
+    "objectID": "blog/2022-01-03-bioc_publications/index.html#session-information",
+    "href": "blog/2022-01-03-bioc_publications/index.html#session-information",
+    "title": "Where can I publish a paper describing my Bioconductor package?",
+    "section": "Session information",
+    "text": "Session information\nThis post was created under the following conditions:\n\n\n─ Session info ───────────────────────────────────────────────────────────────\n setting  value\n version  R version 4.3.0 (2023-04-21)\n os       Ubuntu 20.04.5 LTS\n system   x86_64, linux-gnu\n ui       X11\n language (EN)\n collate  en_US.UTF-8\n ctype    en_US.UTF-8\n tz       Europe/Brussels\n date     2023-06-12\n pandoc   3.1.1 @ /usr/lib/rstudio/resources/app/bin/quarto/bin/tools/ (via rmarkdown)\n\n─ Packages ───────────────────────────────────────────────────────────────────\n package     * version date (UTC) lib source\n BiocManager   1.30.20 2023-02-24 [1] CRAN (R 4.3.0)\n BiocStyle     2.28.0  2023-04-25 [1] Bioconductor\n bslib         0.4.2   2022-12-16 [1] CRAN (R 4.3.0)\n cachem        1.0.8   2023-05-01 [1] CRAN (R 4.3.0)\n cli           3.6.1   2023-03-23 [1] CRAN (R 4.3.0)\n colorspace    2.1-0   2023-01-23 [1] CRAN (R 4.3.0)\n crosstalk     1.2.0   2021-11-04 [1] CRAN (R 4.3.0)\n curl          5.0.0   2023-01-12 [1] CRAN (R 4.3.0)\n digest        0.6.31  2022-12-11 [1] CRAN (R 4.3.0)\n dplyr       * 1.1.2   2023-04-20 [1] CRAN (R 4.3.0)\n DT            0.27    2023-01-17 [1] CRAN (R 4.3.0)\n ellipsis      0.3.2   2021-04-29 [1] CRAN (R 4.3.0)\n evaluate      0.20    2023-01-17 [1] CRAN (R 4.3.0)\n fansi         1.0.4   2023-01-22 [1] CRAN (R 4.3.0)\n farver        2.1.1   2022-07-06 [1] CRAN (R 4.3.0)\n fastmap       1.1.1   2023-02-24 [1] CRAN (R 4.3.0)\n forcats     * 1.0.0   2023-01-29 [1] CRAN (R 4.3.0)\n generics      0.1.3   2022-07-05 [1] CRAN (R 4.3.0)\n ggplot2     * 3.4.2   2023-04-03 [1] CRAN (R 4.3.0)\n glue          1.6.2   2022-02-24 [1] CRAN (R 4.3.0)\n gtable        0.3.3   2023-03-21 [1] CRAN (R 4.3.0)\n here          1.0.1   2020-12-13 [1] CRAN (R 4.3.0)\n hms           1.1.3   2023-03-21 [1] CRAN (R 4.3.0)\n htmltools     0.5.5   2023-03-23 [1] CRAN (R 4.3.0)\n htmlwidgets   1.6.2   2023-03-17 [1] CRAN (R 4.3.0)\n httr          1.4.5   2023-02-24 [1] CRAN (R 4.3.0)\n jquerylib     0.1.4   2021-04-26 [1] CRAN (R 4.3.0)\n jsonlite      1.8.4   2022-12-06 [1] CRAN (R 4.3.0)\n knitr         1.42    2023-01-25 [1] CRAN (R 4.3.0)\n labeling      0.4.2   2020-10-20 [1] CRAN (R 4.3.0)\n lifecycle     1.0.3   2022-10-07 [1] CRAN (R 4.3.0)\n lubridate   * 1.9.2   2023-02-10 [1] CRAN (R 4.3.0)\n magrittr      2.0.3   2022-03-30 [1] CRAN (R 4.3.0)\n munsell       0.5.0   2018-06-12 [1] CRAN (R 4.3.0)\n patchwork     1.1.2   2022-08-19 [1] CRAN (R 4.3.0)\n pillar        1.9.0   2023-03-22 [1] CRAN (R 4.3.0)\n pkgconfig     2.0.3   2019-09-22 [1] CRAN (R 4.3.0)\n png           0.1-8   2022-11-29 [1] CRAN (R 4.3.0)\n purrr       * 1.0.1   2023-01-10 [1] CRAN (R 4.3.0)\n R6            2.5.1   2021-08-19 [1] CRAN (R 4.3.0)\n readr       * 2.1.4   2023-02-10 [1] CRAN (R 4.3.0)\n rlang         1.1.1   2023-04-28 [1] CRAN (R 4.3.0)\n rmarkdown     2.21    2023-03-26 [1] CRAN (R 4.3.0)\n rprojroot     2.0.3   2022-04-02 [1] CRAN (R 4.3.0)\n rstudioapi    0.14    2022-08-22 [1] CRAN (R 4.3.0)\n rvest       * 1.0.3   2022-08-19 [1] CRAN (R 4.3.0)\n sass          0.4.5   2023-01-24 [1] CRAN (R 4.3.0)\n scales        1.2.1   2022-08-20 [1] CRAN (R 4.3.0)\n sessioninfo   1.2.2   2021-12-06 [1] CRAN (R 4.3.0)\n stringi       1.7.12  2023-01-11 [1] CRAN (R 4.3.0)\n stringr     * 1.5.0   2022-12-02 [1] CRAN (R 4.3.0)\n tibble      * 3.2.1   2023-03-20 [1] CRAN (R 4.3.0)\n tidyr       * 1.3.0   2023-01-24 [1] CRAN (R 4.3.0)\n tidyselect    1.2.0   2022-10-10 [1] CRAN (R 4.3.0)\n tidyverse   * 2.0.0   2023-02-22 [1] CRAN (R 4.3.0)\n timechange    0.2.0   2023-01-11 [1] CRAN (R 4.3.0)\n tzdb          0.3.0   2022-03-28 [1] CRAN (R 4.3.0)\n utf8          1.2.3   2023-01-31 [1] CRAN (R 4.3.0)\n vctrs         0.6.2   2023-04-19 [1] CRAN (R 4.3.0)\n withr         2.5.0   2022-03-03 [1] CRAN (R 4.3.0)\n xfun          0.39    2023-04-20 [1] CRAN (R 4.3.0)\n xml2          1.3.4   2023-04-27 [1] CRAN (R 4.3.0)\n yaml          2.3.7   2023-01-23 [1] CRAN (R 4.3.0)\n\n [1] /home/faalm/R/x86_64-pc-linux-gnu-library/4.3\n [2] /usr/local/lib/R/site-library\n [3] /usr/lib/R/site-library\n [4] /usr/lib/R/library\n\n──────────────────────────────────────────────────────────────────────────────"
+  },
+  {
+    "objectID": "blog/2022-05-06-upgrading_R/index.html",
+    "href": "blog/2022-05-06-upgrading_R/index.html",
+    "title": "Upgrading R version with all your packages",
+    "section": "",
+    "text": "Have you ever upgraded R and lost all of your packages? As a consequence, you had to install them again one by one. One. By. One. Oh, man… Boring, huh? Here, I will guide you on how to upgrade your R version and reinstall your packages automatically. This way, you can spend your time on what really matters: writing some cool R code! This post is inspired by this Gist code."
+  },
+  {
+    "objectID": "blog/2022-05-06-upgrading_R/index.html#motivation",
+    "href": "blog/2022-05-06-upgrading_R/index.html#motivation",
+    "title": "Upgrading R version with all your packages",
+    "section": "",
+    "text": "Have you ever upgraded R and lost all of your packages? As a consequence, you had to install them again one by one. One. By. One. Oh, man… Boring, huh? Here, I will guide you on how to upgrade your R version and reinstall your packages automatically. This way, you can spend your time on what really matters: writing some cool R code! This post is inspired by this Gist code."
+  },
+  {
+    "objectID": "blog/2022-05-06-upgrading_R/index.html#taking-a-picture-of-your-current-r-package-universe",
+    "href": "blog/2022-05-06-upgrading_R/index.html#taking-a-picture-of-your-current-r-package-universe",
+    "title": "Upgrading R version with all your packages",
+    "section": "‘Taking a picture’ of your current R package universe",
+    "text": "‘Taking a picture’ of your current R package universe\nThe first thing you need to do before upgrading your R version is to save a list of all packages you have installed. Not only must you have package names, but also from where they were downloaded (e.g., CRAN, Bioconductor, GitHub, etc.). The code below will create a data frame of packages and their sources, and save it as a .csv file in your current working directory.\nNOTE: You need to have the packages tidyverse and sessioninfo installed.\n\n#----Create a data frame with all installed packages and their sources---------\nlibrary(tidyverse)\nall_pkg &lt;- sessioninfo::session_info(\"installed\") |&gt; \n  pluck(\"packages\") |&gt; \n  as_tibble()\n\n# Classify sources: CRAN, Bioconductor, GitHub, r-universe, and local\nsplit_repo &lt;- all_pkg |&gt; \n    mutate(repo = case_when(\n        str_detect(source, \"Bioconductor\") ~ \"Bioconductor\",\n        str_detect(source, \"CRAN\") ~ \"CRAN\",\n        str_detect(source, \"Github\") ~ \"GitHub\",\n        str_detect(source, \"local\") ~ \"local\",\n        str_detect(source, \"r-universe\") ~ \"r-universe\",\n        TRUE ~ NA_character_\n    ), .before = \"source\") |&gt;\n    select(package, repo)\n\nhead(split_repo)\n\n# A tibble: 6 × 2\n  package          repo        \n  &lt;chr&gt;            &lt;chr&gt;       \n1 abind            CRAN        \n2 ade4             CRAN        \n3 annotate         Bioconductor\n4 AnnotationDbi    Bioconductor\n5 AnnotationFilter Bioconductor\n6 ape              CRAN        \n\n\nYou can then export this data frame to a .csv file as follows:\n\nsplit_repo |&gt; \n  write_csv(\"packages.csv\")\n\nNow that you have a list of all your packages and their sources, you can install the latest version of R. That will vary according to the operating system you use, so you’d better go to the CRAN page and see the instructions on how to upgrade R for your case. In my case, on a Ubuntu 20.04 LTS machine, I just ran:\n\nsudo apt-get update\nsudo apt-get upgrade\n\nOnce you’re done upgrading your R version, open a new R session (now with the latest version) and run the following code to install all your beloved packages:\n\n#----First, install tidyverse, remotes, and BiocManager-------------------------\nif(!require(\"tidyverse\", quietly = TRUE))\n    install.packages(\"tidyverse\")\n\nif(!require(\"remotes\", quietly = TRUE))\n    install.packages(\"remotes\")\n\nif(!require(\"BiocManager\", quietly = TRUE))\n    install.packages(\"BiocManager\")\n\n#----Read data frame with package names and sources-----------------------------\nlibrary(tidyverse)\nall_pkg &lt;- readr::read_csv(\"packages.csv\", show_col_types = FALSE)\n\n#----Reinstall packages---------------------------------------------------------\n## CRAN packages\ncran_pkg &lt;- all_pkg |&gt; \n  dplyr::filter(repo == \"CRAN\") |&gt; \n  dplyr::pull(package)\n\ncran_pkg |&gt;\n  install.packages()\n\n\n## Bioconductor packages\nbioc_pkg &lt;- all_pkg |&gt;\n    dplyr::filter(repo == \"Bioconductor\") |&gt;\n    dplyr::pull(package)\n\nbioc_pkg |&gt;\n    BiocManager::install()\n\n\n## R-Universe\nruni_pkg &lt;- all_pkg |&gt;\n    dplyr::filter(repo == \"r-universe\") |&gt;\n    dplyr::pull(package)\n\nruni_pkg |&gt;\n    install.packages(repos = \"https://ropensci.r-universe.dev\")\n\n\n## GitHub packages - only list packages\ngh_pkg &lt;- all_pkg |&gt;\n    dplyr::filter(repo == \"GitHub\") |&gt;\n    dplyr::pull(package)\n\nFor GitHub packages, I suggest looking at them one by one (there shouldn’t be many of them) and deciding which ones you want to install, as many of them are usually unstable and installed for testing purposes. Once you have identified which ones you want to install, you can do it with remotes::install_github().\nAnd that’s all! Whenever you need to upgrade R, just run the same code again and you’re all set. I hope this post helped you!"
+  },
+  {
+    "objectID": "blog/2022-05-06-upgrading_R/index.html#session-information",
+    "href": "blog/2022-05-06-upgrading_R/index.html#session-information",
+    "title": "Upgrading R version with all your packages",
+    "section": "Session information",
+    "text": "Session information\n\nsessioninfo::session_info()\n\n─ Session info ───────────────────────────────────────────────────────────────\n setting  value\n version  R version 4.3.0 (2023-04-21)\n os       Ubuntu 20.04.5 LTS\n system   x86_64, linux-gnu\n ui       X11\n language (EN)\n collate  en_US.UTF-8\n ctype    en_US.UTF-8\n tz       Europe/Brussels\n date     2023-06-12\n pandoc   3.1.1 @ /usr/lib/rstudio/resources/app/bin/quarto/bin/tools/ (via rmarkdown)\n\n─ Packages ───────────────────────────────────────────────────────────────────\n package     * version date (UTC) lib source\n bit           4.0.5   2022-11-15 [1] CRAN (R 4.3.0)\n bit64         4.0.5   2020-08-30 [1] CRAN (R 4.3.0)\n cli           3.6.1   2023-03-23 [1] CRAN (R 4.3.0)\n colorspace    2.1-0   2023-01-23 [1] CRAN (R 4.3.0)\n crayon        1.5.2   2022-09-29 [1] CRAN (R 4.3.0)\n digest        0.6.31  2022-12-11 [1] CRAN (R 4.3.0)\n dplyr       * 1.1.2   2023-04-20 [1] CRAN (R 4.3.0)\n evaluate      0.20    2023-01-17 [1] CRAN (R 4.3.0)\n fansi         1.0.4   2023-01-22 [1] CRAN (R 4.3.0)\n fastmap       1.1.1   2023-02-24 [1] CRAN (R 4.3.0)\n forcats     * 1.0.0   2023-01-29 [1] CRAN (R 4.3.0)\n generics      0.1.3   2022-07-05 [1] CRAN (R 4.3.0)\n ggplot2     * 3.4.2   2023-04-03 [1] CRAN (R 4.3.0)\n glue          1.6.2   2022-02-24 [1] CRAN (R 4.3.0)\n gtable        0.3.3   2023-03-21 [1] CRAN (R 4.3.0)\n hms           1.1.3   2023-03-21 [1] CRAN (R 4.3.0)\n htmltools     0.5.5   2023-03-23 [1] CRAN (R 4.3.0)\n htmlwidgets   1.6.2   2023-03-17 [1] CRAN (R 4.3.0)\n jsonlite      1.8.4   2022-12-06 [1] CRAN (R 4.3.0)\n knitr         1.42    2023-01-25 [1] CRAN (R 4.3.0)\n lifecycle     1.0.3   2022-10-07 [1] CRAN (R 4.3.0)\n lubridate   * 1.9.2   2023-02-10 [1] CRAN (R 4.3.0)\n magrittr      2.0.3   2022-03-30 [1] CRAN (R 4.3.0)\n munsell       0.5.0   2018-06-12 [1] CRAN (R 4.3.0)\n pillar        1.9.0   2023-03-22 [1] CRAN (R 4.3.0)\n pkgconfig     2.0.3   2019-09-22 [1] CRAN (R 4.3.0)\n purrr       * 1.0.1   2023-01-10 [1] CRAN (R 4.3.0)\n R6            2.5.1   2021-08-19 [1] CRAN (R 4.3.0)\n readr       * 2.1.4   2023-02-10 [1] CRAN (R 4.3.0)\n rlang         1.1.1   2023-04-28 [1] CRAN (R 4.3.0)\n rmarkdown     2.21    2023-03-26 [1] CRAN (R 4.3.0)\n rstudioapi    0.14    2022-08-22 [1] CRAN (R 4.3.0)\n scales        1.2.1   2022-08-20 [1] CRAN (R 4.3.0)\n sessioninfo   1.2.2   2021-12-06 [1] CRAN (R 4.3.0)\n stringi       1.7.12  2023-01-11 [1] CRAN (R 4.3.0)\n stringr     * 1.5.0   2022-12-02 [1] CRAN (R 4.3.0)\n tibble      * 3.2.1   2023-03-20 [1] CRAN (R 4.3.0)\n tidyr       * 1.3.0   2023-01-24 [1] CRAN (R 4.3.0)\n tidyselect    1.2.0   2022-10-10 [1] CRAN (R 4.3.0)\n tidyverse   * 2.0.0   2023-02-22 [1] CRAN (R 4.3.0)\n timechange    0.2.0   2023-01-11 [1] CRAN (R 4.3.0)\n tzdb          0.3.0   2022-03-28 [1] CRAN (R 4.3.0)\n utf8          1.2.3   2023-01-31 [1] CRAN (R 4.3.0)\n vctrs         0.6.2   2023-04-19 [1] CRAN (R 4.3.0)\n vroom         1.6.3   2023-04-28 [1] CRAN (R 4.3.0)\n withr         2.5.0   2022-03-03 [1] CRAN (R 4.3.0)\n xfun          0.39    2023-04-20 [1] CRAN (R 4.3.0)\n yaml          2.3.7   2023-01-23 [1] CRAN (R 4.3.0)\n\n [1] /home/faalm/R/x86_64-pc-linux-gnu-library/4.3\n [2] /usr/local/lib/R/site-library\n [3] /usr/lib/R/site-library\n [4] /usr/lib/R/library\n\n──────────────────────────────────────────────────────────────────────────────"
+  }
+]
