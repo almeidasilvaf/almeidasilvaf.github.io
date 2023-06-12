@@ -1,0 +1,16 @@
+{
+  "hash": "04be4e5a48e919096112d33d61354e75",
+  "result": {
+    "markdown": "---\ntitle: \"Pushing Docker images to Docker Hub\"\ndescription: \"Keeping your images in a Docker Hub repo will make your life easier\"\ndate: 2021-12-01\nauthor: \n  - name: Fabrício Almeida-Silva\n    orcid: 0000-0002-5314-2964\ndraft: false\nimage: docker.gif\ncategories:\n  - project management\n  - bioinformatics\n  - docker\n  - virtualization\n  - reproducible research\n---\n\n\n## Pushing Docker images to Docker Hub\n\nThis post assumes you already have an account on Docker Hub. If you don't, [sign up for free](https://hub.docker.com/) before going any further. \n\nOnce you have a Docker Hub account, log in and **create the repository** where you want to store the image. You can do that by clicking the **Create Repository** button.\n\n\n::: {.cell layout-align=\"center\"}\n::: {.cell-output-display}\n![](dockerhub_create_repo.png){fig-align='center' width=472}\n:::\n:::\n\n\n### Building the image\n\nTo push an image to Docker Hub, you will need to have it on your machine. An image can be built from instructions in a **Dockerfile** or using Docker Compose. Personally, I like to create images from Dockerfiles, where I define my desired OS with all softwares and packages I need. Assuming you alrady have a Dockerfile, `cd` to the directory where the Dockerfile is and run:\n\n\n::: {.cell}\n\n```{.bash .cell-code}\ndocker build -t username/reponame .\n```\n:::\n\n\nHere, `username` and `reponame` are your Docker Hub's user name and the name of the repository where you want to store the image.\n\n### Pushing to Docker Hub\n\nTo push your image, you must be logged in. To log in, run:\n\n\n::: {.cell}\n\n```{.bash .cell-code}\ndocker login\n```\n:::\n\n\nYou will be asked to type your **user name** and **password**, and then you're all set. Finally, push the image with:\n\n\n::: {.cell}\n\n```{.bash .cell-code}\ndocker push username/reponame:tag\n```\n:::\n\n\nNote that the `:tag` is not mandatory. If you omit it, a tag **latest** will be automatically assigned. You would want to assign a custom tag if you're pushing a specific version of your image. For example, suppose I want to push the version 2.0 of an image to my [soyfungigcn](https://hub.docker.com/repository/docker/almeidasilvaf/soyfungigcn) repo. To do that, I would run:\n\n\n::: {.cell}\n\n```{.bash .cell-code}\ndocker push almeidasilvaf/soyfungigcn:2.0\n```\n:::\n\n\nAnd that's it! In the future, if you want to use that same image on a different machine, all you need to do is run:\n\n\n::: {.cell}\n\n```{.bash .cell-code}\ndocker pull username/reponame\n```\n:::\n\n\nThis will download the latest version of the image to your machine. You can also specify a specific version to download by setting a `:tag` after the repository name.\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -1,0 +1,13 @@
+---
+title: "Software & Data Products"
+listing:
+  contents: .
+  sort:
+    - "date desc"
+    - "title desc"
+  type: grid
+  filter-ui: false
+  image-height: 416px
+page-layout: full
+---
+

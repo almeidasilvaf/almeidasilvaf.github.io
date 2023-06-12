@@ -1,0 +1,13 @@
+---
+title: My blog
+listing:
+  contents: .
+  sort:
+    - "date desc"
+    - "title desc"
+  type: default
+  filter-ui: true
+---
+
+Here, I write about R, Bioconductor, open science, reproducible research,
+and more.

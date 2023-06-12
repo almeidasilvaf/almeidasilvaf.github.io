@@ -1,0 +1,19 @@
+---
+title: "Inference and analysis of synteny networks with syntenet"
+description: "Workshop at #EuroBioc2022, the European Bioconductor annual conference"
+date: 2022-09-14
+author: 
+  - name: Fabrício Almeida-Silva
+    orcid: 0000-0002-5314-2964
+draft: false
+image: featured_eurobioc2022.png
+toc: false
+categories:
+  - talk
+  - EuroBioc2022
+---
+  
+## Overview
+
+Click [here](https://github.com/almeidasilvaf/EuroBioc2022_synteny_networks) 
+to access the slide presentations.

@@ -1,0 +1,19 @@
+---
+title: "cageminer: mining candidate genes by integrating GWAS and gene coexpression networks"
+description: "Lightning Talk at #Bioc2021, the Bioconductor annual conference"
+date: 2021-08-06
+author: 
+  - name: Fabrício Almeida-Silva
+    orcid: 0000-0002-5314-2964
+draft: false
+image: featured_bioc2021.png
+toc: false
+categories:
+  - talk
+  - EuroBioc2021
+---
+
+## Overview
+
+Click [here](https://almeidasilvaf.github.io/bioc2021/slides.html)
+to access the slide presentation.

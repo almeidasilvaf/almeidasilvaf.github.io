@@ -1,0 +1,19 @@
+---
+title: "SoyFungiGCN"
+description: |
+  An R/Shiny package and web app to explore soybean-fungi
+  interactions at the transcriptional level
+date: "2021-08-07"
+author: 
+  - name: Fabrício Almeida-Silva
+    orcid: 0000-0002-5314-2964
+draft: false
+image: featured_soyfungigcn_hex.png
+categories:
+  - R packages
+  - coexpression networks
+---
+
+## Summary
+
+SoyFungiGCN is an R package that contains a Shiny app to let users explore a gene coexpression network inferred from RNA-seq data of soybean tissues infected with phytopathogenic fungi. The Shiny app is also available online at https://soyfungigcn.venanciogroup.uenf.br.

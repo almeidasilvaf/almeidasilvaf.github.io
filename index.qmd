@@ -1,0 +1,32 @@
+---
+title: "Hi, I'm Fabrício!"
+image: img/profile.jpg
+about:
+    template: jolla
+    links:
+      - icon: twitter
+        href: https://twitter.com/almeidasilvaf
+      - text: "{{< ai google-scholar >}}"
+        href: https://scholar.google.com/citations?user=zlnqH0AAAAAJ&hl=en
+      - icon: github
+        href: https://github.com/almeidasilvaf
+      - icon: envelope
+        href: "mailto:fabricio_almeidasilva@hotmail.com"
+      - text: "{{< ai orcid >}}"
+        href: https://orcid.org/0000-0002-5314-2964
+---
+
+```{=html}
+
+<div id="tsparticles"></div>
+<!-- https://github.com/matteobruni/tsparticles -->
+<!-- partial -->
+  <script src='https://cdn.jsdelivr.net/npm/tsparticles-slim@2.2.4/tsparticles.slim.bundle.min.js'></script><script  src="html/particles.js"></script>
+```
+
+
+I am a predoctoral fellow at the VIB-UGent Center for 
+Plant Systems Biology (&#x1F1E7;&#x1F1EA;), supervised by 
+[Dr. Yves Van de Peer](https://www.vandepeerlab.org/). 
+I am particularly interested in using and developing network-based approaches 
+to explore the evolution of (polyploid) plant genomes and regulatory networks.

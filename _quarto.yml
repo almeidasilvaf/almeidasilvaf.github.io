@@ -1,0 +1,48 @@
+project:
+  type: website
+
+website:
+  title: "Fabrício Almeida-Silva"
+  page-footer: "Copyright 2023, Fabrício Almeida-Silva"
+  favicon: img/logo.png
+  twitter-card: true
+  
+  # Start of the navigation bar (top)
+  navbar:
+    logo: img/logo.png
+    background: "#6D8763"
+    left:
+      - text: Home
+        href: index.qmd
+      - text: Software & Data
+        href: software/index.qmd
+      - text: Publications
+        href: publications/index.qmd
+      - text: Teaching
+        href: teaching/index.qmd
+      - text: CV
+        href: cv/index.qmd
+      - text: Talks
+        href: talks/index.qmd
+
+      - text: Blog
+        href: blog/index.qmd
+        
+        
+    right:
+      - icon: twitter
+        href: https://twitter.com/almeidasilvaf
+      - icon: github
+        href: https://github.com/almeidasilvaf
+      - icon: envelope
+        href: "mailto:fabricio_almeidasilva@hotmail.com"
+
+execute:
+  freeze: auto
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+

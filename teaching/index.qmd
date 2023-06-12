@@ -1,0 +1,12 @@
+---
+title: Teaching
+listing:
+  contents: .
+  sort:
+    - "date desc"
+    - "title desc"
+  type: grid
+  filter-ui: false
+  image-height: 300px
+page-layout: full
+---

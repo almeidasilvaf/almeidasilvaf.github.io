@@ -1,0 +1,21 @@
+---
+title: |
+    Bioinformatics in Modern Biology: computational genomics as a tool
+    to unravel the soybean genome and gene regulation
+description: "Invited speaker"
+date: 2021-11-22
+author: 
+  - name: Fabrício Almeida-Silva
+    orcid: 0000-0002-5314-2964
+draft: false
+image: featured_sbv2021.png
+toc: false
+categories:
+  - talk
+  - SBV2021
+---
+
+## Overview
+
+Click [here](https://almeidasilvaf.github.io/rslides/2021_11_22_SBV.html)
+to access the slide presentation.

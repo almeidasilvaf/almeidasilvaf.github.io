@@ -1,0 +1,141 @@
+---
+title: "Upgrading R version with all your packages"
+description: "Learn how to do a painless upgrade of your R version"
+date: 2022-05-06
+author: 
+  - name: Fabrício Almeida-Silva
+    orcid: 0000-0002-5314-2964
+draft: false
+image: upgrade.gif
+categories:
+  - rstats
+  - project management
+---
+
+## Motivation
+
+Have you ever upgraded R and lost all of your packages? As a consequence,
+you had to install them again one by one. One. By. One. Oh, man... Boring, huh?
+Here, I will guide you on how to upgrade your R version and reinstall your 
+packages automatically. This way, you can spend your time on what really 
+matters: writing some cool R code! This post is inspired by 
+[this Gist code](https://gist.github.com/jthomasmock/65366b9c1fd750347b9de1d2c80ed827).
+
+
+## 'Taking a picture' of your current R package universe
+
+The first thing you need to do before upgrading your R version is to save
+a list of all packages you have installed. Not only must you have package names,
+but also from where they were downloaded (e.g., CRAN, Bioconductor, GitHub,
+etc.). The code below will create a data frame of packages and their sources,
+and save it as a .csv file in your current working directory.
+
+**NOTE:** You need to have the packages `tidyverse` and `sessioninfo` installed.
+
+```{r upgrade_R, message = FALSE, warning=FALSE}
+#----Create a data frame with all installed packages and their sources---------
+library(tidyverse)
+all_pkg <- sessioninfo::session_info("installed") |> 
+  pluck("packages") |> 
+  as_tibble()
+
+# Classify sources: CRAN, Bioconductor, GitHub, r-universe, and local
+split_repo <- all_pkg |> 
+    mutate(repo = case_when(
+        str_detect(source, "Bioconductor") ~ "Bioconductor",
+        str_detect(source, "CRAN") ~ "CRAN",
+        str_detect(source, "Github") ~ "GitHub",
+        str_detect(source, "local") ~ "local",
+        str_detect(source, "r-universe") ~ "r-universe",
+        TRUE ~ NA_character_
+    ), .before = "source") |>
+    select(package, repo)
+
+head(split_repo)
+```
+
+You can then export this data frame to a .csv file as follows:
+
+```{r}
+split_repo |> 
+  write_csv("packages.csv")
+```
+
+Now that you have a list of all your packages and their sources, you can
+install the latest version of R. That will vary according to the operating 
+system you use, so you'd better go to the [CRAN page](https://cran.rstudio.com/)
+and see the instructions on how to upgrade R for your case. In my case,
+on a Ubuntu 20.04 LTS machine, I just ran:
+
+```{bash upgrade_ubuntu, eval = FALSE}
+sudo apt-get update
+sudo apt-get upgrade
+```
+
+Once you're done upgrading your R version, open a new R session (now with
+the latest version) and run the following code to install all your beloved
+packages:
+
+```{r reinstall_packages, eval = FALSE}
+#----First, install tidyverse, remotes, and BiocManager-------------------------
+if(!require("tidyverse", quietly = TRUE))
+    install.packages("tidyverse")
+
+if(!require("remotes", quietly = TRUE))
+    install.packages("remotes")
+
+if(!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+#----Read data frame with package names and sources-----------------------------
+library(tidyverse)
+all_pkg <- readr::read_csv("packages.csv", show_col_types = FALSE)
+
+#----Reinstall packages---------------------------------------------------------
+## CRAN packages
+cran_pkg <- all_pkg |> 
+  dplyr::filter(repo == "CRAN") |> 
+  dplyr::pull(package)
+
+cran_pkg |>
+  install.packages()
+
+
+## Bioconductor packages
+bioc_pkg <- all_pkg |>
+    dplyr::filter(repo == "Bioconductor") |>
+    dplyr::pull(package)
+
+bioc_pkg |>
+    BiocManager::install()
+
+
+## R-Universe
+runi_pkg <- all_pkg |>
+    dplyr::filter(repo == "r-universe") |>
+    dplyr::pull(package)
+
+runi_pkg |>
+    install.packages(repos = "https://ropensci.r-universe.dev")
+
+
+## GitHub packages - only list packages
+gh_pkg <- all_pkg |>
+    dplyr::filter(repo == "GitHub") |>
+    dplyr::pull(package)
+```
+
+For GitHub packages, I suggest looking at them one by one (there shouldn't be
+many of them) and deciding which ones you want to install, as many of them
+are usually unstable and installed for testing purposes. Once you have
+identified which ones you want to install, you can do it 
+with `remotes::install_github()`.
+
+And that's all! Whenever you need to upgrade R, just run the same code again
+and you're all set. I hope this post helped you!
+
+## Session information
+
+```{r sessioninfo}
+sessioninfo::session_info()
+```

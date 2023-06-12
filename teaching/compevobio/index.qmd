@@ -1,0 +1,22 @@
+---
+title: "Introduction to Computational Evolutionary Biology"
+description: |
+  A hands-on introduction to Computational Evolutionary Biology. These materials are used in the Master's courses Evolutionary Biology and Bioinformatics 2 at UGent.
+date: "2023-05-01"
+author: "Fabrício Almeida-Silva"
+draft: false
+image: CompEvoBio.png
+categories:
+  - evolutionary biology
+  - r
+  - computational biology
+---
+
+## Overview
+
+This book aims to provide learners with a hands-on introduction to Computational Evolutionary Biology, and the materials here are used in the practical lessons of the courses C003709A - Evolutionary Biology and C000500A - Bioinformatics 2 at Universiteit Gent, taught by Dr. Yves Van de Peer and Fabricio Almeida-Silva.
+
+Course materials:
+
+- [GitHub repo](https://github.com/almeidasilvaf/CompEvoBio)
+- [Book](https://almeidasilvaf.github.io/CompEvoBio/)

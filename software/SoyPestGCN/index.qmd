@@ -1,0 +1,19 @@
+---
+title: "SoyPestGCN"
+description: |
+  An R/Shiny package and web app to explore soybean-pest
+  interactions at the transcriptional level
+date: "2022-06-06"
+author: 
+  - name: Fabrício Almeida-Silva
+    orcid: 0000-0002-5314-2964
+draft: false
+image: featured_SoyPestGCN_logo.png
+categories:
+  - R packages
+  - coexpression networks
+---
+
+## Summary
+
+SoyPestGCN is an R package that contains a Shiny app to let users explore a gene coexpression network inferred from RNA-seq data of soybean tissues infested with pests (i.e., insects and nematodes). The Shiny app is also available online at https://soypestgcn.venanciogroup.uenf.br.

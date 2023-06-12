@@ -1,0 +1,9 @@
+---
+title: "Talks I've given"
+listing:
+  contents: .
+  sort:
+    - "date desc"
+    - "title desc"
+  type: default
+---

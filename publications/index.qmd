@@ -1,0 +1,47 @@
+---
+title: "My publications"
+toc: false
+---
+
+```{r}
+#| results: asis
+#| echo: false
+
+# Get a vector of formatted citations from Google Scholar
+pubs <- scholar::format_publications(
+    "zlnqH0AAAAAJ", author.name = "F Almeida-Silva"
+) 
+
+# Extract year for each publication
+years <- regmatches(pubs, regexpr("(20[0-9]{2})", pubs))
+
+# Create a data frame of citations and years, sorted decreasingly
+citation_df <- data.frame(
+    citation = pubs,
+    year = years
+)
+citation_df <- citation_df[order(citation_df$year, decreasing = TRUE), ]
+
+# Add numbers to citation, where 1 is the first publication
+citation_df$citation <- paste0(
+    rev(seq_len(nrow(citation_df))), "\\. ",
+    citation_df$citation
+)
+
+# For each year, create a header 2 containing the year and publications
+citation_list <- split(citation_df, citation_df$year)
+formatted_citation <- lapply(rev(seq_along(citation_list)), function(x) {
+    
+    header <- paste0("## ", names(citation_list)[x])
+    entries <- citation_list[[x]]$citation
+
+    section <- c(header, entries)
+    return(section)
+})
+formatted_citation <- Reduce(c, formatted_citation)
+
+# Print citation list in sections by year
+cat(formatted_citation, sep = "\n\n")
+```
+
+

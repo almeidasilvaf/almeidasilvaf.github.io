@@ -1,0 +1,19 @@
+---
+title: "Prioritizing soybean resistance genes against fungal diseases by integrating GWAS and gene coexpression networks"
+description: "Oral session at the 2021's Plant Genomes in a Changing Environment conference"
+date: 2021-10-19
+author: 
+  - name: Fabrício Almeida-Silva
+    orcid: 0000-0002-5314-2964
+draft: false
+image: featured_pgce2021.jpeg
+toc: false
+categories:
+  - talk
+  - PGCE2021
+---
+  
+## Overview
+
+Click [here](https://almeidasilvaf.github.io/rslides/2021_19_10_PGCE.html)
+to access the slide presentation.
