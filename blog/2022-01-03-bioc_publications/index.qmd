@@ -13,6 +13,9 @@ categories:
   - bioconductor
   - scientific writing
   - rstats
+comments: 
+  giscus: 
+    repo: almeidasilvaf/blogcomments
 ---
 
 ## Motivation
