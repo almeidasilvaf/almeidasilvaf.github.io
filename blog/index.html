@@ -72,9 +72,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -91,6 +91,15 @@ ul.task-list li input[type="checkbox"] {
     }
   })
   </script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-9TMPT34HZ4"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-9TMPT34HZ4', { 'anonymize_ip': true});
+</script>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -98,7 +107,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../styles.css">
 <meta name="twitter:title" content="Fabrício Almeida-Silva - My blog">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://github.com/almeidasilvaf/almeidasilvaf.github.io/blog/2022-01-03-bioc_publications/bioc.gif">
+<meta name="twitter:image" content="https://almeidasilvaf.github.io/blog/2022-01-03-bioc_publications/bioc.gif">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -180,7 +189,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    </div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div><div class="category" data-category="bioconductor">bioconductor <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bioinformatics">bioinformatics <span class="quarto-category-count">(2)</span></div><div class="category" data-category="docker">docker <span class="quarto-category-count">(1)</span></div><div class="category" data-category="project management">project management <span class="quarto-category-count">(2)</span></div><div class="category" data-category="reproducible research">reproducible research <span class="quarto-category-count">(2)</span></div><div class="category" data-category="rstats">rstats <span class="quarto-category-count">(2)</span></div><div class="category" data-category="scientific writing">scientific writing <span class="quarto-category-count">(1)</span></div><div class="category" data-category="virtualization">virtualization <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -214,7 +223,7 @@ ul.task-list li input[type="checkbox"] {
     </div>
 </div>
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="bioinformatics,reproducible research,bioconductor,scientific writing,rstats" data-listing-date-sort="1686528000000" data-listing-file-modified-sort="1686571163487" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9">
+<div class="quarto-post image-right" data-index="0" data-categories="bioinformatics,reproducible research,bioconductor,scientific writing,rstats" data-listing-date-sort="1686528000000" data-listing-file-modified-sort="1686571612360" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9">
 <div class="thumbnail">
 <p><a href="../blog/2022-01-03-bioc_publications/index.html"> <img src="../blog/2022-01-03-bioc_publications/bioc.gif" class="thumbnail-image"> </a></p>
 </div>
@@ -226,6 +235,25 @@ Where can I publish a paper describing my Bioconductor package?
 <div class="listing-subtitle">
 
 </div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('bioinformatics'); return false;">
+bioinformatics
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('reproducible research'); return false;">
+reproducible research
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('bioconductor'); return false;">
+bioconductor
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('scientific writing'); return false;">
+scientific writing
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('rstats'); return false;">
+rstats
+</div>
+</div>
+<a href="../blog/2022-01-03-bioc_publications/index.html">
 <div class="listing-description">
 <p>Check out where Bioc developers have published their papers</p>
 </div>
@@ -242,7 +270,7 @@ Fabrício Almeida-Silva
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="rstats,project management" data-listing-date-sort="1651795200000" data-listing-file-modified-sort="1686571163491" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="quarto-post image-right" data-index="1" data-categories="rstats,project management" data-listing-date-sort="1651795200000" data-listing-file-modified-sort="1686571612360" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
 <div class="thumbnail">
 <p><a href="../blog/2022-05-06-upgrading_R/index.html"> <img src="../blog/2022-05-06-upgrading_R/upgrade.gif" class="thumbnail-image"> </a></p>
 </div>
@@ -254,6 +282,16 @@ Upgrading R version with all your packages
 <div class="listing-subtitle">
 
 </div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('rstats'); return false;">
+rstats
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('project management'); return false;">
+project management
+</div>
+</div>
+<a href="../blog/2022-05-06-upgrading_R/index.html">
 <div class="listing-description">
 <p>Learn how to do a painless upgrade of your R version</p>
 </div>
@@ -270,7 +308,7 @@ Fabrício Almeida-Silva
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="project management,bioinformatics,docker,virtualization,reproducible research" data-listing-date-sort="1638316800000" data-listing-file-modified-sort="1686571163487" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="2" data-categories="project management,bioinformatics,docker,virtualization,reproducible research" data-listing-date-sort="1638316800000" data-listing-file-modified-sort="1686571612360" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
 <div class="thumbnail">
 <p><a href="../blog/2021-12-01-push_image_dockerhub/index.html"> <img src="../blog/2021-12-01-push_image_dockerhub/docker.gif" class="thumbnail-image"> </a></p>
 </div>
@@ -282,6 +320,25 @@ Pushing Docker images to Docker Hub
 <div class="listing-subtitle">
 
 </div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('project management'); return false;">
+project management
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('bioinformatics'); return false;">
+bioinformatics
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('docker'); return false;">
+docker
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('virtualization'); return false;">
+virtualization
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('reproducible research'); return false;">
+reproducible research
+</div>
+</div>
+<a href="../blog/2021-12-01-push_image_dockerhub/index.html">
 <div class="listing-description">
 <p>Keeping your images in a Docker Hub repo will make your life easier</p>
 </div>

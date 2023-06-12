@@ -1,1 +1,1 @@
-Sitemap: https://github.com/almeidasilvaf/almeidasilvaf.github.io/sitemap.xml
+Sitemap: https://almeidasilvaf.github.io/sitemap.xml
