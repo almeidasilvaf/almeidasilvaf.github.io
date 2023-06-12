@@ -7,6 +7,7 @@ listing:
     - "title desc"
   type: default
   filter-ui: true
+  categories: true
 ---
 
 Here, I write about R, Bioconductor, open science, reproducible research,

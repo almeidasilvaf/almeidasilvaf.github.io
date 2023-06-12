@@ -6,6 +6,10 @@ website:
   page-footer: "Copyright 2023, Fabrício Almeida-Silva"
   favicon: img/logo.png
   twitter-card: true
+  site-url: https://almeidasilvaf.github.io/
+  google-analytics: 
+    tracking-id: "G-9TMPT34HZ4"
+    anonymize-ip: true
   
   # Start of the navigation bar (top)
   navbar:
