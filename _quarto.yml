@@ -5,7 +5,13 @@ website:
   title: "Fabrício Almeida-Silva"
   page-footer: "Copyright 2023, Fabrício Almeida-Silva"
   favicon: img/logo.png
-  twitter-card: true
+  twitter-card: 
+    creator: "@almeidasilvaf"
+    site: "@almeidasilvaf"
+    image: img/logo.png
+    title: "Fabrício Almeida-Silva"
+    description: |
+      Hi, I'm Fabrício! Welcome to my personal website and blog.
   site-url: https://almeidasilvaf.github.io/
   google-analytics: 
     tracking-id: "G-9TMPT34HZ4"
