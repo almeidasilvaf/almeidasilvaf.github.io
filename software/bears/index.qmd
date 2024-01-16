@@ -1,0 +1,36 @@
+---
+title: "bears"
+description: |
+  An R package to create gene expression atlases from public bulk RNA-seq data
+date: "2023-09-08"
+author: 
+  - name: Fabrício Almeida-Silva
+    url: https://almeidasilvaf.github.io/
+    orcid: 0000-0002-5314-2964
+draft: false
+image: featured_bears.png
+categories:
+  - R packages
+  - transcriptomics
+  - database
+---
+
+## Summary
+
+In the past decades, there has been an exponential accumulation of RNA-seq data 
+in public repositories. This steep increase paved the way to the creation of 
+gene expression atlases, which consist in comprehensive collections of 
+expression data from public databases, analyzed with a single pipeline for 
+consistency and cross-project comparison. bears is a package that allows you 
+to create your own gene expression atlas for a given species using public 
+data. The package features:
+
+- Data download from NCBI’s Sequence Read Archive (SRA) or the European 
+Nucleotide Archive (ENA).
+- Sequence quality check and trimming of low-quality sequences and adapters.
+- Removal of rRNA, which are typical problems of libraries that were prepared 
+with the rRNA depletion protocol.
+- Read mapping against a reference genome.
+- Transcriptome assembly.
+- Quantification of gene- and transcript-level transcript abundance 
+with alignment-based and alignment-free methods.
