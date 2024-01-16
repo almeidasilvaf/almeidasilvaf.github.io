@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Fabrício Almeida-Silva">
+<meta name="dcterms.date" content="2023-09-08">
+<meta name="description" content="A database of over 5000 soybean RNA-seq samples">
 
-<title>Fabrício Almeida-Silva - Talks I’ve given</title>
+<title>Fabrício Almeida-Silva - SoybeanExpressionAtlas</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,25 +26,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../img/logo.png" rel="icon" type="image/png">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../img/logo.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -62,35 +63,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-9TMPT34HZ4"></script>
 
 <script type="text/javascript">
@@ -101,13 +73,11 @@ gtag('js', new Date());
 gtag('config', 'G-9TMPT34HZ4', { 'anonymize_ip': true});
 </script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../../styles.css">
 <meta name="twitter:title" content="Fabrício Almeida-Silva">
 <meta name="twitter:description" content="Hi, I’m Fabrício! Welcome to my personal website and blog.">
-<meta name="twitter:image" content="https://almeidasilvaf.github.io/talks/img/logo.png">
+<meta name="twitter:image" content="https://almeidasilvaf.github.io/software/SoybeanExpressionAtlas/img/logo.png">
 <meta name="twitter:creator" content="@almeidasilvaf">
 <meta name="twitter:site" content="@almeidasilvaf">
 <meta name="twitter:card" content="summary_large_image">
@@ -120,10 +90,10 @@ gtag('config', 'G-9TMPT34HZ4', { 'anonymize_ip': true});
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../img/logo.png" alt="" class="navbar-logo">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../img/logo.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Fabrício Almeida-Silva</span>
     </a>
   </div>
@@ -134,31 +104,31 @@ gtag('config', 'G-9TMPT34HZ4', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html" rel="" target="">
+    <a class="nav-link" href="../../index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../software/index.html" rel="" target="">
+    <a class="nav-link" href="../../software/index.html" rel="" target="">
  <span class="menu-text">Software &amp; Data</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../publications/index.html" rel="" target="">
+    <a class="nav-link" href="../../publications/index.html" rel="" target="">
  <span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../teaching/index.html" rel="" target="">
+    <a class="nav-link" href="../../teaching/index.html" rel="" target="">
  <span class="menu-text">Teaching</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../cv/index.html" rel="" target="">
+    <a class="nav-link" href="../../cv/index.html" rel="" target="">
  <span class="menu-text">CV</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../talks/index.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="../../talks/index.html" rel="" target="">
  <span class="menu-text">Talks</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../blog/index.html" rel="" target="">
+    <a class="nav-link" href="../../blog/index.html" rel="" target="">
  <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
@@ -190,21 +160,49 @@ gtag('config', 'G-9TMPT34HZ4', { 'anonymize_ip': true});
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Talks I’ve given</h1>
-</div>
+<h1 class="title">SoybeanExpressionAtlas</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">R packages</div>
+    <div class="quarto-category">transcriptomics</div>
+    <div class="quarto-category">database</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    <p>A database of over 5000 soybean RNA-seq samples</p>
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p><a href="https://almeidasilvaf.github.io/">Fabrício Almeida-Silva</a> <a href="https://orcid.org/0000-0002-5314-2964" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 8, 2023</p>
+    </div>
+  </div>
   
     
   </div>
@@ -212,129 +210,14 @@ gtag('config', 'G-9TMPT34HZ4', { 'anonymize_ip': true});
 
 </header>
 
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>Soybean is a crucial crop worldwide, used as a source of food, feed, and industrial products due to its high protein and oil content. Previously, the rapid accumulation of soybean RNA-seq data in public databases and the computational challenges of processing raw RNA-seq data motivated us to develop the Soybean Expression Atlas, a gene expression database of over a thousand RNA-seq samples. Over the past few years, our database has allowed researchers to explore the expression profiles of important gene families, discover genes associated with agronomic traits, and understand the transcriptional dynamics of cellular processes. Here, we present the Soybean Expression Atlas v2, an updated version of our database with a fourfold increase in the number of samples, featuring transcript- and gene-level transcript abundance matrices for 5481 publicly available RNA-seq samples. New features in our database include the availability of transcript-level abundance estimates and equivalence classes to explore differential transcript usage, abundance estimates in bias-corrected counts to increase the accuracy of differential gene expression analyses, a new web interface with improved data visualization and user experience, and a reproducible and scalable pipeline available as an R package. The Soybean Expression Atlas v2 is available at https://soyatlas.venanciogroup.uenf.br/, and it will accelerate soybean research, empowering researchers with high-quality and easily accessible gene expression data.</p>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="talk,EuroBioc2022" data-listing-date-sort="1663113600000" data-listing-file-modified-sort="1705393422113" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
-<div class="thumbnail">
-<p><a href="../talks/eurobioc2022/index.html"> <img src="../talks/eurobioc2022/featured_eurobioc2022.png" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="../talks/eurobioc2022/index.html">
-<h3 class="no-anchor listing-title">
-Inference and analysis of synteny networks with syntenet
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-<p>Workshop at #EuroBioc2022, the European Bioconductor annual conference</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="../talks/eurobioc2022/index.html">
-<div class="listing-date">
-Sep 14, 2022
-</div>
-<div class="listing-author">
-Fabrício Almeida-Silva
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="talk,SBV2021" data-listing-date-sort="1637539200000" data-listing-file-modified-sort="1705393422117" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
-<div class="thumbnail">
-<p><a href="../talks/sbv2021/index.html"> <img src="../talks/sbv2021/featured_sbv2021.png" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="../talks/sbv2021/index.html">
-<h3 class="no-anchor listing-title">
-Bioinformatics in Modern Biology: computational genomics as a tool to unravel the soybean genome and gene regulation
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-<p>Invited speaker</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="../talks/sbv2021/index.html">
-<div class="listing-date">
-Nov 22, 2021
-</div>
-<div class="listing-author">
-Fabrício Almeida-Silva
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="talk,PGCE2021" data-listing-date-sort="1634601600000" data-listing-file-modified-sort="1705393422113" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
-<div class="thumbnail">
-<p><a href="../talks/pgce2021/index.html"> <img src="../talks/pgce2021/featured_pgce2021.jpeg" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="../talks/pgce2021/index.html">
-<h3 class="no-anchor listing-title">
-Prioritizing soybean resistance genes against fungal diseases by integrating GWAS and gene coexpression networks
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-<p>Oral session at the 2021’s Plant Genomes in a Changing Environment conference</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="../talks/pgce2021/index.html">
-<div class="listing-date">
-Oct 19, 2021
-</div>
-<div class="listing-author">
-Fabrício Almeida-Silva
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="talk,EuroBioc2021" data-listing-date-sort="1628208000000" data-listing-file-modified-sort="1705393422113" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
-<div class="thumbnail">
-<p><a href="../talks/bioc2021/index.html"> <img src="../talks/bioc2021/featured_bioc2021.png" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="../talks/bioc2021/index.html">
-<h3 class="no-anchor listing-title">
-cageminer: mining candidate genes by integrating GWAS and gene coexpression networks
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-<p>Lightning Talk at #Bioc2021, the Bioconductor annual conference</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="../talks/bioc2021/index.html">
-<div class="listing-date">
-Aug 6, 2021
-</div>
-<div class="listing-author">
-Fabrício Almeida-Silva
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
