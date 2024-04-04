@@ -3,7 +3,7 @@ title: "HybridExpress"
 description: |
   An R package for comparative transcriptomic analyses of hybrids and their 
   progenitors
-date: "2023-09-08"
+date: "2024-04-01"
 author: 
   - name: Fabrício Almeida-Silva
     url: https://almeidasilvaf.github.io/
