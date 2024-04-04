@@ -1,17 +1,10 @@
 [
   {
-    "listing": "/teaching/index.html",
-    "items": [
-      "/teaching/compevobio/index.html",
-      "/teaching/tidyverse/index.html"
-    ]
-  },
-  {
     "listing": "/software/index.html",
     "items": [
+      "/software/HybridExpress/index.html",
       "/software/bears/index.html",
       "/software/SoybeanExpressionAtlas/index.html",
-      "/software/HybridExpress/index.html",
       "/software/syntenet/index.html",
       "/software/planttfhunter/index.html",
       "/software/magrene/index.html",
@@ -21,6 +14,13 @@
       "/software/cageminer/index.html",
       "/software/SoyFungiGCN/index.html",
       "/software/BioNERO/index.html"
+    ]
+  },
+  {
+    "listing": "/teaching/index.html",
+    "items": [
+      "/teaching/compevobio/index.html",
+      "/teaching/tidyverse/index.html"
     ]
   },
   {

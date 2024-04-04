@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -48,7 +48,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -57,6 +63,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -104,6 +111,33 @@ gtag('config', 'G-9TMPT34HZ4', { 'anonymize_ip': true});
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 <link rel="stylesheet" href="../styles.css">
 <meta name="twitter:title" content="Fabrício Almeida-Silva">
 <meta name="twitter:description" content="Hi, I’m Fabrício! Welcome to my personal website and blog.">
@@ -117,9 +151,9 @@ gtag('config', 'G-9TMPT34HZ4', { 'anonymize_ip': true});
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
     <img src="../img/logo.png" alt="" class="navbar-logo">
     </a>
@@ -134,54 +168,54 @@ gtag('config', 'G-9TMPT34HZ4', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html" rel="" target="">
- <span class="menu-text">Home</span></a>
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../software/index.html" rel="" target="">
- <span class="menu-text">Software &amp; Data</span></a>
+    <a class="nav-link" href="../software/index.html"> 
+<span class="menu-text">Software &amp; Data</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../publications/index.html" rel="" target="">
- <span class="menu-text">Publications</span></a>
+    <a class="nav-link" href="../publications/index.html"> 
+<span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../teaching/index.html" rel="" target="">
- <span class="menu-text">Teaching</span></a>
+    <a class="nav-link" href="../teaching/index.html"> 
+<span class="menu-text">Teaching</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../cv/index.html" rel="" target="">
- <span class="menu-text">CV</span></a>
+    <a class="nav-link" href="../cv/index.html"> 
+<span class="menu-text">CV</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../talks/index.html" rel="" target="">
- <span class="menu-text">Talks</span></a>
+    <a class="nav-link" href="../talks/index.html"> 
+<span class="menu-text">Talks</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../blog/index.html" rel="" target="" aria-current="page">
- <span class="menu-text">Blog</span></a>
+    <a class="nav-link active" href="../blog/index.html" aria-current="page"> 
+<span class="menu-text">Blog</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/almeidasilvaf" rel="" target=""><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/almeidasilvaf"> <i class="bi bi-twitter" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/almeidasilvaf" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/almeidasilvaf"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="mailto:fabricio_almeidasilva@hotmail.com" rel="" target=""><i class="bi bi-envelope" role="img">
+    <a class="nav-link" href="mailto:fabricio_almeidasilva@hotmail.com"> <i class="bi bi-envelope" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -210,7 +244,9 @@ gtag('config', 'G-9TMPT34HZ4', { 'anonymize_ip': true});
   </div>
   
 
+
 </header>
+
 
 <p>Here, I write about R, Bioconductor, open science, reproducible research, and more.</p>
 
@@ -225,19 +261,19 @@ gtag('config', 'G-9TMPT34HZ4', { 'anonymize_ip': true});
     </div>
 </div>
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="bioinformatics,reproducible research,bioconductor,scientific writing,rstats" data-listing-date-sort="1686528000000" data-listing-file-modified-sort="1705393422093" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9">
+<div class="quarto-post image-right" data-index="0" data-categories="bioinformatics,reproducible research,bioconductor,scientific writing,rstats" data-listing-date-sort="1686528000000" data-listing-file-modified-sort="1712233757461" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1708">
 <div class="thumbnail">
-<p><a href="../blog/2022-01-03-bioc_publications/index.html"> <img src="../blog/2022-01-03-bioc_publications/bioc.gif" class="thumbnail-image"> </a></p>
+<p><a href="../blog/2022-01-03-bioc_publications/index.html" class="no-external"></a></p><a href="../blog/2022-01-03-bioc_publications/index.html" class="no-external">
+<p><img src="../blog/2022-01-03-bioc_publications/bioc.gif" class="thumbnail-image"></p>
+</a><p><a href="../blog/2022-01-03-bioc_publications/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../blog/2022-01-03-bioc_publications/index.html">
 <h3 class="no-anchor listing-title">
-Where can I publish a paper describing my Bioconductor package?
+<a href="../blog/2022-01-03-bioc_publications/index.html" class="no-external">Where can I publish a paper describing my Bioconductor package?</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../blog/2022-01-03-bioc_publications/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('bioinformatics'); return false;">
 bioinformatics
@@ -255,14 +291,12 @@ scientific writing
 rstats
 </div>
 </div>
-<a href="../blog/2022-01-03-bioc_publications/index.html">
 <div class="listing-description">
-<p>Check out where Bioc developers have published their papers</p>
+<a href="../blog/2022-01-03-bioc_publications/index.html" class="no-external">Check out where Bioc developers have published their papers</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../blog/2022-01-03-bioc_publications/index.html">
+<a href="../blog/2022-01-03-bioc_publications/index.html" class="no-external">
 <div class="listing-date">
 Jun 12, 2023
 </div>
@@ -272,19 +306,19 @@ Fabrício Almeida-Silva
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="rstats,project management" data-listing-date-sort="1651795200000" data-listing-file-modified-sort="1705393422093" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="quarto-post image-right" data-index="1" data-categories="rstats,project management" data-listing-date-sort="1651795200000" data-listing-file-modified-sort="1712233757461" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="577">
 <div class="thumbnail">
-<p><a href="../blog/2022-05-06-upgrading_R/index.html"> <img src="../blog/2022-05-06-upgrading_R/upgrade.gif" class="thumbnail-image"> </a></p>
+<p><a href="../blog/2022-05-06-upgrading_R/index.html" class="no-external"></a></p><a href="../blog/2022-05-06-upgrading_R/index.html" class="no-external">
+<p><img src="../blog/2022-05-06-upgrading_R/upgrade.gif" class="thumbnail-image"></p>
+</a><p><a href="../blog/2022-05-06-upgrading_R/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../blog/2022-05-06-upgrading_R/index.html">
 <h3 class="no-anchor listing-title">
-Upgrading R version with all your packages
+<a href="../blog/2022-05-06-upgrading_R/index.html" class="no-external">Upgrading R version with all your packages</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../blog/2022-05-06-upgrading_R/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('rstats'); return false;">
 rstats
@@ -293,14 +327,12 @@ rstats
 project management
 </div>
 </div>
-<a href="../blog/2022-05-06-upgrading_R/index.html">
 <div class="listing-description">
-<p>Learn how to do a painless upgrade of your R version</p>
+<a href="../blog/2022-05-06-upgrading_R/index.html" class="no-external">Learn how to do a painless upgrade of your R version</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../blog/2022-05-06-upgrading_R/index.html">
+<a href="../blog/2022-05-06-upgrading_R/index.html" class="no-external">
 <div class="listing-date">
 May 6, 2022
 </div>
@@ -310,19 +342,19 @@ Fabrício Almeida-Silva
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="project management,bioinformatics,docker,virtualization,reproducible research" data-listing-date-sort="1638316800000" data-listing-file-modified-sort="1705393422089" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="2" data-categories="project management,bioinformatics,docker,virtualization,reproducible research" data-listing-date-sort="1638316800000" data-listing-file-modified-sort="1712233757457" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="306">
 <div class="thumbnail">
-<p><a href="../blog/2021-12-01-push_image_dockerhub/index.html"> <img src="../blog/2021-12-01-push_image_dockerhub/docker.gif" class="thumbnail-image"> </a></p>
+<p><a href="../blog/2021-12-01-push_image_dockerhub/index.html" class="no-external"></a></p><a href="../blog/2021-12-01-push_image_dockerhub/index.html" class="no-external">
+<p><img src="../blog/2021-12-01-push_image_dockerhub/docker.gif" class="thumbnail-image"></p>
+</a><p><a href="../blog/2021-12-01-push_image_dockerhub/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../blog/2021-12-01-push_image_dockerhub/index.html">
 <h3 class="no-anchor listing-title">
-Pushing Docker images to Docker Hub
+<a href="../blog/2021-12-01-push_image_dockerhub/index.html" class="no-external">Pushing Docker images to Docker Hub</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../blog/2021-12-01-push_image_dockerhub/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('project management'); return false;">
 project management
@@ -340,14 +372,12 @@ virtualization
 reproducible research
 </div>
 </div>
-<a href="../blog/2021-12-01-push_image_dockerhub/index.html">
 <div class="listing-description">
-<p>Keeping your images in a Docker Hub repo will make your life easier</p>
+<a href="../blog/2021-12-01-push_image_dockerhub/index.html" class="no-external">Keeping your images in a Docker Hub repo will make your life easier</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../blog/2021-12-01-push_image_dockerhub/index.html">
+<a href="../blog/2021-12-01-push_image_dockerhub/index.html" class="no-external">
 <div class="listing-date">
 Dec 1, 2021
 </div>
@@ -441,10 +471,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/almeidasilvaf\.github\.io\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -454,8 +501,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -467,7 +523,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -511,6 +690,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -536,6 +716,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -601,12 +807,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center">Copyright 2023, Fabrício Almeida-Silva</div>
+    <div class="nav-footer-center">
+<p>Copyright 2023, Fabrício Almeida-Silva</p>
+</div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
   </div>
 </footer>
+
 
 
 
