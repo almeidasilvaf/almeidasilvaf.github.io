@@ -25,7 +25,7 @@ about:
 ```
 
 
-I am a predoctoral fellow at the VIB-UGent Center for 
+I am a PhD student at the VIB-UGent Center for 
 Plant Systems Biology (&#x1F1E7;&#x1F1EA;), supervised by 
 [Dr. Yves Van de Peer](https://www.vandepeerlab.org/). 
 I am particularly interested in using and developing network-based approaches 

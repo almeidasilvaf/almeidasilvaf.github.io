@@ -30,8 +30,6 @@ website:
         href: publications/index.qmd
       - text: Teaching
         href: teaching/index.qmd
-      - text: CV
-        href: cv/index.qmd
       - text: Talks
         href: talks/index.qmd
 
