@@ -26,18 +26,18 @@
     ]
   },
   {
-    "listing": "/teaching/index.html",
-    "items": [
-      "/teaching/compevobio/index.html",
-      "/teaching/tidyverse/index.html"
-    ]
-  },
-  {
     "listing": "/blog/index.html",
     "items": [
       "/blog/2022-01-03-bioc_publications/index.html",
       "/blog/2022-05-06-upgrading_R/index.html",
       "/blog/2021-12-01-push_image_dockerhub/index.html"
+    ]
+  },
+  {
+    "listing": "/teaching/index.html",
+    "items": [
+      "/teaching/compevobio/index.html",
+      "/teaching/tidyverse/index.html"
     ]
   }
 ]
