@@ -1,22 +1,5 @@
 [
   {
-    "listing": "/software/index.html",
-    "items": [
-      "/software/HybridExpress/index.html",
-      "/software/bears/index.html",
-      "/software/SoybeanExpressionAtlas/index.html",
-      "/software/syntenet/index.html",
-      "/software/planttfhunter/index.html",
-      "/software/magrene/index.html",
-      "/software/doubletrouble/index.html",
-      "/software/cogeqc/index.html",
-      "/software/SoyPestGCN/index.html",
-      "/software/cageminer/index.html",
-      "/software/SoyFungiGCN/index.html",
-      "/software/BioNERO/index.html"
-    ]
-  },
-  {
     "listing": "/talks/index.html",
     "items": [
       "/talks/eurobioc2022/index.html",
@@ -31,6 +14,23 @@
       "/blog/2022-01-03-bioc_publications/index.html",
       "/blog/2022-05-06-upgrading_R/index.html",
       "/blog/2021-12-01-push_image_dockerhub/index.html"
+    ]
+  },
+  {
+    "listing": "/software/index.html",
+    "items": [
+      "/software/HybridExpress/index.html",
+      "/software/bears/index.html",
+      "/software/SoybeanExpressionAtlas/index.html",
+      "/software/syntenet/index.html",
+      "/software/planttfhunter/index.html",
+      "/software/magrene/index.html",
+      "/software/doubletrouble/index.html",
+      "/software/cogeqc/index.html",
+      "/software/SoyPestGCN/index.html",
+      "/software/cageminer/index.html",
+      "/software/SoyFungiGCN/index.html",
+      "/software/BioNERO/index.html"
     ]
   },
   {
