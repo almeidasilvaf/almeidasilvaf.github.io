@@ -1,6 +1,6 @@
 ---
 title: "Hi, I'm Fabrício!"
-image: img/profile.jpg
+image: img/profile.jpeg
 about:
     template: jolla
     links:
