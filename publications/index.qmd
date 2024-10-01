@@ -22,7 +22,13 @@ cit_df <- data.frame(
     dplyr::mutate(
         citation = paste0(rev(seq_len(dplyr::n())), "\\. ", citation),
         citation = gsub("Almeida-Silva F", "**Almeida-Silva F**", citation),
-        citation = gsub("doi.*<", "<", citation)
+        citation = gsub("doi.*<", "<", citation),
+        url = gsub(".*<(https?://[^>]+)>.*", "\\1", citation),
+        citation = gsub("<https?://[^>]+>\\.", "", citation),
+        full_citation = paste0(
+            citation, 
+            paste0("<a href='", url, "' class='citation-link' target='_blank'>🔗</a>")
+        )
     )
 
 # For each year, create a header 2 containing the year and publications
@@ -30,7 +36,7 @@ cit_list <- split(cit_df, cit_df$year)
 formatted_citation <- lapply(rev(seq_along(cit_list)), function(x) {
     
     header <- paste0("## ", names(cit_list)[x])
-    entries <- cit_list[[x]]$citation
+    entries <- cit_list[[x]]$full_citation
 
     section <- c(header, entries)
     return(section)
