@@ -4,8 +4,8 @@ image: img/profile.jpeg
 about:
     template: jolla
     links:
-      - icon: twitter
-        href: https://twitter.com/almeidasilvaf
+      - text: "{{< fa brands bluesky >}}"
+        href: https://bsky.app/profile/almeidasilvaf.bsky.social
       - text: "{{< ai google-scholar >}}"
         href: https://scholar.google.com/citations?user=zlnqH0AAAAAJ&hl=en
       - icon: github
