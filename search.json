@@ -1,24 +1,17 @@
 [
   {
-    "objectID": "teaching/compevobio/index.html",
-    "href": "teaching/compevobio/index.html",
-    "title": "Introduction to Computational Evolutionary Biology",
+    "objectID": "blog/2021-12-01-push_image_dockerhub/index.html",
+    "href": "blog/2021-12-01-push_image_dockerhub/index.html",
+    "title": "Pushing Docker images to Docker Hub",
     "section": "",
-    "text": "This book aims to provide learners with a hands-on introduction to Computational Evolutionary Biology, and the materials here are used in the practical lessons of the courses C003709A - Evolutionary Biology and C000500A - Bioinformatics 2 at Universiteit Gent, taught by Dr. Yves Van de Peer and Fabricio Almeida-Silva.\nCourse materials:\n\nGitHub repo\nBook"
+    "text": "This post assumes you already have an account on Docker Hub. If you don’t, sign up for free before going any further.\nOnce you have a Docker Hub account, log in and create the repository where you want to store the image. You can do that by clicking the Create Repository button.\n\n\n\n\n\n\n\n\n\n\n\nTo push an image to Docker Hub, you will need to have it on your machine. An image can be built from instructions in a Dockerfile or using Docker Compose. Personally, I like to create images from Dockerfiles, where I define my desired OS with all softwares and packages I need. Assuming you alrady have a Dockerfile, cd to the directory where the Dockerfile is and run:\n\ndocker build -t username/reponame .\n\nHere, username and reponame are your Docker Hub’s user name and the name of the repository where you want to store the image.\n\n\n\nTo push your image, you must be logged in. To log in, run:\n\ndocker login\n\nYou will be asked to type your user name and password, and then you’re all set. Finally, push the image with:\n\ndocker push username/reponame:tag\n\nNote that the :tag is not mandatory. If you omit it, a tag latest will be automatically assigned. You would want to assign a custom tag if you’re pushing a specific version of your image. For example, suppose I want to push the version 2.0 of an image to my soyfungigcn repo. To do that, I would run:\n\ndocker push almeidasilvaf/soyfungigcn:2.0\n\nAnd that’s it! In the future, if you want to use that same image on a different machine, all you need to do is run:\n\ndocker pull username/reponame\n\nThis will download the latest version of the image to your machine. You can also specify a specific version to download by setting a :tag after the repository name."
   },
   {
-    "objectID": "teaching/compevobio/index.html#overview",
-    "href": "teaching/compevobio/index.html#overview",
-    "title": "Introduction to Computational Evolutionary Biology",
+    "objectID": "blog/2021-12-01-push_image_dockerhub/index.html#pushing-docker-images-to-docker-hub",
+    "href": "blog/2021-12-01-push_image_dockerhub/index.html#pushing-docker-images-to-docker-hub",
+    "title": "Pushing Docker images to Docker Hub",
     "section": "",
-    "text": "This book aims to provide learners with a hands-on introduction to Computational Evolutionary Biology, and the materials here are used in the practical lessons of the courses C003709A - Evolutionary Biology and C000500A - Bioinformatics 2 at Universiteit Gent, taught by Dr. Yves Van de Peer and Fabricio Almeida-Silva.\nCourse materials:\n\nGitHub repo\nBook"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Hi, I’m Fabrício!",
-    "section": "",
-    "text": "I am a PhD student at the VIB-UGent Center for Plant Systems Biology (🇧🇪), supervised by Dr. Yves Van de Peer. I am particularly interested in using and developing network-based approaches to explore the evolution of (polyploid) plant genomes and regulatory networks."
+    "text": "This post assumes you already have an account on Docker Hub. If you don’t, sign up for free before going any further.\nOnce you have a Docker Hub account, log in and create the repository where you want to store the image. You can do that by clicking the Create Repository button.\n\n\n\n\n\n\n\n\n\n\n\nTo push an image to Docker Hub, you will need to have it on your machine. An image can be built from instructions in a Dockerfile or using Docker Compose. Personally, I like to create images from Dockerfiles, where I define my desired OS with all softwares and packages I need. Assuming you alrady have a Dockerfile, cd to the directory where the Dockerfile is and run:\n\ndocker build -t username/reponame .\n\nHere, username and reponame are your Docker Hub’s user name and the name of the repository where you want to store the image.\n\n\n\nTo push your image, you must be logged in. To log in, run:\n\ndocker login\n\nYou will be asked to type your user name and password, and then you’re all set. Finally, push the image with:\n\ndocker push username/reponame:tag\n\nNote that the :tag is not mandatory. If you omit it, a tag latest will be automatically assigned. You would want to assign a custom tag if you’re pushing a specific version of your image. For example, suppose I want to push the version 2.0 of an image to my soyfungigcn repo. To do that, I would run:\n\ndocker push almeidasilvaf/soyfungigcn:2.0\n\nAnd that’s it! In the future, if you want to use that same image on a different machine, all you need to do is run:\n\ndocker pull username/reponame\n\nThis will download the latest version of the image to your machine. You can also specify a specific version to download by setting a :tag after the repository name."
   },
   {
     "objectID": "blog/2022-01-03-bioc_publications/index.html",
@@ -56,53 +49,18 @@
     "text": "Session information\nThis post was created under the following conditions:\n\n\n─ Session info ───────────────────────────────────────────────────────────────\n setting  value\n version  R version 4.3.0 (2023-04-21)\n os       Ubuntu 20.04.5 LTS\n system   x86_64, linux-gnu\n ui       X11\n language (EN)\n collate  en_US.UTF-8\n ctype    en_US.UTF-8\n tz       Europe/Brussels\n date     2023-06-13\n pandoc   3.1.1 @ /usr/lib/rstudio/resources/app/bin/quarto/bin/tools/ (via rmarkdown)\n\n─ Packages ───────────────────────────────────────────────────────────────────\n package     * version date (UTC) lib source\n BiocManager   1.30.20 2023-02-24 [1] CRAN (R 4.3.0)\n BiocStyle     2.28.0  2023-04-25 [1] Bioconductor\n bslib         0.4.2   2022-12-16 [1] CRAN (R 4.3.0)\n cachem        1.0.8   2023-05-01 [1] CRAN (R 4.3.0)\n cli           3.6.1   2023-03-23 [1] CRAN (R 4.3.0)\n colorspace    2.1-0   2023-01-23 [1] CRAN (R 4.3.0)\n crosstalk     1.2.0   2021-11-04 [1] CRAN (R 4.3.0)\n curl          5.0.0   2023-01-12 [1] CRAN (R 4.3.0)\n digest        0.6.31  2022-12-11 [1] CRAN (R 4.3.0)\n dplyr       * 1.1.2   2023-04-20 [1] CRAN (R 4.3.0)\n DT            0.27    2023-01-17 [1] CRAN (R 4.3.0)\n ellipsis      0.3.2   2021-04-29 [1] CRAN (R 4.3.0)\n evaluate      0.20    2023-01-17 [1] CRAN (R 4.3.0)\n fansi         1.0.4   2023-01-22 [1] CRAN (R 4.3.0)\n farver        2.1.1   2022-07-06 [1] CRAN (R 4.3.0)\n fastmap       1.1.1   2023-02-24 [1] CRAN (R 4.3.0)\n forcats     * 1.0.0   2023-01-29 [1] CRAN (R 4.3.0)\n generics      0.1.3   2022-07-05 [1] CRAN (R 4.3.0)\n ggplot2     * 3.4.2   2023-04-03 [1] CRAN (R 4.3.0)\n glue          1.6.2   2022-02-24 [1] CRAN (R 4.3.0)\n gtable        0.3.3   2023-03-21 [1] CRAN (R 4.3.0)\n here          1.0.1   2020-12-13 [1] CRAN (R 4.3.0)\n hms           1.1.3   2023-03-21 [1] CRAN (R 4.3.0)\n htmltools     0.5.5   2023-03-23 [1] CRAN (R 4.3.0)\n htmlwidgets   1.6.2   2023-03-17 [1] CRAN (R 4.3.0)\n httr          1.4.5   2023-02-24 [1] CRAN (R 4.3.0)\n jquerylib     0.1.4   2021-04-26 [1] CRAN (R 4.3.0)\n jsonlite      1.8.4   2022-12-06 [1] CRAN (R 4.3.0)\n knitr         1.42    2023-01-25 [1] CRAN (R 4.3.0)\n labeling      0.4.2   2020-10-20 [1] CRAN (R 4.3.0)\n lifecycle     1.0.3   2022-10-07 [1] CRAN (R 4.3.0)\n lubridate   * 1.9.2   2023-02-10 [1] CRAN (R 4.3.0)\n magrittr      2.0.3   2022-03-30 [1] CRAN (R 4.3.0)\n munsell       0.5.0   2018-06-12 [1] CRAN (R 4.3.0)\n patchwork     1.1.2   2022-08-19 [1] CRAN (R 4.3.0)\n pillar        1.9.0   2023-03-22 [1] CRAN (R 4.3.0)\n pkgconfig     2.0.3   2019-09-22 [1] CRAN (R 4.3.0)\n png           0.1-8   2022-11-29 [1] CRAN (R 4.3.0)\n purrr       * 1.0.1   2023-01-10 [1] CRAN (R 4.3.0)\n R6            2.5.1   2021-08-19 [1] CRAN (R 4.3.0)\n readr       * 2.1.4   2023-02-10 [1] CRAN (R 4.3.0)\n rlang         1.1.1   2023-04-28 [1] CRAN (R 4.3.0)\n rmarkdown     2.21    2023-03-26 [1] CRAN (R 4.3.0)\n rprojroot     2.0.3   2022-04-02 [1] CRAN (R 4.3.0)\n rstudioapi    0.14    2022-08-22 [1] CRAN (R 4.3.0)\n rvest       * 1.0.3   2022-08-19 [1] CRAN (R 4.3.0)\n sass          0.4.5   2023-01-24 [1] CRAN (R 4.3.0)\n scales        1.2.1   2022-08-20 [1] CRAN (R 4.3.0)\n sessioninfo   1.2.2   2021-12-06 [1] CRAN (R 4.3.0)\n stringi       1.7.12  2023-01-11 [1] CRAN (R 4.3.0)\n stringr     * 1.5.0   2022-12-02 [1] CRAN (R 4.3.0)\n tibble      * 3.2.1   2023-03-20 [1] CRAN (R 4.3.0)\n tidyr       * 1.3.0   2023-01-24 [1] CRAN (R 4.3.0)\n tidyselect    1.2.0   2022-10-10 [1] CRAN (R 4.3.0)\n tidyverse   * 2.0.0   2023-02-22 [1] CRAN (R 4.3.0)\n timechange    0.2.0   2023-01-11 [1] CRAN (R 4.3.0)\n tzdb          0.3.0   2022-03-28 [1] CRAN (R 4.3.0)\n utf8          1.2.3   2023-01-31 [1] CRAN (R 4.3.0)\n vctrs         0.6.2   2023-04-19 [1] CRAN (R 4.3.0)\n withr         2.5.0   2022-03-03 [1] CRAN (R 4.3.0)\n xfun          0.39    2023-04-20 [1] CRAN (R 4.3.0)\n xml2          1.3.4   2023-04-27 [1] CRAN (R 4.3.0)\n yaml          2.3.7   2023-01-23 [1] CRAN (R 4.3.0)\n\n [1] /home/faalm/R/x86_64-pc-linux-gnu-library/4.3\n [2] /usr/local/lib/R/site-library\n [3] /usr/lib/R/site-library\n [4] /usr/lib/R/library\n\n──────────────────────────────────────────────────────────────────────────────"
   },
   {
-    "objectID": "blog/index.html",
-    "href": "blog/index.html",
-    "title": "My blog",
+    "objectID": "software/doubletrouble/index.html",
+    "href": "software/doubletrouble/index.html",
+    "title": "doubletrouble",
     "section": "",
-    "text": "Here, I write about R, Bioconductor, open science, reproducible research, and more.\n\n\n\n\n\n\n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nWhere can I publish a paper describing my Bioconductor package?\n\n\n\n\n\n\nbioinformatics\n\n\nreproducible research\n\n\nbioconductor\n\n\nscientific writing\n\n\nrstats\n\n\n\nCheck out where Bioc developers have published their papers\n\n\n\n\n\nJun 12, 2023\n\n\nFabrício Almeida-Silva\n\n\n\n\n\n\n\n\n\n\n\n\nUpgrading R version with all your packages\n\n\n\n\n\n\nrstats\n\n\nproject management\n\n\n\nLearn how to do a painless upgrade of your R version\n\n\n\n\n\nMay 6, 2022\n\n\nFabrício Almeida-Silva\n\n\n\n\n\n\n\n\n\n\n\n\nPushing Docker images to Docker Hub\n\n\n\n\n\n\nproject management\n\n\nbioinformatics\n\n\ndocker\n\n\nvirtualization\n\n\nreproducible research\n\n\n\nKeeping your images in a Docker Hub repo will make your life easier\n\n\n\n\n\nDec 1, 2021\n\n\nFabrício Almeida-Silva\n\n\n\n\n\n\nNo matching items"
+    "text": "The major goal of doubletrouble is to identify duplicated genes from whole-genome protein sequences and classify them based on their modes of duplication. The simplest classification scheme has two duplication modes:\n\nWhole-genome duplication (WGD);\nSmall-scale duplication (SSD)\n\nFor a more detailed view of the duplication modes, users can also choose to split SSD into subcategories, so the available duplication modes will be:\n\nWhole-genome duplication (WGD);\nTandem duplication (TD);\nProximal duplication (PD);\nTransposed duplication (TRD);\nDispersed duplication (DD).\n\nBesides classifying gene pairs, users can also classify genes, so that each gene is assigned a unique mode of duplication.\nUsers can also calculate substitution rates per substitution site (i.e., Ka and Ks) from duplicate pairs, find peaks in Ks distributions with Gaussian Mixture Models (GMMs), and classify gene pairs into age groups based on Ks peaks."
   },
   {
-    "objectID": "software/SoyPestGCN/index.html",
-    "href": "software/SoyPestGCN/index.html",
-    "title": "SoyPestGCN",
+    "objectID": "software/doubletrouble/index.html#summary",
+    "href": "software/doubletrouble/index.html#summary",
+    "title": "doubletrouble",
     "section": "",
-    "text": "SoyPestGCN is an R package that contains a Shiny app to let users explore a gene coexpression network inferred from RNA-seq data of soybean tissues infested with pests (i.e., insects and nematodes). The Shiny app is also available online at https://soypestgcn.venanciogroup.uenf.br."
-  },
-  {
-    "objectID": "software/SoyPestGCN/index.html#summary",
-    "href": "software/SoyPestGCN/index.html#summary",
-    "title": "SoyPestGCN",
-    "section": "",
-    "text": "SoyPestGCN is an R package that contains a Shiny app to let users explore a gene coexpression network inferred from RNA-seq data of soybean tissues infested with pests (i.e., insects and nematodes). The Shiny app is also available online at https://soypestgcn.venanciogroup.uenf.br."
-  },
-  {
-    "objectID": "software/SoyFungiGCN/index.html",
-    "href": "software/SoyFungiGCN/index.html",
-    "title": "SoyFungiGCN",
-    "section": "",
-    "text": "SoyFungiGCN is an R package that contains a Shiny app to let users explore a gene coexpression network inferred from RNA-seq data of soybean tissues infected with phytopathogenic fungi. The Shiny app is also available online at https://soyfungigcn.venanciogroup.uenf.br."
-  },
-  {
-    "objectID": "software/SoyFungiGCN/index.html#summary",
-    "href": "software/SoyFungiGCN/index.html#summary",
-    "title": "SoyFungiGCN",
-    "section": "",
-    "text": "SoyFungiGCN is an R package that contains a Shiny app to let users explore a gene coexpression network inferred from RNA-seq data of soybean tissues infected with phytopathogenic fungi. The Shiny app is also available online at https://soyfungigcn.venanciogroup.uenf.br."
-  },
-  {
-    "objectID": "software/cogeqc/index.html",
-    "href": "software/cogeqc/index.html",
-    "title": "cogeqc",
-    "section": "",
-    "text": "The goal of cogeqc is to facilitate systematic quality checks on standard comparative genomics analyses to help researchers detect issues and select the most suitable parameters for each data set. Currently, cogeqc can be used to assess:\n\nGenome assembly quality: users can assess genome completeness using Best Universal Single-Copy Orthologs (BUSCOs). cogeqc allows users to run BUSCO from the comfort of an R session and explore summary statistics with publication-ready plots.\nOrthogroup inference: orthogroups are assessed based on the percentage of shared protein domains in all ortogroups. The rationale for this approach is that genes in the same orthogroup evolved from a common ancestor, so the percentage of conserved protein domains in an orthogroup should be as high as possible.\nSynteny detection: synteny detection is assessed using network-based approaches, namely the clustering coefficient and degree of a synteny network."
-  },
-  {
-    "objectID": "software/cogeqc/index.html#summary",
-    "href": "software/cogeqc/index.html#summary",
-    "title": "cogeqc",
-    "section": "",
-    "text": "The goal of cogeqc is to facilitate systematic quality checks on standard comparative genomics analyses to help researchers detect issues and select the most suitable parameters for each data set. Currently, cogeqc can be used to assess:\n\nGenome assembly quality: users can assess genome completeness using Best Universal Single-Copy Orthologs (BUSCOs). cogeqc allows users to run BUSCO from the comfort of an R session and explore summary statistics with publication-ready plots.\nOrthogroup inference: orthogroups are assessed based on the percentage of shared protein domains in all ortogroups. The rationale for this approach is that genes in the same orthogroup evolved from a common ancestor, so the percentage of conserved protein domains in an orthogroup should be as high as possible.\nSynteny detection: synteny detection is assessed using network-based approaches, namely the clustering coefficient and degree of a synteny network."
+    "text": "The major goal of doubletrouble is to identify duplicated genes from whole-genome protein sequences and classify them based on their modes of duplication. The simplest classification scheme has two duplication modes:\n\nWhole-genome duplication (WGD);\nSmall-scale duplication (SSD)\n\nFor a more detailed view of the duplication modes, users can also choose to split SSD into subcategories, so the available duplication modes will be:\n\nWhole-genome duplication (WGD);\nTandem duplication (TD);\nProximal duplication (PD);\nTransposed duplication (TRD);\nDispersed duplication (DD).\n\nBesides classifying gene pairs, users can also classify genes, so that each gene is assigned a unique mode of duplication.\nUsers can also calculate substitution rates per substitution site (i.e., Ka and Ks) from duplicate pairs, find peaks in Ks distributions with Gaussian Mixture Models (GMMs), and classify gene pairs into age groups based on Ks peaks."
   },
   {
     "objectID": "software/HybridExpress/index.html",
@@ -119,6 +77,20 @@
     "text": "The goal of HybridExpress is to perform comparative transcriptomic analyses of hybrids relative to their progenitor species (a.k.a. experimental trios). The package features:\n\nCalculation of midparent expression values, which are in silico samples obtained from the mean, sum, or weighted mean of random sample pairs from each parent;\nExploratory analyses of sample grouping with PCA plots and heatmaps of hierarchically-clustered pairwise sample correlations;\nIdentification of differentially expressed genes between hybrids and their progenitor species, hybrids and midparent values, and the two parents. If spike-in standards are available, HybridExpress uses them to normalize the count data by transcriptome size;\nClassification of genes in expression-based categories and classes based on Rapp et al. (2009). The 12 expression categories proposed by Rapp et al. (2009) are grouped into 5 major classes (transgressive up-regulation, transgressive down-regulation, additivity, expression-level dominance toward parent 1, and expression-level dominance toward parent 2);\nFunctional analyses through the identification of overrepresented functional terms for gene sets of interest."
   },
   {
+    "objectID": "software/cogeqc/index.html",
+    "href": "software/cogeqc/index.html",
+    "title": "cogeqc",
+    "section": "",
+    "text": "The goal of cogeqc is to facilitate systematic quality checks on standard comparative genomics analyses to help researchers detect issues and select the most suitable parameters for each data set. Currently, cogeqc can be used to assess:\n\nGenome assembly quality: users can assess genome completeness using Best Universal Single-Copy Orthologs (BUSCOs). cogeqc allows users to run BUSCO from the comfort of an R session and explore summary statistics with publication-ready plots.\nOrthogroup inference: orthogroups are assessed based on the percentage of shared protein domains in all ortogroups. The rationale for this approach is that genes in the same orthogroup evolved from a common ancestor, so the percentage of conserved protein domains in an orthogroup should be as high as possible.\nSynteny detection: synteny detection is assessed using network-based approaches, namely the clustering coefficient and degree of a synteny network."
+  },
+  {
+    "objectID": "software/cogeqc/index.html#summary",
+    "href": "software/cogeqc/index.html#summary",
+    "title": "cogeqc",
+    "section": "",
+    "text": "The goal of cogeqc is to facilitate systematic quality checks on standard comparative genomics analyses to help researchers detect issues and select the most suitable parameters for each data set. Currently, cogeqc can be used to assess:\n\nGenome assembly quality: users can assess genome completeness using Best Universal Single-Copy Orthologs (BUSCOs). cogeqc allows users to run BUSCO from the comfort of an R session and explore summary statistics with publication-ready plots.\nOrthogroup inference: orthogroups are assessed based on the percentage of shared protein domains in all ortogroups. The rationale for this approach is that genes in the same orthogroup evolved from a common ancestor, so the percentage of conserved protein domains in an orthogroup should be as high as possible.\nSynteny detection: synteny detection is assessed using network-based approaches, namely the clustering coefficient and degree of a synteny network."
+  },
+  {
     "objectID": "software/SoybeanExpressionAtlas/index.html",
     "href": "software/SoybeanExpressionAtlas/index.html",
     "title": "SoybeanExpressionAtlas",
@@ -133,30 +105,79 @@
     "text": "Soybean is a crucial crop worldwide, used as a source of food, feed, and industrial products due to its high protein and oil content. Previously, the rapid accumulation of soybean RNA-seq data in public databases and the computational challenges of processing raw RNA-seq data motivated us to develop the Soybean Expression Atlas, a gene expression database of over a thousand RNA-seq samples. Over the past few years, our database has allowed researchers to explore the expression profiles of important gene families, discover genes associated with agronomic traits, and understand the transcriptional dynamics of cellular processes. Here, we present the Soybean Expression Atlas v2, an updated version of our database with a fourfold increase in the number of samples, featuring transcript- and gene-level transcript abundance matrices for 5481 publicly available RNA-seq samples. New features in our database include the availability of transcript-level abundance estimates and equivalence classes to explore differential transcript usage, abundance estimates in bias-corrected counts to increase the accuracy of differential gene expression analyses, a new web interface with improved data visualization and user experience, and a reproducible and scalable pipeline available as an R package. The Soybean Expression Atlas v2 is available at https://soyatlas.venanciogroup.uenf.br/, and it will accelerate soybean research, empowering researchers with high-quality and easily accessible gene expression data."
   },
   {
-    "objectID": "software/magrene/index.html",
-    "href": "software/magrene/index.html",
-    "title": "magrene",
+    "objectID": "software/BioNERO/index.html",
+    "href": "software/BioNERO/index.html",
+    "title": "BioNERO",
     "section": "",
-    "text": "The goal of magrene is to identify and analyze graph motifs containing duplicated genes in gene regulatory networks (GRNs). Possible motifs include V, PPI V, lambda, delta, and bifans.\nMotif frequencies can be analyzed in the context of gene duplications to explore the impact of small-scale and whole-genome duplications on gene regulatory networks.\nAdditionally, GRNs can be tested for motif enrichment by comparing motif frequencies to a null distribution generated from degree-preserving simulated GRNs.\nFinally, users can calculate the interaction similarity between gene pairs based on the Sorensen-Dice similarity index."
+    "text": "BioNERO is an R/Bioconductor package that aims to facilitate network analyses by integrating all standard analysis steps, including data preprocessing, inference of gene regulatory and coexpression network from expression data, functional analyses, and network intra and interspecies network comparisons."
   },
   {
-    "objectID": "software/magrene/index.html#summary",
-    "href": "software/magrene/index.html#summary",
-    "title": "magrene",
+    "objectID": "software/BioNERO/index.html#summary",
+    "href": "software/BioNERO/index.html#summary",
+    "title": "BioNERO",
     "section": "",
-    "text": "The goal of magrene is to identify and analyze graph motifs containing duplicated genes in gene regulatory networks (GRNs). Possible motifs include V, PPI V, lambda, delta, and bifans.\nMotif frequencies can be analyzed in the context of gene duplications to explore the impact of small-scale and whole-genome duplications on gene regulatory networks.\nAdditionally, GRNs can be tested for motif enrichment by comparing motif frequencies to a null distribution generated from degree-preserving simulated GRNs.\nFinally, users can calculate the interaction similarity between gene pairs based on the Sorensen-Dice similarity index."
+    "text": "BioNERO is an R/Bioconductor package that aims to facilitate network analyses by integrating all standard analysis steps, including data preprocessing, inference of gene regulatory and coexpression network from expression data, functional analyses, and network intra and interspecies network comparisons."
   },
   {
-    "objectID": "talks/sbv2021/index.html",
-    "href": "talks/sbv2021/index.html",
-    "title": "Bioinformatics in Modern Biology: computational genomics as a tool to unravel the soybean genome and gene regulation",
+    "objectID": "software/SoyPestGCN/index.html",
+    "href": "software/SoyPestGCN/index.html",
+    "title": "SoyPestGCN",
+    "section": "",
+    "text": "SoyPestGCN is an R package that contains a Shiny app to let users explore a gene coexpression network inferred from RNA-seq data of soybean tissues infested with pests (i.e., insects and nematodes). The Shiny app is also available online at https://soypestgcn.venanciogroup.uenf.br."
+  },
+  {
+    "objectID": "software/SoyPestGCN/index.html#summary",
+    "href": "software/SoyPestGCN/index.html#summary",
+    "title": "SoyPestGCN",
+    "section": "",
+    "text": "SoyPestGCN is an R package that contains a Shiny app to let users explore a gene coexpression network inferred from RNA-seq data of soybean tissues infested with pests (i.e., insects and nematodes). The Shiny app is also available online at https://soypestgcn.venanciogroup.uenf.br."
+  },
+  {
+    "objectID": "software/planttfhunter/index.html",
+    "href": "software/planttfhunter/index.html",
+    "title": "planttfhunter",
+    "section": "",
+    "text": "The goal of planttfhunter is to identify plant transcription factors from protein sequence data and classify them into families and subfamilies using the classification scheme implemented in PlantTFDB."
+  },
+  {
+    "objectID": "software/planttfhunter/index.html#summary",
+    "href": "software/planttfhunter/index.html#summary",
+    "title": "planttfhunter",
+    "section": "",
+    "text": "The goal of planttfhunter is to identify plant transcription factors from protein sequence data and classify them into families and subfamilies using the classification scheme implemented in PlantTFDB."
+  },
+  {
+    "objectID": "teaching/index.html",
+    "href": "teaching/index.html",
+    "title": "Teaching",
+    "section": "",
+    "text": "Introduction to Computational Evolutionary Biology\n\n\nA hands-on introduction to Computational Evolutionary Biology. These materials are used in the Master’s courses Evolutionary Biology and Bioinformatics 2 at UGent.\n\n\n\nFabrício Almeida-Silva\n\n\nMay 1, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProcessing and visualizing data in the tidyverse\n\n\nA gentle introduction to data analyses using tidyverse packages.\n\n\n\nFabrício Almeida-Silva\n\n\nMay 29, 2021\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "teaching/compevobio/index.html",
+    "href": "teaching/compevobio/index.html",
+    "title": "Introduction to Computational Evolutionary Biology",
+    "section": "",
+    "text": "This book aims to provide learners with a hands-on introduction to Computational Evolutionary Biology, and the materials here are used in the practical lessons of the courses C003709A - Evolutionary Biology and C000500A - Bioinformatics 2 at Universiteit Gent, taught by Dr. Yves Van de Peer and Fabricio Almeida-Silva.\nCourse materials:\n\nGitHub repo\nBook"
+  },
+  {
+    "objectID": "teaching/compevobio/index.html#overview",
+    "href": "teaching/compevobio/index.html#overview",
+    "title": "Introduction to Computational Evolutionary Biology",
+    "section": "",
+    "text": "This book aims to provide learners with a hands-on introduction to Computational Evolutionary Biology, and the materials here are used in the practical lessons of the courses C003709A - Evolutionary Biology and C000500A - Bioinformatics 2 at Universiteit Gent, taught by Dr. Yves Van de Peer and Fabricio Almeida-Silva.\nCourse materials:\n\nGitHub repo\nBook"
+  },
+  {
+    "objectID": "talks/bioc2021/index.html",
+    "href": "talks/bioc2021/index.html",
+    "title": "cageminer: mining candidate genes by integrating GWAS and gene coexpression networks",
     "section": "",
     "text": "Click here to access the slide presentation."
   },
   {
-    "objectID": "talks/sbv2021/index.html#overview",
-    "href": "talks/sbv2021/index.html#overview",
-    "title": "Bioinformatics in Modern Biology: computational genomics as a tool to unravel the soybean genome and gene regulation",
+    "objectID": "talks/bioc2021/index.html#overview",
+    "href": "talks/bioc2021/index.html#overview",
+    "title": "cageminer: mining candidate genes by integrating GWAS and gene coexpression networks",
     "section": "",
     "text": "Click here to access the slide presentation."
   },
@@ -175,20 +196,6 @@
     "text": "Click here to access the slide presentations."
   },
   {
-    "objectID": "talks/bioc2021/index.html",
-    "href": "talks/bioc2021/index.html",
-    "title": "cageminer: mining candidate genes by integrating GWAS and gene coexpression networks",
-    "section": "",
-    "text": "Click here to access the slide presentation."
-  },
-  {
-    "objectID": "talks/bioc2021/index.html#overview",
-    "href": "talks/bioc2021/index.html#overview",
-    "title": "cageminer: mining candidate genes by integrating GWAS and gene coexpression networks",
-    "section": "",
-    "text": "Click here to access the slide presentation."
-  },
-  {
     "objectID": "talks/pgce2021/index.html",
     "href": "talks/pgce2021/index.html",
     "title": "Prioritizing soybean resistance genes against fungal diseases by integrating GWAS and gene coexpression networks",
@@ -203,6 +210,20 @@
     "text": "Click here to access the slide presentation."
   },
   {
+    "objectID": "talks/sbv2021/index.html",
+    "href": "talks/sbv2021/index.html",
+    "title": "Bioinformatics in Modern Biology: computational genomics as a tool to unravel the soybean genome and gene regulation",
+    "section": "",
+    "text": "Click here to access the slide presentation."
+  },
+  {
+    "objectID": "talks/sbv2021/index.html#overview",
+    "href": "talks/sbv2021/index.html#overview",
+    "title": "Bioinformatics in Modern Biology: computational genomics as a tool to unravel the soybean genome and gene regulation",
+    "section": "",
+    "text": "Click here to access the slide presentation."
+  },
+  {
     "objectID": "talks/index.html",
     "href": "talks/index.html",
     "title": "Talks I’ve given",
@@ -210,46 +231,53 @@
     "text": "Inference and analysis of synteny networks with syntenet\n\n\n\n\n\nWorkshop at #EuroBioc2022, the European Bioconductor annual conference\n\n\n\n\n\nSep 14, 2022\n\n\nFabrício Almeida-Silva\n\n\n\n\n\n\n\n\n\n\n\n\nBioinformatics in Modern Biology: computational genomics as a tool to unravel the soybean genome and gene regulation\n\n\n\n\n\nInvited speaker\n\n\n\n\n\nNov 22, 2021\n\n\nFabrício Almeida-Silva\n\n\n\n\n\n\n\n\n\n\n\n\nPrioritizing soybean resistance genes against fungal diseases by integrating GWAS and gene coexpression networks\n\n\n\n\n\nOral session at the 2021’s Plant Genomes in a Changing Environment conference\n\n\n\n\n\nOct 19, 2021\n\n\nFabrício Almeida-Silva\n\n\n\n\n\n\n\n\n\n\n\n\ncageminer: mining candidate genes by integrating GWAS and gene coexpression networks\n\n\n\n\n\nLightning Talk at #Bioc2021, the Bioconductor annual conference\n\n\n\n\n\nAug 6, 2021\n\n\nFabrício Almeida-Silva\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "software/BioNERO/index.html",
-    "href": "software/BioNERO/index.html",
-    "title": "BioNERO",
+    "objectID": "publications/index.html",
+    "href": "publications/index.html",
+    "title": "My publications",
     "section": "",
-    "text": "BioNERO is an R/Bioconductor package that aims to facilitate network analyses by integrating all standard analysis steps, including data preprocessing, inference of gene regulatory and coexpression network from expression data, functional analyses, and network intra and interspecies network comparisons."
+    "text": "27. Almeida-Silva F, Van de Peer Y (2025). “doubletrouble: an R/Bioconductor package for the identification, classification, and analysis of gene and genome duplications.” Bioinformatics, btaf043.🔗"
   },
   {
-    "objectID": "software/BioNERO/index.html#summary",
-    "href": "software/BioNERO/index.html#summary",
-    "title": "BioNERO",
+    "objectID": "publications/index.html#section",
+    "href": "publications/index.html#section",
+    "title": "My publications",
     "section": "",
-    "text": "BioNERO is an R/Bioconductor package that aims to facilitate network analyses by integrating all standard analysis steps, including data preprocessing, inference of gene regulatory and coexpression network from expression data, functional analyses, and network intra and interspecies network comparisons."
+    "text": "27. Almeida-Silva F, Van de Peer Y (2025). “doubletrouble: an R/Bioconductor package for the identification, classification, and analysis of gene and genome duplications.” Bioinformatics, btaf043.🔗"
   },
   {
-    "objectID": "software/planttfhunter/index.html",
-    "href": "software/planttfhunter/index.html",
-    "title": "planttfhunter",
-    "section": "",
-    "text": "The goal of planttfhunter is to identify plant transcription factors from protein sequence data and classify them into families and subfamilies using the classification scheme implemented in PlantTFDB."
+    "objectID": "publications/index.html#section-1",
+    "href": "publications/index.html#section-1",
+    "title": "My publications",
+    "section": "2024",
+    "text": "2024\n26. Chen H, Almeida-Silva F, Logghe G, Bonte D, Van de Peer Y (2024). “The rise of polyploids during environmental catastrophes.” bioRxiv, 2024-11.🔗\n25. Zhang R, Shang H, Milne RI, Almeida-Silva F, Chen H, Zhou M, Shu H, Jia K, Van de Peer Y, Ma Y (2024). “SOI: Robust identification of orthologous synteny with the Orthology Index and broad applications in evolutionary genomics.” bioRxiv, 2024-08.🔗\n24. Prost-Boxoen L, Bafort Q, Van de Vloet A, Almeida-Silva F, Paing YT, Casteleyn G, D’hondt S, De Clerck O, Van de Peer Y (2024). “Asymmetric genome merging leads to gene expression novelty through nucleo-cytoplasmic disruptions and transcriptomic shock in Chlamydomonas triploids.” New Phytologist. 🔗\n23. Drnevich J, Tan FJ, Almeida-Silva F, Castelo R, Culhane AC, Davis S, Doyle MA, Holmes S, Lahti L, Mahmoud A, Nishida K, Ramos M, Rue-Albrecht K, Shih DJH, Gatto L, Soneson C (2024). “Learning and teaching biological data science in the Bioconductor community.” arXiv. 🔗\n22. Barbosa-Xavier K, Pedrosa-Silva F, Almeida-Silva F, Venancio T (2024). “Cannabis Expression Atlas: a comprehensive resource for integrative analysis of Cannabis sativa L. gene expression.” bioRxiv. 🔗\n21. Turquetti-Moraes DK, Cardoso-Silva CB, Almeida-Silva F, Venancio TM (2024). “Multiomic analysis of genes related to oil traits in legumes provide insights into lipid metabolism and oil richness in soybean.” Plant Physiology and Biochemistry, 109180. ISSN 0981-9428, 🔗\n20. Wu T, Bafort Q, Mortier F, Almeida-Silva F, Natran A, Van de Peer Y (2024). “The immediate metabolomic effects of whole-genome duplication in the greater duckweed, Spirodela polyrhiza.” American Journal of Botany, e16383. 🔗\n19. Almeida-Silva F, Prost-Boxoen L, Van de Peer Y (2024). “hybridexpress: an R/Bioconductor package for comparative transcriptomic analyses of hybrids and their progenitors.” New Phytologist, 243(2), 811-819. 🔗"
   },
   {
-    "objectID": "software/planttfhunter/index.html#summary",
-    "href": "software/planttfhunter/index.html#summary",
-    "title": "planttfhunter",
-    "section": "",
-    "text": "The goal of planttfhunter is to identify plant transcription factors from protein sequence data and classify them into families and subfamilies using the classification scheme implemented in PlantTFDB."
+    "objectID": "publications/index.html#section-2",
+    "href": "publications/index.html#section-2",
+    "title": "My publications",
+    "section": "2023",
+    "text": "2023\n18. Pinto VB, Vidigal PMP, Dal-Bianco M, Almeida-Silva F, Venancio TM, Viana JMS (2023). “Transcriptome-based strategies for identifying aluminum tolerance genes in popcorn (Zea mays L. var. everta).” Scientific Reports, 13(1), 19400. 🔗\n17. Cherene MB, Taveira GB, Almeida-Silva F, da Silva MS, Cavaco MC, da Silva-Ferreira AT, Perales JEA, de Oliveira Carvalho A, Venâncio TM, da Motta OV, others (2023). “Structural and Biochemical Characterization of Three Antimicrobial Peptides from Capsicum annuum L. var. annuum Leaves for Anti-Candida Use.” Probiotics and Antimicrobial Proteins, 1-18. 🔗\n16. Cao Y, Almeida-Silva F, Zhang W, Ding Y, Bai D, Bai W, Zhang B, Van de Peer Y, Zhang D (2023). “Genomic Insights into Adaptation to Karst Limestone and Incipient Speciation in East Asian Platycarya spp.(Juglandaceae).” Molecular Biology and Evolution, 40(6), msad121. 🔗\n15. Almeida-Silva F, Venancio TM (2023). “Discovering and prioritizing candidate resistance genes against soybean pests by integrating GWAS and gene coexpression networks.” Gene, 860, 147231. 🔗\n14. Almeida-Silva F, Pedrosa-Silva F, Venancio TM (2023). “The Soybean Expression Atlas v2: A comprehensive database of over 5000 RNA-seq samples.” The Plant Journal. 🔗\n13. Almeida-Silva F, Van de Peer Y (2023). “Assessing the quality of comparative genomics data and results with the cogeqc R/Bioconductor package.” Methods in Ecology and Evolution. 🔗\n12. Almeida-Silva F, Van de Peer Y (2023). “Whole-genome Duplications and the Long-term Evolution of Gene Regulatory Networks in Angiosperms.” Molecular Biology and Evolution, 40(7), msad141. 🔗\n11. Almeida-Silva F, Zhao T, Ullrich KK, Schranz ME, Van de Peer Y (2023). “syntenet: an R/Bioconductor package for the inference and analysis of synteny networks.” Bioinformatics, 39(1), btac806. 🔗"
   },
   {
-    "objectID": "software/bears/index.html",
-    "href": "software/bears/index.html",
-    "title": "bears",
-    "section": "",
-    "text": "In the past decades, there has been an exponential accumulation of RNA-seq data in public repositories. This steep increase paved the way to the creation of gene expression atlases, which consist in comprehensive collections of expression data from public databases, analyzed with a single pipeline for consistency and cross-project comparison. bears is a package that allows you to create your own gene expression atlas for a given species using public data. The package features:\n\nData download from NCBI’s Sequence Read Archive (SRA) or the European Nucleotide Archive (ENA).\nSequence quality check and trimming of low-quality sequences and adapters.\nRemoval of rRNA, which are typical problems of libraries that were prepared with the rRNA depletion protocol.\nRead mapping against a reference genome.\nTranscriptome assembly.\nQuantification of gene- and transcript-level transcript abundance with alignment-based and alignment-free methods."
+    "objectID": "publications/index.html#section-3",
+    "href": "publications/index.html#section-3",
+    "title": "My publications",
+    "section": "2022",
+    "text": "2022\n10. Irineu LESdS, Soares CdP, Soares TS, Almeida FAd, Almeida-Silva F, Gazara RK, Meneses CHSG, Canellas LP, Silveira V, Venancio TM, others (2022). “Multiomic approaches reveal hormonal modulation and nitrogen uptake and assimilation in the initial growth of maize inoculated with Herbaspirillum seropedicae.” Plants, 12(1), 48. 🔗\n9. Almeida-Silva F, Venancio TM (2022). “BioNERO: an all-in-one R/Bioconductor package for comprehensive and easy biological network reconstruction.” Functional & Integrative Genomics, 22(1), 131-136. 🔗\n8. Almeida-Silva F, Venancio TM (2022). “Pathogenesis-related protein 1 (PR-1) genes in soybean: Genome-wide identification, structural analysis and expression profiling under multiple biotic and abiotic stresses.” Gene, 809, 146013. 🔗\n7. Turquetti-Moraes DK, Moharana KC, Almeida-Silva F, Pedrosa-Silva F, Venancio TM (2022). “Integrating omics approaches to discover and prioritize candidate genes involved in oil biosynthesis in soybean.” Gene, 808, 145976. 🔗\n6. Almeida-Silva F, Venancio TM (2022). “cageminer: an R/Bioconductor package to prioritize candidate genes by integrating genome-wide association studies and gene coexpression networks.” in silico Plants, 4(2), diac018. 🔗"
   },
   {
-    "objectID": "software/bears/index.html#summary",
-    "href": "software/bears/index.html#summary",
-    "title": "bears",
-    "section": "",
-    "text": "In the past decades, there has been an exponential accumulation of RNA-seq data in public repositories. This steep increase paved the way to the creation of gene expression atlases, which consist in comprehensive collections of expression data from public databases, analyzed with a single pipeline for consistency and cross-project comparison. bears is a package that allows you to create your own gene expression atlas for a given species using public data. The package features:\n\nData download from NCBI’s Sequence Read Archive (SRA) or the European Nucleotide Archive (ENA).\nSequence quality check and trimming of low-quality sequences and adapters.\nRemoval of rRNA, which are typical problems of libraries that were prepared with the rRNA depletion protocol.\nRead mapping against a reference genome.\nTranscriptome assembly.\nQuantification of gene- and transcript-level transcript abundance with alignment-based and alignment-free methods."
+    "objectID": "publications/index.html#section-4",
+    "href": "publications/index.html#section-4",
+    "title": "My publications",
+    "section": "2021",
+    "text": "2021\n5. Almeida-Silva F, Venancio TM (2021). “Integration of genome-wide association studies and gene coexpression networks unveils promising soybean resistance genes against five common fungal pathogens.” Scientific Reports, 11(1), 24453. 🔗\n4. Sangi S, Araújo PM, Coelho FS, Gazara RK, Almeida-Silva F, Venancio TM, Grativol C (2021). “Genome-wide analysis of the COBRA-Like gene family supports gene expansion through Whole-Genome Duplication in soybean (Glycine max).” Plants, 10(1), 167. 🔗\n3. Almeida-Silva F, Moharana KC, Venancio TM (2021). “The state of the art in soybean transcriptomics resources and gene coexpression networks.” in silico Plants, 3(1), diab005. 🔗"
+  },
+  {
+    "objectID": "publications/index.html#section-5",
+    "href": "publications/index.html#section-5",
+    "title": "My publications",
+    "section": "2020",
+    "text": "2020\n2. Almeida-Silva F, Moharana KC, Machado FB, Venancio TM (2020). “Exploring the complexity of soybean (Glycine max) transcriptional regulation using global gene co-expression networks.” Planta, 252, 1-12. 🔗\n1. Machado FB, Moharana KC, Almeida-Silva F, Gazara RK, Pedrosa-Silva F, Coelho FS, Grativol C, Venancio TM (2020). “Systematic analysis of 1298 RNA-Seq samples and construction of a comprehensive soybean (Glycine max) expression atlas.” The Plant Journal, 103(5), 1894-1909. 🔗"
   },
   {
     "objectID": "software/cageminer/index.html",
@@ -280,6 +308,34 @@
     "text": "The goal of syntenet is to infer synteny networks from whole-genome protein sequence data and analyze them. Anchor pairs from synteny analyses are treated as an undirected unweighted graph (i.e., a synteny network), and users can perform:\n\nSynteny detection using a native implementation of the MCScanX algorithm, a C++ program that has been modified and ported to R with Rcpp. This way, users do not need to install MCScanX beforehand, because syntenet has its own implementation of the same algorithm.\nSynteny network inference by treating anchor pairs as edges of a graph;\nNetwork clustering using the Infomap algorithm;\nPhylogenomic profiling, which consists in identifying which species contain which clusters. This analysis can reveal highly conserved synteny clusters and taxon-specific ones (e.g., family- and order-specific clusters);\nMicrosynteny-based phylogeny reconstruction with maximum likelihood, which can be achieved by inferring a phylogeny from a binary matrix of phylogenomic profiles with IQTREE."
   },
   {
+    "objectID": "software/SoyFungiGCN/index.html",
+    "href": "software/SoyFungiGCN/index.html",
+    "title": "SoyFungiGCN",
+    "section": "",
+    "text": "SoyFungiGCN is an R package that contains a Shiny app to let users explore a gene coexpression network inferred from RNA-seq data of soybean tissues infected with phytopathogenic fungi. The Shiny app is also available online at https://soyfungigcn.venanciogroup.uenf.br."
+  },
+  {
+    "objectID": "software/SoyFungiGCN/index.html#summary",
+    "href": "software/SoyFungiGCN/index.html#summary",
+    "title": "SoyFungiGCN",
+    "section": "",
+    "text": "SoyFungiGCN is an R package that contains a Shiny app to let users explore a gene coexpression network inferred from RNA-seq data of soybean tissues infected with phytopathogenic fungi. The Shiny app is also available online at https://soyfungigcn.venanciogroup.uenf.br."
+  },
+  {
+    "objectID": "software/bears/index.html",
+    "href": "software/bears/index.html",
+    "title": "bears",
+    "section": "",
+    "text": "In the past decades, there has been an exponential accumulation of RNA-seq data in public repositories. This steep increase paved the way to the creation of gene expression atlases, which consist in comprehensive collections of expression data from public databases, analyzed with a single pipeline for consistency and cross-project comparison. bears is a package that allows you to create your own gene expression atlas for a given species using public data. The package features:\n\nData download from NCBI’s Sequence Read Archive (SRA) or the European Nucleotide Archive (ENA).\nSequence quality check and trimming of low-quality sequences and adapters.\nRemoval of rRNA, which are typical problems of libraries that were prepared with the rRNA depletion protocol.\nRead mapping against a reference genome.\nTranscriptome assembly.\nQuantification of gene- and transcript-level transcript abundance with alignment-based and alignment-free methods."
+  },
+  {
+    "objectID": "software/bears/index.html#summary",
+    "href": "software/bears/index.html#summary",
+    "title": "bears",
+    "section": "",
+    "text": "In the past decades, there has been an exponential accumulation of RNA-seq data in public repositories. This steep increase paved the way to the creation of gene expression atlases, which consist in comprehensive collections of expression data from public databases, analyzed with a single pipeline for consistency and cross-project comparison. bears is a package that allows you to create your own gene expression atlas for a given species using public data. The package features:\n\nData download from NCBI’s Sequence Read Archive (SRA) or the European Nucleotide Archive (ENA).\nSequence quality check and trimming of low-quality sequences and adapters.\nRemoval of rRNA, which are typical problems of libraries that were prepared with the rRNA depletion protocol.\nRead mapping against a reference genome.\nTranscriptome assembly.\nQuantification of gene- and transcript-level transcript abundance with alignment-based and alignment-free methods."
+  },
+  {
     "objectID": "software/index.html",
     "href": "software/index.html",
     "title": "Software & Data Products",
@@ -287,18 +343,32 @@
     "text": "HybridExpress\n\n\nAn R package for comparative transcriptomic analyses of hybrids and their progenitors\n\n\n\nFabrício Almeida-Silva\n\n\nApr 1, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nbears\n\n\nAn R package to create gene expression atlases from public bulk RNA-seq data\n\n\n\nFabrício Almeida-Silva\n\n\nSep 8, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSoybeanExpressionAtlas\n\n\nA database of over 5000 soybean RNA-seq samples\n\n\n\nFabrício Almeida-Silva\n\n\nSep 8, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nsyntenet\n\n\nAn R/Bioconductor package for the inference and analysis of synteny networks\n\n\n\nFabrício Almeida-Silva\n\n\nDec 27, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nplanttfhunter\n\n\nAn R/Bioconductor package to identify and classify plant transcription factors from protein sequence data\n\n\n\nFabrício Almeida-Silva\n\n\nDec 27, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmagrene\n\n\nAn R/Bioconductor package to analyze motifs in gene regulatory networks\n\n\n\nFabrício Almeida-Silva\n\n\nDec 27, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ndoubletrouble\n\n\nAn R/Bioconductor package to identify and classify duplicated genes from whole-genome protein sequence data\n\n\n\nFabrício Almeida-Silva\n\n\nDec 27, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ncogeqc\n\n\nAn R/Bioconductor package to for data quality checks and parameter selection in comparative genomics\n\n\n\nFabrício Almeida-Silva\n\n\nDec 27, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSoyPestGCN\n\n\nAn R/Shiny package and web app to explore soybean-pest interactions at the transcriptional level\n\n\n\nFabrício Almeida-Silva\n\n\nJun 6, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ncageminer\n\n\nAn R/Bioconductor package to mine candidate genes by integrating GWAS and gene coexpression networks”\n\n\n\nFabrício Almeida-Silva\n\n\nAug 7, 2021\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSoyFungiGCN\n\n\nAn R/Shiny package and web app to explore soybean-fungi interactions at the transcriptional level\n\n\n\nFabrício Almeida-Silva\n\n\nAug 7, 2021\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBioNERO\n\n\nAn R/Bioconductor package for easy and comprehensive network reconstruction\n\n\n\nFabrício Almeida-Silva\n\n\nAug 7, 2021\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "software/doubletrouble/index.html",
-    "href": "software/doubletrouble/index.html",
-    "title": "doubletrouble",
+    "objectID": "software/magrene/index.html",
+    "href": "software/magrene/index.html",
+    "title": "magrene",
     "section": "",
-    "text": "The major goal of doubletrouble is to identify duplicated genes from whole-genome protein sequences and classify them based on their modes of duplication. The simplest classification scheme has two duplication modes:\n\nWhole-genome duplication (WGD);\nSmall-scale duplication (SSD)\n\nFor a more detailed view of the duplication modes, users can also choose to split SSD into subcategories, so the available duplication modes will be:\n\nWhole-genome duplication (WGD);\nTandem duplication (TD);\nProximal duplication (PD);\nTransposed duplication (TRD);\nDispersed duplication (DD).\n\nBesides classifying gene pairs, users can also classify genes, so that each gene is assigned a unique mode of duplication.\nUsers can also calculate substitution rates per substitution site (i.e., Ka and Ks) from duplicate pairs, find peaks in Ks distributions with Gaussian Mixture Models (GMMs), and classify gene pairs into age groups based on Ks peaks."
+    "text": "The goal of magrene is to identify and analyze graph motifs containing duplicated genes in gene regulatory networks (GRNs). Possible motifs include V, PPI V, lambda, delta, and bifans.\nMotif frequencies can be analyzed in the context of gene duplications to explore the impact of small-scale and whole-genome duplications on gene regulatory networks.\nAdditionally, GRNs can be tested for motif enrichment by comparing motif frequencies to a null distribution generated from degree-preserving simulated GRNs.\nFinally, users can calculate the interaction similarity between gene pairs based on the Sorensen-Dice similarity index."
   },
   {
-    "objectID": "software/doubletrouble/index.html#summary",
-    "href": "software/doubletrouble/index.html#summary",
-    "title": "doubletrouble",
+    "objectID": "software/magrene/index.html#summary",
+    "href": "software/magrene/index.html#summary",
+    "title": "magrene",
     "section": "",
-    "text": "The major goal of doubletrouble is to identify duplicated genes from whole-genome protein sequences and classify them based on their modes of duplication. The simplest classification scheme has two duplication modes:\n\nWhole-genome duplication (WGD);\nSmall-scale duplication (SSD)\n\nFor a more detailed view of the duplication modes, users can also choose to split SSD into subcategories, so the available duplication modes will be:\n\nWhole-genome duplication (WGD);\nTandem duplication (TD);\nProximal duplication (PD);\nTransposed duplication (TRD);\nDispersed duplication (DD).\n\nBesides classifying gene pairs, users can also classify genes, so that each gene is assigned a unique mode of duplication.\nUsers can also calculate substitution rates per substitution site (i.e., Ka and Ks) from duplicate pairs, find peaks in Ks distributions with Gaussian Mixture Models (GMMs), and classify gene pairs into age groups based on Ks peaks."
+    "text": "The goal of magrene is to identify and analyze graph motifs containing duplicated genes in gene regulatory networks (GRNs). Possible motifs include V, PPI V, lambda, delta, and bifans.\nMotif frequencies can be analyzed in the context of gene duplications to explore the impact of small-scale and whole-genome duplications on gene regulatory networks.\nAdditionally, GRNs can be tested for motif enrichment by comparing motif frequencies to a null distribution generated from degree-preserving simulated GRNs.\nFinally, users can calculate the interaction similarity between gene pairs based on the Sorensen-Dice similarity index."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Hi, I’m Fabrício!",
+    "section": "",
+    "text": "I am a PhD student at the VIB-UGent Center for Plant Systems Biology (🇧🇪), supervised by Dr. Yves Van de Peer. I am particularly interested in using and developing network-based approaches to explore the evolution of (polyploid) plant genomes and regulatory networks."
+  },
+  {
+    "objectID": "blog/index.html",
+    "href": "blog/index.html",
+    "title": "My blog",
+    "section": "",
+    "text": "Here, I write about R, Bioconductor, open science, reproducible research, and more.\n\n\n\n\n\n\n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nWhere can I publish a paper describing my Bioconductor package?\n\n\n\n\n\n\nbioinformatics\n\n\nreproducible research\n\n\nbioconductor\n\n\nscientific writing\n\n\nrstats\n\n\n\nCheck out where Bioc developers have published their papers\n\n\n\n\n\nJun 12, 2023\n\n\nFabrício Almeida-Silva\n\n\n\n\n\n\n\n\n\n\n\n\nUpgrading R version with all your packages\n\n\n\n\n\n\nrstats\n\n\nproject management\n\n\n\nLearn how to do a painless upgrade of your R version\n\n\n\n\n\nMay 6, 2022\n\n\nFabrício Almeida-Silva\n\n\n\n\n\n\n\n\n\n\n\n\nPushing Docker images to Docker Hub\n\n\n\n\n\n\nproject management\n\n\nbioinformatics\n\n\ndocker\n\n\nvirtualization\n\n\nreproducible research\n\n\n\nKeeping your images in a Docker Hub repo will make your life easier\n\n\n\n\n\nDec 1, 2021\n\n\nFabrício Almeida-Silva\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "blog/2022-05-06-upgrading_R/index.html",
@@ -327,68 +397,5 @@
     "title": "Upgrading R version with all your packages",
     "section": "Session information",
     "text": "Session information\n\nsessioninfo::session_info()\n\n─ Session info ───────────────────────────────────────────────────────────────\n setting  value\n version  R version 4.3.0 (2023-04-21)\n os       Ubuntu 20.04.5 LTS\n system   x86_64, linux-gnu\n ui       X11\n language (EN)\n collate  en_US.UTF-8\n ctype    en_US.UTF-8\n tz       Europe/Brussels\n date     2023-06-12\n pandoc   3.1.1 @ /usr/lib/rstudio/resources/app/bin/quarto/bin/tools/ (via rmarkdown)\n\n─ Packages ───────────────────────────────────────────────────────────────────\n package     * version date (UTC) lib source\n bit           4.0.5   2022-11-15 [1] CRAN (R 4.3.0)\n bit64         4.0.5   2020-08-30 [1] CRAN (R 4.3.0)\n cli           3.6.1   2023-03-23 [1] CRAN (R 4.3.0)\n colorspace    2.1-0   2023-01-23 [1] CRAN (R 4.3.0)\n crayon        1.5.2   2022-09-29 [1] CRAN (R 4.3.0)\n digest        0.6.31  2022-12-11 [1] CRAN (R 4.3.0)\n dplyr       * 1.1.2   2023-04-20 [1] CRAN (R 4.3.0)\n evaluate      0.20    2023-01-17 [1] CRAN (R 4.3.0)\n fansi         1.0.4   2023-01-22 [1] CRAN (R 4.3.0)\n fastmap       1.1.1   2023-02-24 [1] CRAN (R 4.3.0)\n forcats     * 1.0.0   2023-01-29 [1] CRAN (R 4.3.0)\n generics      0.1.3   2022-07-05 [1] CRAN (R 4.3.0)\n ggplot2     * 3.4.2   2023-04-03 [1] CRAN (R 4.3.0)\n glue          1.6.2   2022-02-24 [1] CRAN (R 4.3.0)\n gtable        0.3.3   2023-03-21 [1] CRAN (R 4.3.0)\n hms           1.1.3   2023-03-21 [1] CRAN (R 4.3.0)\n htmltools     0.5.5   2023-03-23 [1] CRAN (R 4.3.0)\n htmlwidgets   1.6.2   2023-03-17 [1] CRAN (R 4.3.0)\n jsonlite      1.8.4   2022-12-06 [1] CRAN (R 4.3.0)\n knitr         1.42    2023-01-25 [1] CRAN (R 4.3.0)\n lifecycle     1.0.3   2022-10-07 [1] CRAN (R 4.3.0)\n lubridate   * 1.9.2   2023-02-10 [1] CRAN (R 4.3.0)\n magrittr      2.0.3   2022-03-30 [1] CRAN (R 4.3.0)\n munsell       0.5.0   2018-06-12 [1] CRAN (R 4.3.0)\n pillar        1.9.0   2023-03-22 [1] CRAN (R 4.3.0)\n pkgconfig     2.0.3   2019-09-22 [1] CRAN (R 4.3.0)\n purrr       * 1.0.1   2023-01-10 [1] CRAN (R 4.3.0)\n R6            2.5.1   2021-08-19 [1] CRAN (R 4.3.0)\n readr       * 2.1.4   2023-02-10 [1] CRAN (R 4.3.0)\n rlang         1.1.1   2023-04-28 [1] CRAN (R 4.3.0)\n rmarkdown     2.21    2023-03-26 [1] CRAN (R 4.3.0)\n rstudioapi    0.14    2022-08-22 [1] CRAN (R 4.3.0)\n scales        1.2.1   2022-08-20 [1] CRAN (R 4.3.0)\n sessioninfo   1.2.2   2021-12-06 [1] CRAN (R 4.3.0)\n stringi       1.7.12  2023-01-11 [1] CRAN (R 4.3.0)\n stringr     * 1.5.0   2022-12-02 [1] CRAN (R 4.3.0)\n tibble      * 3.2.1   2023-03-20 [1] CRAN (R 4.3.0)\n tidyr       * 1.3.0   2023-01-24 [1] CRAN (R 4.3.0)\n tidyselect    1.2.0   2022-10-10 [1] CRAN (R 4.3.0)\n tidyverse   * 2.0.0   2023-02-22 [1] CRAN (R 4.3.0)\n timechange    0.2.0   2023-01-11 [1] CRAN (R 4.3.0)\n tzdb          0.3.0   2022-03-28 [1] CRAN (R 4.3.0)\n utf8          1.2.3   2023-01-31 [1] CRAN (R 4.3.0)\n vctrs         0.6.2   2023-04-19 [1] CRAN (R 4.3.0)\n vroom         1.6.3   2023-04-28 [1] CRAN (R 4.3.0)\n withr         2.5.0   2022-03-03 [1] CRAN (R 4.3.0)\n xfun          0.39    2023-04-20 [1] CRAN (R 4.3.0)\n yaml          2.3.7   2023-01-23 [1] CRAN (R 4.3.0)\n\n [1] /home/faalm/R/x86_64-pc-linux-gnu-library/4.3\n [2] /usr/local/lib/R/site-library\n [3] /usr/lib/R/site-library\n [4] /usr/lib/R/library\n\n──────────────────────────────────────────────────────────────────────────────"
-  },
-  {
-    "objectID": "blog/2021-12-01-push_image_dockerhub/index.html",
-    "href": "blog/2021-12-01-push_image_dockerhub/index.html",
-    "title": "Pushing Docker images to Docker Hub",
-    "section": "",
-    "text": "This post assumes you already have an account on Docker Hub. If you don’t, sign up for free before going any further.\nOnce you have a Docker Hub account, log in and create the repository where you want to store the image. You can do that by clicking the Create Repository button.\n\n\n\n\n\n\n\n\n\n\n\nTo push an image to Docker Hub, you will need to have it on your machine. An image can be built from instructions in a Dockerfile or using Docker Compose. Personally, I like to create images from Dockerfiles, where I define my desired OS with all softwares and packages I need. Assuming you alrady have a Dockerfile, cd to the directory where the Dockerfile is and run:\n\ndocker build -t username/reponame .\n\nHere, username and reponame are your Docker Hub’s user name and the name of the repository where you want to store the image.\n\n\n\nTo push your image, you must be logged in. To log in, run:\n\ndocker login\n\nYou will be asked to type your user name and password, and then you’re all set. Finally, push the image with:\n\ndocker push username/reponame:tag\n\nNote that the :tag is not mandatory. If you omit it, a tag latest will be automatically assigned. You would want to assign a custom tag if you’re pushing a specific version of your image. For example, suppose I want to push the version 2.0 of an image to my soyfungigcn repo. To do that, I would run:\n\ndocker push almeidasilvaf/soyfungigcn:2.0\n\nAnd that’s it! In the future, if you want to use that same image on a different machine, all you need to do is run:\n\ndocker pull username/reponame\n\nThis will download the latest version of the image to your machine. You can also specify a specific version to download by setting a :tag after the repository name."
-  },
-  {
-    "objectID": "blog/2021-12-01-push_image_dockerhub/index.html#pushing-docker-images-to-docker-hub",
-    "href": "blog/2021-12-01-push_image_dockerhub/index.html#pushing-docker-images-to-docker-hub",
-    "title": "Pushing Docker images to Docker Hub",
-    "section": "",
-    "text": "This post assumes you already have an account on Docker Hub. If you don’t, sign up for free before going any further.\nOnce you have a Docker Hub account, log in and create the repository where you want to store the image. You can do that by clicking the Create Repository button.\n\n\n\n\n\n\n\n\n\n\n\nTo push an image to Docker Hub, you will need to have it on your machine. An image can be built from instructions in a Dockerfile or using Docker Compose. Personally, I like to create images from Dockerfiles, where I define my desired OS with all softwares and packages I need. Assuming you alrady have a Dockerfile, cd to the directory where the Dockerfile is and run:\n\ndocker build -t username/reponame .\n\nHere, username and reponame are your Docker Hub’s user name and the name of the repository where you want to store the image.\n\n\n\nTo push your image, you must be logged in. To log in, run:\n\ndocker login\n\nYou will be asked to type your user name and password, and then you’re all set. Finally, push the image with:\n\ndocker push username/reponame:tag\n\nNote that the :tag is not mandatory. If you omit it, a tag latest will be automatically assigned. You would want to assign a custom tag if you’re pushing a specific version of your image. For example, suppose I want to push the version 2.0 of an image to my soyfungigcn repo. To do that, I would run:\n\ndocker push almeidasilvaf/soyfungigcn:2.0\n\nAnd that’s it! In the future, if you want to use that same image on a different machine, all you need to do is run:\n\ndocker pull username/reponame\n\nThis will download the latest version of the image to your machine. You can also specify a specific version to download by setting a :tag after the repository name."
-  },
-  {
-    "objectID": "publications/index.html",
-    "href": "publications/index.html",
-    "title": "My publications",
-    "section": "",
-    "text": "25. Prost-Boxoen L, Bafort Q, Van de Vloet A, Almeida-Silva F, Paing YT, Casteleyn G, D’hondt S, De Clerck O, Van de Peer Y (2024). “Asymmetric genome merging leads to gene expression novelty through nucleo-cytoplasmic disruptions and transcriptomic shock in Chlamydomonas triploids.” New Phytologist. 🔗\n24. Drnevich J, Tan FJ, Almeida-Silva F, Castelo R, Culhane AC, Davis S, Doyle MA, Holmes S, Lahti L, Mahmoud A, Nishida K, Ramos M, Rue-Albrecht K, Shih DJH, Gatto L, Soneson C (2024). “Learning and teaching biological data science in the Bioconductor community.” arXiv. 🔗\n23. Barbosa-Xavier K, Pedrosa-Silva F, Almeida-Silva F, Venancio T (2024). “Cannabis Expression Atlas: a comprehensive resource for integrative analysis of Cannabis sativa L. gene expression.” bioRxiv. 🔗\n22. Turquetti-Moraes DK, Cardoso-Silva CB, Almeida-Silva F, Venancio TM (2024). “Multiomic analysis of genes related to oil traits in legumes provide insights into lipid metabolism and oil richness in soybean.” Plant Physiology and Biochemistry, 109180. ISSN 0981-9428, 🔗\n21. Wu T, Bafort Q, Mortier F, Almeida-Silva F, Natran A, Van de Peer Y (2024). “The immediate metabolomic effects of whole-genome duplication in the greater duckweed, Spirodela polyrhiza.” American Journal of Botany, e16383. 🔗\n20. Almeida-Silva F, Prost-Boxoen L, Van de Peer Y (2024). “hybridexpress: an R/Bioconductor package for comparative transcriptomic analyses of hybrids and their progenitors.” New Phytologist, 243(2), 811-819. 🔗\n19. Almeida-Silva F, Van de Peer Y (2024). “doubletrouble: an R/Bioconductor package for the identification, classification, and analysis of gene and genome duplications.” bioRxiv. 🔗"
-  },
-  {
-    "objectID": "publications/index.html#section",
-    "href": "publications/index.html#section",
-    "title": "My publications",
-    "section": "",
-    "text": "25. Prost-Boxoen L, Bafort Q, Van de Vloet A, Almeida-Silva F, Paing YT, Casteleyn G, D’hondt S, De Clerck O, Van de Peer Y (2024). “Asymmetric genome merging leads to gene expression novelty through nucleo-cytoplasmic disruptions and transcriptomic shock in Chlamydomonas triploids.” New Phytologist. 🔗\n24. Drnevich J, Tan FJ, Almeida-Silva F, Castelo R, Culhane AC, Davis S, Doyle MA, Holmes S, Lahti L, Mahmoud A, Nishida K, Ramos M, Rue-Albrecht K, Shih DJH, Gatto L, Soneson C (2024). “Learning and teaching biological data science in the Bioconductor community.” arXiv. 🔗\n23. Barbosa-Xavier K, Pedrosa-Silva F, Almeida-Silva F, Venancio T (2024). “Cannabis Expression Atlas: a comprehensive resource for integrative analysis of Cannabis sativa L. gene expression.” bioRxiv. 🔗\n22. Turquetti-Moraes DK, Cardoso-Silva CB, Almeida-Silva F, Venancio TM (2024). “Multiomic analysis of genes related to oil traits in legumes provide insights into lipid metabolism and oil richness in soybean.” Plant Physiology and Biochemistry, 109180. ISSN 0981-9428, 🔗\n21. Wu T, Bafort Q, Mortier F, Almeida-Silva F, Natran A, Van de Peer Y (2024). “The immediate metabolomic effects of whole-genome duplication in the greater duckweed, Spirodela polyrhiza.” American Journal of Botany, e16383. 🔗\n20. Almeida-Silva F, Prost-Boxoen L, Van de Peer Y (2024). “hybridexpress: an R/Bioconductor package for comparative transcriptomic analyses of hybrids and their progenitors.” New Phytologist, 243(2), 811-819. 🔗\n19. Almeida-Silva F, Van de Peer Y (2024). “doubletrouble: an R/Bioconductor package for the identification, classification, and analysis of gene and genome duplications.” bioRxiv. 🔗"
-  },
-  {
-    "objectID": "publications/index.html#section-1",
-    "href": "publications/index.html#section-1",
-    "title": "My publications",
-    "section": "2023",
-    "text": "2023\n18. Pinto VB, Vidigal PMP, Dal-Bianco M, Almeida-Silva F, Venancio TM, Viana JMS (2023). “Transcriptome-based strategies for identifying aluminum tolerance genes in popcorn (Zea mays L. var. everta).” Scientific Reports, 13(1), 19400. 🔗\n17. Cherene MB, Taveira GB, Almeida-Silva F, da Silva MS, Cavaco MC, da Silva-Ferreira AT, Perales JEA, de Oliveira Carvalho A, Venâncio TM, da Motta OV, others (2023). “Structural and Biochemical Characterization of Three Antimicrobial Peptides from Capsicum annuum L. var. annuum Leaves for Anti-Candida Use.” Probiotics and Antimicrobial Proteins, 1-18. 🔗\n16. Cao Y, Almeida-Silva F, Zhang W, Ding Y, Bai D, Bai W, Zhang B, Van de Peer Y, Zhang D (2023). “Genomic Insights into Adaptation to Karst Limestone and Incipient Speciation in East Asian Platycarya spp.(Juglandaceae).” Molecular Biology and Evolution, 40(6), msad121. 🔗\n15. Almeida-Silva F, Venancio TM (2023). “Discovering and prioritizing candidate resistance genes against soybean pests by integrating GWAS and gene coexpression networks.” Gene, 860, 147231. 🔗\n14. Almeida-Silva F, Pedrosa-Silva F, Venancio TM (2023). “The Soybean Expression Atlas v2: A comprehensive database of over 5000 RNA-seq samples.” The Plant Journal. 🔗\n13. Almeida-Silva F, Van de Peer Y (2023). “Assessing the quality of comparative genomics data and results with the cogeqc R/Bioconductor package.” Methods in Ecology and Evolution. 🔗\n12. Almeida-Silva F, Van de Peer Y (2023). “Whole-genome Duplications and the Long-term Evolution of Gene Regulatory Networks in Angiosperms.” Molecular Biology and Evolution, 40(7), msad141. 🔗\n11. Almeida-Silva F, Zhao T, Ullrich KK, Schranz ME, Van de Peer Y (2023). “syntenet: an R/Bioconductor package for the inference and analysis of synteny networks.” Bioinformatics, 39(1), btac806. 🔗"
-  },
-  {
-    "objectID": "publications/index.html#section-2",
-    "href": "publications/index.html#section-2",
-    "title": "My publications",
-    "section": "2022",
-    "text": "2022\n10. Irineu LESdS, Soares CdP, Soares TS, Almeida FAd, Almeida-Silva F, Gazara RK, Meneses CHSG, Canellas LP, Silveira V, Venancio TM, others (2022). “Multiomic approaches reveal hormonal modulation and nitrogen uptake and assimilation in the initial growth of maize inoculated with Herbaspirillum seropedicae.” Plants, 12(1), 48. 🔗\n9. Almeida-Silva F, Venancio TM (2022). “BioNERO: an all-in-one R/Bioconductor package for comprehensive and easy biological network reconstruction.” Functional & Integrative Genomics, 22(1), 131-136. 🔗\n8. Almeida-Silva F, Venancio TM (2022). “Pathogenesis-related protein 1 (PR-1) genes in soybean: Genome-wide identification, structural analysis and expression profiling under multiple biotic and abiotic stresses.” Gene, 809, 146013. 🔗\n7. Turquetti-Moraes DK, Moharana KC, Almeida-Silva F, Pedrosa-Silva F, Venancio TM (2022). “Integrating omics approaches to discover and prioritize candidate genes involved in oil biosynthesis in soybean.” Gene, 808, 145976. 🔗\n6. Almeida-Silva F, Venancio TM (2022). “cageminer: an R/Bioconductor package to prioritize candidate genes by integrating genome-wide association studies and gene coexpression networks.” in silico Plants, 4(2), diac018. 🔗"
-  },
-  {
-    "objectID": "publications/index.html#section-3",
-    "href": "publications/index.html#section-3",
-    "title": "My publications",
-    "section": "2021",
-    "text": "2021\n5. Almeida-Silva F, Venancio TM (2021). “Integration of genome-wide association studies and gene coexpression networks unveils promising soybean resistance genes against five common fungal pathogens.” Scientific Reports, 11(1), 24453. 🔗\n4. Sangi S, Araújo PM, Coelho FS, Gazara RK, Almeida-Silva F, Venancio TM, Grativol C (2021). “Genome-wide analysis of the COBRA-Like gene family supports gene expansion through Whole-Genome Duplication in soybean (Glycine max).” Plants, 10(1), 167. 🔗\n3. Almeida-Silva F, Moharana KC, Venancio TM (2021). “The state of the art in soybean transcriptomics resources and gene coexpression networks.” in silico Plants, 3(1), diab005. 🔗"
-  },
-  {
-    "objectID": "publications/index.html#section-4",
-    "href": "publications/index.html#section-4",
-    "title": "My publications",
-    "section": "2020",
-    "text": "2020\n2. Almeida-Silva F, Moharana KC, Machado FB, Venancio TM (2020). “Exploring the complexity of soybean (Glycine max) transcriptional regulation using global gene co-expression networks.” Planta, 252, 1-12. 🔗\n1. Machado FB, Moharana KC, Almeida-Silva F, Gazara RK, Pedrosa-Silva F, Coelho FS, Grativol C, Venancio TM (2020). “Systematic analysis of 1298 RNA-Seq samples and construction of a comprehensive soybean (Glycine max) expression atlas.” The Plant Journal, 103(5), 1894-1909. 🔗"
-  },
-  {
-    "objectID": "teaching/index.html",
-    "href": "teaching/index.html",
-    "title": "Teaching",
-    "section": "",
-    "text": "Introduction to Computational Evolutionary Biology\n\n\nA hands-on introduction to Computational Evolutionary Biology. These materials are used in the Master’s courses Evolutionary Biology and Bioinformatics 2 at UGent.\n\n\n\nFabrício Almeida-Silva\n\n\nMay 1, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProcessing and visualizing data in the tidyverse\n\n\nA gentle introduction to data analyses using tidyverse packages.\n\n\n\nFabrício Almeida-Silva\n\n\nMay 29, 2021\n\n\n\n\n\n\n\n\nNo matching items"
   }
 ]
