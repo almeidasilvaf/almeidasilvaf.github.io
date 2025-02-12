@@ -25,8 +25,19 @@ about:
 ```
 
 
-I am a PhD student at the VIB-UGent Center for 
-Plant Systems Biology (&#x1F1E7;&#x1F1EA;), supervised by 
-[Dr. Yves Van de Peer](https://www.vandepeerlab.org/). 
+I am a PhD student in Bioinformatics at Ghent University (Belgium) supervised by 
+[Dr. Yves Van de Peer](https://www.vandepeerlab.be/), and I conduct my research
+at the VIB Center for Plant Systems Biology.
 I am particularly interested in using and developing network-based approaches 
-to explore the evolution of (polyploid) plant genomes and regulatory networks.
+to explore the impact of gene and genome duplications on the evolution of plant
+genomes and regulatory networks.
+
+As an advocate for open science and reproducible research, I have contributed
+to the [Bioconductor project](https://bioconductor.org/) with several R packages.
+I am also an active member of the [Bioconductor training commitee](https://training.bioconductor.org/), where I contribute by developing
+Bioconductor-focused training materials and teaching 
+[Bioconductor Carpentry](https://training.bioconductor.org/carpentry/index.html) 
+workshops.
+
+
+

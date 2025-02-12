@@ -3,7 +3,7 @@ project:
 
 website:
   title: "Fabrício Almeida-Silva"
-  page-footer: "Copyright 2023, Fabrício Almeida-Silva"
+  page-footer: "Copyright 2025, Fabrício Almeida-Silva"
   favicon: img/logo.png
   twitter-card: 
     creator: "@almeidasilvaf"
@@ -22,8 +22,8 @@ website:
     logo: img/logo.png
     background: "#6D8763"
     left:
-      - text: Home
-        href: index.qmd
+      - text: About me
+        href: about/index.qmd
       - text: Software & Data
         href: software/index.qmd
       - text: Publications
@@ -38,8 +38,8 @@ website:
         
         
     right:
-      - icon: twitter
-        href: https://twitter.com/almeidasilvaf
+      - text: "{{< fa brands bluesky >}}"
+        href: https://bsky.app/profile/almeidasilvaf.bsky.social
       - icon: github
         href: https://github.com/almeidasilvaf
       - icon: envelope

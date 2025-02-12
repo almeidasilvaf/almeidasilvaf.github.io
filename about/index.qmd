@@ -1,0 +1,76 @@
+---
+title: "About me"
+toc: false
+engine: knitr
+---
+
+## Contact
+
+VIB Center for Plant Systems Biology <br>
+Department of Plant Biotechnology and Bioinformatics <br>
+Ghent University <br>
+Technologiepark 71, 9052 Ghent, Belgium <br>
+
+Email: <fabricio.almeidasilva@psb.vib-ugent.be> <br>
+Personal email: <fabricio_almeidasilva@hotmail.com>
+
+
+## Background
+
+For my undergrad studies, I attended the State University of Northern 
+Rio de Janeiro (UENF) to study Biological Sciences, 
+graduating with distinction (*magna cum laude*) in 2019. Like many great 
+universities in Brazil, UENF stands out due to its strong Scientific Initiation
+program that allows undergrad students to start a research project at an early
+stage of their careers. Thanks to this program, I joined the lab of 
+[Dr. Thiago Venancio](https://scholar.google.com/citations?user=BAIFUiAAAAAJ&hl=en)
+as an undergrad trainee. Thiago has been a truly exceptional mentor, and he 
+supervised me in a project that aimed at exploring transcriptional regulation
+in soybean (*Glycine max*) using gene coexpression networks inferred from
+a large compendium of RNA-seq set with >1000 samples (which later
+became the [Soybean Expression Atlas](https://doi.org/10.1111/tpj.14850)).
+
+::: {.column-page}
+
+![Sunset at the whistle-shaped Convention Center at the State University of Northern Rio de Janeiro (UENF). This building was designed by the renowned Brazilian architect Oscar Niemeyer.](UENF.jpg){width='100%'}
+
+:::
+
+---
+
+In 2020, I joined a Master's program in Plant Biotechnology at UENF, still
+under the supervision of [Dr. Thiago Venancio](https://scholar.google.com/citations?user=BAIFUiAAAAAJ&hl=en),
+where I developed a statistical framework to integrate data from genome-wide 
+association studies (GWAS) and RNA-seq experiments, particularly using 
+network-based approaches. These methods are now available in the R 
+packages `r BiocStyle::Biocpkg("BioNERO")` and `r BiocStyle::Biocpkg("cageminer")`,
+both available on Bioconductor. We then used these methods to identify and 
+prioritize candidate genes involved in resistance to biotic stresses caused
+by multiple pathogens and pests. At the same time, I was also leading
+the implementation of a 
+[much larger and better version of the Soybean Expression Atlas](https://doi.org/10.1111/tpj.16459), 
+now with >5000 samples. After ~5 years under the mentorship of 
+[Dr. Thiago Venancio](https://scholar.google.com/citations?user=BAIFUiAAAAAJ&hl=en),
+I was already a well-rounded and experienced bioinformatician at the end of my
+Master's.
+
+---
+
+In February 2022, I moved to Belgium to start my PhD in Bioinformatics at 
+Ghent University under the supervision of
+[Dr. Yves Van de Peer](https://scholar.google.com/citations?user=tBs2BVMAAAAJ&hl=en),
+at the VIB Center for Plant Systems Biology.
+Since then, I've been studying the impact of gene and genome duplications
+on plant gene regulatory networks. For that, I use a combination of different
+approaches, including evolutionary genomics, high-dimensional (mostly 
+transcriptomic) data analyses, and network science. Besides, I often find myself
+in a position where I cannot find software tools to do what I want, so I end
+up developing such tools myself. I am the developer and maintainer 
+of >10 R packages, most of them available on [Bioconductor](https://bioconductor.org/), 
+as well as web applications.
+
+::: {.column-page}
+![Aerial footage of the Technology Park in Ghent. Highlighted in the middle (in white/blue and gray) are the buildings of the VIB Center for Plant Systems Biology, where the Van de Peer lab is physically located. The Technology Park also hosts other Ghent University buildings, VIB centers, and biotech/pharma companies such as BASF, Sanofi, and Syngenta.](PSB.jpg){width='100%'}
+:::
+
+
