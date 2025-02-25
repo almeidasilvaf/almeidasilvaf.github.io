@@ -1,21 +1,5 @@
 [
   {
-    "listing": "/talks/index.html",
-    "items": [
-      "/talks/eurobioc2022/index.html",
-      "/talks/sbv2021/index.html",
-      "/talks/pgce2021/index.html",
-      "/talks/bioc2021/index.html"
-    ]
-  },
-  {
-    "listing": "/teaching/index.html",
-    "items": [
-      "/teaching/compevobio/index.html",
-      "/teaching/tidyverse/index.html"
-    ]
-  },
-  {
     "listing": "/blog/index.html",
     "items": [
       "/blog/2022-01-03-bioc_publications/index.html",
@@ -38,6 +22,22 @@
       "/software/cageminer/index.html",
       "/software/SoyFungiGCN/index.html",
       "/software/BioNERO/index.html"
+    ]
+  },
+  {
+    "listing": "/talks/index.html",
+    "items": [
+      "/talks/eurobioc2022/index.html",
+      "/talks/sbv2021/index.html",
+      "/talks/pgce2021/index.html",
+      "/talks/bioc2021/index.html"
+    ]
+  },
+  {
+    "listing": "/teaching/index.html",
+    "items": [
+      "/teaching/compevobio/index.html",
+      "/teaching/tidyverse/index.html"
     ]
   }
 ]
