@@ -14,12 +14,34 @@ biblio <- biblio[order(purrr::map_int(biblio, ~ as.integer(.x$year)), decreasing
 bibs <- lapply(biblio, function(x) capture.output(print(x)))
 bibs <- lapply(bibs, paste, collapse = " ")
 
+# Create a data frame of preprints
+preprint_df <- data.frame(
+    citation = unlist(bibs),
+    year = as.numeric(regmatches(bibs, regexpr("(20[0-9]{2})", bibs)))
+) |>
+    dplyr::filter(stringr::str_detect(citation, "arXiv|bioRxiv")) |>
+    dplyr::group_by(year) |> 
+    dplyr::arrange(desc(dplyr::row_number()), .by_group = TRUE) |> 
+    dplyr::ungroup() |>
+    dplyr::arrange(-year) |>
+    dplyr::mutate(
+        citation = gsub("Almeida-Silva F", "**Almeida-Silva F**", citation),
+        citation = gsub("doi.*<", "<", citation),
+        url = gsub(".*<(https?://[^>]+)>.*", "\\1", citation),
+        citation = gsub("<https?://[^>]+>\\.", "", citation),
+        full_citation = paste0(
+            citation, 
+            paste0("<a href='", url, "' class='citation-link' target='_blank'>🔗</a>")
+        )
+    )
 
-# Create a data frame of citations
+
+# Create a data frame of published papers
 cit_df <- data.frame(
     citation = unlist(bibs),
     year = as.numeric(regmatches(bibs, regexpr("(20[0-9]{2})", bibs)))
 ) |>
+    dplyr::filter(!stringr::str_detect(citation, "arXiv|bioRxiv")) |>
     dplyr::group_by(year) |> 
     dplyr::arrange(desc(dplyr::row_number()), .by_group = TRUE) |> 
     dplyr::ungroup() |>
@@ -36,9 +58,16 @@ cit_df <- data.frame(
         )
     )
 
-# For each year, create a header 2 containing the year and publications
+# Format citations as follows: header 2 with year (or preprint), papers below
+## Preprints
+preprint_citation <- c(
+    "## Preprints awaiting peer review",
+    preprint_df$full_citation
+)
+
+## Published papers
 cit_list <- split(cit_df, cit_df$year)
-formatted_citation <- lapply(rev(seq_along(cit_list)), function(x) {
+paper_citation <- lapply(rev(seq_along(cit_list)), function(x) {
     
     header <- paste0("## ", names(cit_list)[x])
     entries <- cit_list[[x]]$full_citation
@@ -46,9 +75,12 @@ formatted_citation <- lapply(rev(seq_along(cit_list)), function(x) {
     section <- c(header, entries)
     return(section)
 })
-formatted_citation <- Reduce(c, formatted_citation)
+paper_citation <- Reduce(c, paper_citation)
 
-# Print citation list in sections by year
-cat(formatted_citation, sep = "\n\n")
+
+final_citation <- c(preprint_citation, paper_citation)
+
+# Print citation list in sections by year, with preprints coming first
+cat(final_citation, sep = "\n\n")
 ```
 
