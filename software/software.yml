@@ -1,0 +1,170 @@
+
+- package: AngioWGD
+  type: database
+  chrono-order: 13
+  image: hexlogos/featured_angiowgd_hex.png
+  path: https://bioinformatics.psb.ugent.be/AngioWGD/
+  description: >
+    An R package that contains a Shiny app to explore whole-genome
+    duplication (WGD) events identified and dated in 470 angiosperm genomes.
+
+- package: doubletrouble
+  type: software
+  chrono-order: 12
+  image: hexlogos/featured_doubletrouble_hex.png
+  path: https://bioconductor.org/packages/doubletrouble/
+  description: >
+    An R package to to identify duplicated genes from whole-genome protein 
+    sequences and classify them based on their modes of duplication. 
+    The duplication modes are i. segmental duplication (SD); ii. 
+    tandem duplication (TD); iii. proximal duplication (PD); 
+    iv. transposed duplication (TRD) and; v. dispersed duplication (DD). 
+    Transposon-derived duplicates (TRD) can be further subdivided into 
+    rTRD (retrotransposon-derived duplication) and dTRD 
+    (DNA transposon-derived duplication). Users can also calculate 
+    substitution rates per substitution site (i.e., Ka and Ks) from 
+    duplicate pairs, find peaks in Ks distributions with Gaussian Mixture 
+    Models (GMMs), and classify gene pairs into age groups based on Ks peaks.
+
+- package: HybridExpress
+  type: software
+  chrono-order: 11
+  image: hexlogos/featured_hybridexpress_hex.png
+  path: https://bioconductor.org/packages/HybridExpress/
+  description: >
+    An R package to perform comparative transcriptomics analysis of hybrids 
+    (or allopolyploids) relative to their progenitor species. The package 
+    features functions to perform exploratory analyses of sample grouping, 
+    identify differentially expressed genes in hybrids relative to their 
+    progenitors, classify genes in expression categories (N = 12) and 
+    classes (N = 5), and perform functional analyses. 
+    We also provide users with graphical functions for the seamless 
+    creation of publication-ready figures that are commonly used 
+    in the literature.
+
+- package: cogeqc
+  type: software
+  chrono-order: 10
+  image: hexlogos/featured_cogeqc_hex.png
+  path: https://bioconductor.org/packages/cogeqc/
+  description: >
+    An R package to facilitate systematic quality checks on standard 
+    comparative genomics analyses, and to help researchers detect issues and 
+    select the most suitable parameters for each data set. 
+    cogeqc can be used to asses: i. genome assembly and annotation quality 
+    with BUSCOs and comparisons of statistics with publicly available 
+    genomes on the NCBI; ii. orthogroup inference using a protein domain-based 
+    approach and; iii. synteny detection using synteny network properties. 
+    cogeqc also offers visualization functions to explore QC summary statistics.
+
+- package: SoybeanExpressionAtlas
+  type: database
+  chrono-order: 9
+  image: hexlogos/featured_soybeanexpressionatlas_hex.png
+  path: https://soyatlas.venanciogroup.uenf.br
+  description: >
+    An R package that contains a Shiny app to explore and download data
+    from the Soybean Expression Atlas, a database of >5000 bulk RNA-seq 
+    samples from different soybean tissues at several different conditions.
+
+- package: bears
+  type: software
+  chrono-order: 8
+  image: hexlogos/featured_bears_hex.png
+  path: https://github.com/almeidasilvaf/bears
+  description: >
+    An R package with an RNA-seq pipeline to create gene expression atlases 
+    from publicly available bulk RNA-seq data in NCBI's SRA. Users can download 
+    raw reads, preprocess them, map to a reference genome and transcriptome, 
+    and quantify the expression at the gene and transcript levels. 
+    The goal of bears is to make RNA-seq data analysis pipelines reproducible, 
+    with a framework built on state-of-the art methods and software tools, and 
+    all of that in the comfort of an R session.
+    
+- package: planttfhunter
+  type: software
+  chrono-order: 7
+  image: hexlogos/featured_planttfhunter_hex.png
+  path: https://bioconductor.org/packages/planttfhunter/
+  description: >
+    An R package to identify plant transcription factors (TFs) from 
+    protein sequence data and classify them into families and subfamilies 
+    using the classification scheme implemented in PlantTFDB. 
+    TFs are identified using pre-built hidden Markov model profiles for 
+    DNA-binding domains. Then, auxiliary and forbidden domains are used 
+    with DNA-binding domains to classify TFs into families and 
+    subfamilies (when applicable). Currently, TFs can be classified in 
+    58 different TF families/subfamilies.
+  
+- package: magrene
+  type: software
+  chrono-order: 6
+  image: hexlogos/featured_magrene_hex.png
+  path: https://bioconductor.org/packages/magrene/
+  description: >
+    An R package for the identification and analysis of graph motifs in 
+    (duplicated) gene regulatory networks (GRNs), including lambda, V, PPI V, 
+    delta, and bifan motifs. GRNs can be tested for motif enrichment by 
+    comparing motif frequencies to a null distribution generated from 
+    degree-preserving simulated GRNs. Motif frequencies can be analyzed in 
+    the context of gene duplications to explore the impact of small-scale 
+    and whole-genome duplications on gene regulatory networks. Finally, 
+    users can calculate interaction similarity for gene pairs based on 
+    the Sorensen-Dice similarity index.
+  
+- package: syntenet
+  type: software
+  chrono-order: 5
+  image: hexlogos/featured_syntenet_hex.png
+  path: https://bioconductor.org/packages/syntenet/
+  description: >
+    An R package to infer synteny networks from whole-genome protein sequences 
+    and analyze them. Anchor pairs are detected with the MCScanX algorithm, 
+    which was ported to this package with the Rcpp framework for R and C++ 
+    integration. Anchor pairs from synteny analyses are treated as an 
+    undirected unweighted graph (i.e., a synteny network), and users can 
+    perform: i. network clustering; ii. phylogenomic profiling (by identifying 
+    which species contain which clusters) and; iii. microsynteny-based 
+    phylogeny reconstruction with maximum likelihood.
+
+- package: SoyPestGCN
+  type: database
+  chrono-order: 4
+  image: hexlogos/featured_soypestgcn_hex.png
+  path: https://soypestgcn.venanciogroup.uenf.br
+  description: >
+    An R package that contains a Shiny app to let users explore a gene 
+    coexpression network inferred from RNA-seq data comprising soybean tissues 
+    infested with pests (i.e., insects and nematodes).
+  
+- package: SoyFungiGCN
+  type: database
+  chrono-order: 3
+  image: hexlogos/featured_soyfungigcn_hex.png
+  path: https://soyfungigcn.venanciogroup.uenf.br
+  description: >
+    An R package that contains a Shiny app to let users explore a 
+    gene coexpression network inferred from RNA-seq data comprising soybean 
+    tissues infected with phytopathogenic fungi.
+  
+- package: cageminer
+  type: software
+  chrono-order: 2
+  image: hexlogos/featured_cageminer_hex.png
+  path: https://bioconductor.org/packages/cageminer/
+  description: >
+    An R package to integrate GWAS-derived SNPs and coexpression networks to 
+    mine candidate genes associated with a particular phenotype using
+    guide genes. Candidate genes can be scored and ranked to select
+    promising targets for downstream experiments.
+
+- package: BioNERO
+  type: software
+  chrono-order: 1
+  image: hexlogos/featured_BioNERO_hex.png
+  path: https://bioconductor.org/packages/BioNERO/
+  description: >
+    An R package that aims to facilitate network analyses by 
+    integrating all standard analysis steps, including data preprocessing, 
+    inference of gene regulatory and coexpression network from expression data, 
+    functional analyses, and intra/interspecies network comparisons.

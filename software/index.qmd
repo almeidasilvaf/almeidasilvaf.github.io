@@ -1,13 +1,25 @@
 ---
 title: "Software & Data Products"
 listing:
-  contents: .
-  sort:
-    - "date desc"
-    - "title desc"
-  type: grid
-  filter-ui: false
-  image-height: 416px
-page-layout: full
+    type: table
+    contents: software.yml
+    sort: 
+      - "chrono-order desc"
+    filter-ui: false
+    sort-ui: false
+    image-height: 80px
+    page-size: 100
+    field-links: ["package"]
+    fields: ["package", "image", "description", "type"]
+    field-display-names: 
+      package: "Package"
+      description: "Description"
+      type: "Type"
+body-width: 1000px
+sidebar-width: 150px
+
 ---
+
+Below you can find a list of software tools and databases/web applications
+I have developed.
 
