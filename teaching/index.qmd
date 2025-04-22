@@ -1,12 +1,31 @@
 ---
 title: Teaching
-listing:
-  contents: .
-  sort:
-    - "date desc"
-    - "title desc"
-  type: grid
-  filter-ui: false
-  image-height: 300px
-page-layout: full
 ---
+
+## UGent courses
+
+Since 2023, I teach practical lessons in the following courses
+at Ghent University:
+
+- [C003709A - Evolutionary Biology](https://github.com/almeidasilvaf/CompEvoBio), Master's program in Bioinformatics
+- [C000500A - Bioinformatics 2](https://github.com/almeidasilvaf/BIOINF2), Master's program in Biochemistry and Biotechnology.
+
+<br>
+
+Below is a list of short courses (from 2 days to a week) I have taught.
+
+## 2025
+
+- [Bioconductor Kenya workshop](https://training.bioconductor.org/workshops/2025-03-Nairobi/index.html) -📍 Nairobi, Kenya
+
+## 2024
+
+- [Network Analysis in Systems Biology with R/Bioconductor](https://github.com/almeidasilvaf/NASB) - 📍 Online
+- [Network Analysis in R](https://github.com/almeidasilvaf/NAR) - 📍 Online
+- [Analysis and interpretation of bulk RNA-seq data using Bioconductor](https://bioconductor.github.io/2023-09-18-RNASeq-EuroBioc/) - 📍 Oxford, United Kingdom
+- [Single-cell RNA-seq analysis with R/Bioconductor](https://jserizay.com/scRNAseq_Physalia_2024/), 📍 Online
+
+## 2023
+
+- [Network Analysis in Systems Biology with R/Bioconductor](https://github.com/almeidasilvaf/NASB) - 📍 Online
+- [Analysis and interpretation of bulk RNA-seq data using Bioconductor](https://bioconductor.github.io/2023-09-18-RNASeq-EuroBioc/) -📍 Ghent, Belgium
