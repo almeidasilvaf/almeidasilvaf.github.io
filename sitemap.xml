@@ -1,63 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://almeidasilvaf.github.io/software/index.html</loc>
-    <lastmod>2025-04-22T12:40:45.145Z</lastmod>
-  </url>
-  <url>
-    <loc>https://almeidasilvaf.github.io/blog/2021-12-01-push_image_dockerhub/index.html</loc>
-    <lastmod>2025-04-22T12:40:45.119Z</lastmod>
-  </url>
-  <url>
-    <loc>https://almeidasilvaf.github.io/blog/2022-01-03-bioc_publications/index.html</loc>
-    <lastmod>2025-04-22T12:40:45.120Z</lastmod>
+    <loc>https://almeidasilvaf.github.io/publications/index.html</loc>
+    <lastmod>2025-05-04T07:03:53.094Z</lastmod>
   </url>
   <url>
     <loc>https://almeidasilvaf.github.io/teaching/index.html</loc>
-    <lastmod>2025-04-22T12:40:45.148Z</lastmod>
-  </url>
-  <url>
-    <loc>https://almeidasilvaf.github.io/index.html</loc>
-    <lastmod>2025-04-22T12:40:45.133Z</lastmod>
-  </url>
-  <url>
-    <loc>https://almeidasilvaf.github.io/talks/bioc2021/index.html</loc>
-    <lastmod>2025-04-22T12:40:45.145Z</lastmod>
-  </url>
-  <url>
-    <loc>https://almeidasilvaf.github.io/talks/pgce2021/index.html</loc>
-    <lastmod>2025-04-22T12:40:45.147Z</lastmod>
-  </url>
-  <url>
-    <loc>https://almeidasilvaf.github.io/publications/index.html</loc>
-    <lastmod>2025-04-22T12:40:45.133Z</lastmod>
-  </url>
-  <url>
-    <loc>https://almeidasilvaf.github.io/talks/index.html</loc>
-    <lastmod>2025-04-22T12:40:45.146Z</lastmod>
-  </url>
-  <url>
-    <loc>https://almeidasilvaf.github.io/talks/eurobioc2022/index.html</loc>
-    <lastmod>2025-04-22T12:40:45.146Z</lastmod>
-  </url>
-  <url>
-    <loc>https://almeidasilvaf.github.io/talks/sbv2021/index.html</loc>
-    <lastmod>2025-04-22T12:40:45.148Z</lastmod>
-  </url>
-  <url>
-    <loc>https://almeidasilvaf.github.io/about/index.html</loc>
-    <lastmod>2025-04-22T12:40:45.116Z</lastmod>
-  </url>
-  <url>
-    <loc>https://almeidasilvaf.github.io/cv/index.html</loc>
-    <lastmod>2025-04-22T12:40:45.127Z</lastmod>
+    <lastmod>2025-05-04T07:03:53.108Z</lastmod>
   </url>
   <url>
     <loc>https://almeidasilvaf.github.io/blog/index.html</loc>
-    <lastmod>2025-04-22T12:40:45.121Z</lastmod>
+    <lastmod>2025-05-04T07:03:53.082Z</lastmod>
+  </url>
+  <url>
+    <loc>https://almeidasilvaf.github.io/blog/2022-01-03-bioc_publications/index.html</loc>
+    <lastmod>2025-05-04T07:03:53.081Z</lastmod>
+  </url>
+  <url>
+    <loc>https://almeidasilvaf.github.io/software/index.html</loc>
+    <lastmod>2025-05-04T07:03:53.105Z</lastmod>
+  </url>
+  <url>
+    <loc>https://almeidasilvaf.github.io/talks/eurobioc2022/index.html</loc>
+    <lastmod>2025-05-04T07:03:53.107Z</lastmod>
+  </url>
+  <url>
+    <loc>https://almeidasilvaf.github.io/talks/pgce2021/index.html</loc>
+    <lastmod>2025-05-04T07:03:53.108Z</lastmod>
+  </url>
+  <url>
+    <loc>https://almeidasilvaf.github.io/talks/sbv2021/index.html</loc>
+    <lastmod>2025-05-04T07:03:53.108Z</lastmod>
+  </url>
+  <url>
+    <loc>https://almeidasilvaf.github.io/talks/bioc2021/index.html</loc>
+    <lastmod>2025-05-04T07:03:53.106Z</lastmod>
+  </url>
+  <url>
+    <loc>https://almeidasilvaf.github.io/talks/index.html</loc>
+    <lastmod>2025-05-04T07:03:53.107Z</lastmod>
+  </url>
+  <url>
+    <loc>https://almeidasilvaf.github.io/about/index.html</loc>
+    <lastmod>2025-05-04T07:03:53.077Z</lastmod>
   </url>
   <url>
     <loc>https://almeidasilvaf.github.io/blog/2022-05-06-upgrading_R/index.html</loc>
-    <lastmod>2025-04-22T12:40:45.120Z</lastmod>
+    <lastmod>2025-05-04T07:03:53.081Z</lastmod>
+  </url>
+  <url>
+    <loc>https://almeidasilvaf.github.io/blog/2021-12-01-push_image_dockerhub/index.html</loc>
+    <lastmod>2025-05-04T07:03:53.080Z</lastmod>
+  </url>
+  <url>
+    <loc>https://almeidasilvaf.github.io/index.html</loc>
+    <lastmod>2025-05-04T07:03:53.094Z</lastmod>
+  </url>
+  <url>
+    <loc>https://almeidasilvaf.github.io/cv/index.html</loc>
+    <lastmod>2025-05-04T07:03:53.088Z</lastmod>
   </url>
 </urlset>

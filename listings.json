@@ -1,5 +1,13 @@
 [
   {
+    "listing": "/blog/index.html",
+    "items": [
+      "/blog/2022-01-03-bioc_publications/index.html",
+      "/blog/2022-05-06-upgrading_R/index.html",
+      "/blog/2021-12-01-push_image_dockerhub/index.html"
+    ]
+  },
+  {
     "listing": "/software/index.html",
     "items": []
   },
@@ -10,14 +18,6 @@
       "/talks/sbv2021/index.html",
       "/talks/pgce2021/index.html",
       "/talks/bioc2021/index.html"
-    ]
-  },
-  {
-    "listing": "/blog/index.html",
-    "items": [
-      "/blog/2022-01-03-bioc_publications/index.html",
-      "/blog/2022-05-06-upgrading_R/index.html",
-      "/blog/2021-12-01-push_image_dockerhub/index.html"
     ]
   }
 ]
