@@ -1,10 +1,11 @@
 [
   {
-    "listing": "/blog/index.html",
+    "listing": "/talks/index.html",
     "items": [
-      "/blog/2022-01-03-bioc_publications/index.html",
-      "/blog/2022-05-06-upgrading_R/index.html",
-      "/blog/2021-12-01-push_image_dockerhub/index.html"
+      "/talks/eurobioc2022/index.html",
+      "/talks/sbv2021/index.html",
+      "/talks/pgce2021/index.html",
+      "/talks/bioc2021/index.html"
     ]
   },
   {
@@ -12,12 +13,11 @@
     "items": []
   },
   {
-    "listing": "/talks/index.html",
+    "listing": "/blog/index.html",
     "items": [
-      "/talks/eurobioc2022/index.html",
-      "/talks/sbv2021/index.html",
-      "/talks/pgce2021/index.html",
-      "/talks/bioc2021/index.html"
+      "/blog/2022-01-03-bioc_publications/index.html",
+      "/blog/2022-05-06-upgrading_R/index.html",
+      "/blog/2021-12-01-push_image_dockerhub/index.html"
     ]
   }
 ]
