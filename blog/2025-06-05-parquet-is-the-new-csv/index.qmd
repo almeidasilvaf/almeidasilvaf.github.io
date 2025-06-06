@@ -1,0 +1,195 @@
+---
+title: "Parquet is the new TSV"
+description: "Larger-than-memory data access with .parquet files"
+date: 2025-06-05
+author: 
+  - name: Fabrício Almeida-Silva
+    orcid: 0000-0002-5314-2964
+draft: false
+image: fast.gif
+categories:
+  - bioinformatics
+  - database
+execute: 
+  freeze: true
+---
+
+## Motivation
+
+For programming languages that store data in memory (e.g. R and Python),
+working with large data files can be a problem. For example, if you need
+to subset a few rows from a large table stored in a 5 GB TSV/CSV file,
+you will first need to read the entire table, then subset the rows you want.
+If your data is larger than your memory capacity, reading the entire data set
+is not possible. [Apache Parquet](https://parquet.apache.org/) is a 
+column-oriented file format (similar to TSV/CSV) designed for efficient 
+data storage and retrieval, and it can be used by packages such as
+[arrow](https://arrow.apache.org/docs/r/) to analyze larger-than-memory
+data sets. Here, I will demonstrate the advantages of storing large data
+in Parquet files (compared to TSV/CSV files), and benchmark data retrieval
+using Parquet files and other alternatives.
+
+```{r}
+#| message: false
+#| warning: false
+
+# Load required packages
+library(tidyverse)
+library(arrow)
+library(duckdb)
+```
+
+## Example data
+
+[PLAZA](https://bioinformatics.psb.ugent.be/plaza.dev/instances/dicots_05/)
+is a database for plant comparative genomics data. Among many important 
+features and data resources, PLAZA provides orthologous relationships for
+plant genes using differnent 'orthology types'. 
+Here, I will use orthologous genes obtained with the 
+best-hit-and-inparalogs (BHI) type. This is a large (3 GB) CSV file
+containing the orthologs for all genes in all species in PLAZA Dicots 5.0.
+For example, if you have a gene of interest in *Arabidopsis thaliana*, you
+can use this file to find the corresponding (orthologous) gene(s) in other
+plants for comparative studies.
+
+Let's first download the file to a temporary directory.
+
+```{r}
+# Download file
+options(timeout = 1e6) # download might take a while
+
+csv_file <- file.path(tempdir(), "plaza_dicots_bhif.csv.gz")
+download.file(
+    url = "https://ftp.psb.ugent.be/pub/plaza/plaza_public_dicots_05/IntegrativeOrthology/integrative_orthology.BHIF.csv.gz",
+    destfile = csv_file
+)
+```
+
+## From CSV to Parquet
+
+To create a Parquet file, we could read the CSV file to the R session 
+and export it as .parquet file using the `r BiocStyle::CRANpkg("arrow")` or
+`r BiocStyle::CRANpkg("nanoparquet")` packages. This works well if you have
+access to an HPC or a powerful server. If you don't have access to a machine
+with more memory, don't panic: you can use the `r BiocStyle::CRANpkg("duckdb")`
+package to create a Parquet file from a CSV file without having to load it 
+first. This can be achieved with the following code:
+
+```{r}
+#| output: false
+
+# Directly convert CSV to Parquet using {duckdb}
+con <- dbConnect(duckdb())
+parquet_file <- file.path(tempdir(), "plaza_dicots_bhif.parquet")
+
+query <- paste0("
+  COPY (SELECT * FROM '", csv_file, "') 
+  TO '", parquet_file, "' (FORMAT PARQUET)
+")
+dbExecute(con, query)
+dbDisconnect(con)
+```
+
+In terms of storage, a Parquet file is comparable to a gzipped CSV file.
+
+```{r}
+# Inspect file sizes
+data.frame(
+    Format = c("CSV", "Parquet"),
+    Size = fs::file_size(c(csv_file, parquet_file)),
+    row.names = NULL
+)
+```
+
+## Larger-than-memory data access with __{arrow}__
+
+Once you have tabular data in a Parquet file, you can use 
+the `r BiocStyle::CRANpkg("arrow")` package to 'connect' to the file,
+perform some data transformation (e.g., filter rows, subset columns, 
+summarize data by groups, etc) using `r BiocStyle::CRANpkg("tidyverse")` verbs, 
+and read only the output of the data transformation. 
+If your familiar with SQL, this is similar to performing SQL queries without
+loading the data in memory.
+
+To demonstrate how this works, we will extract orthologs (i.e., 
+best-hits-and-inparalogs) of the gene *AT2G14610*, which encodes a 
+pathogenesis-related protein 1 (PR-1) in *Arabidopsis thaliana*.
+
+```{r}
+# Connect to the Parquet file
+bhi <- arrow::open_dataset(parquet_file)
+bhi
+```
+
+Once we connect to the Parquet file, we can see that it contains
+a table with four columns named `#query_gene`, `query_species`, 
+`orthologous_gene`, and `orthologous_species`. Now, we will filter the table
+to keep only rows that have 'AT2G14610' in column `#query_gene`, and collect
+the results to the R session.
+
+```{r}
+# Extract best-hits-and-inparalogs of 'AT2G14610'
+pr1_orthologs <- bhi |>
+    filter(`#query_gene` == "AT2G14610") |>
+    collect()
+
+head(pr1_orthologs)
+```
+
+Brilliant, isn't it? Using Parquet files, we can seamlessly subset a table
+that is too large to fit in memory, solving the problem of larger-than-memory
+data analysis.
+
+## Benchmark
+
+Now, you might be asking yourself: 
+
+> Do I need Parquet files? Why not extract the rows I want from the CSV file using Bash code?
+
+That is indeed possible. In your terminal, you can use Bash code to read the
+CSV file line by line and search for rows that match our condition (i.e.,
+'AT2G14610' in column `#query_gene`). The Bash code would look something like
+this:
+
+```{bash}
+#| eval: false
+
+zcat file.csv.gz | grep -E '^#query|^AT2G14610' > filtered.csv
+```
+
+Let's compare the performance of the Bash-based approach with the
+`r BiocStyle::CRANpkg("arrow")`-based approach. Of note, the .csv.gz file
+from PLAZA is actually a TSV file, not CSV, but that doesn't impact 
+performance.
+
+```{r}
+# Wrapper function for the Bash-based approach
+filter_bash <- function() {
+    outfile <- file.path(tempdir(), "output.tsv")
+    args <- c(csv_file, " | grep -E '^#query|^AT2G14610' > ", outfile)
+    system2("zcat", args = args)
+    
+    df <- read_tsv(outfile, show_col_types = FALSE) |> as.data.frame()
+    return(df)
+}
+
+# Benchmark
+bnch <- bench::mark(
+    arrow = bhi |>
+        filter(`#query_gene` == "AT2G14610") |>
+        collect() |>
+        as.data.frame(),
+    bash = filter_bash()
+)
+
+bnch
+```
+
+The benchmark shows that the `r BiocStyle::CRANpkg("arrow")`-based approach
+(using Parquet files) is **much** faster than the Bash approach 
+(milliseconds vs one minute!). Hence, developers and maintainers of databases
+that provide users with large data files should consider providing
+Parquet files besides traditional CSV/TSV files. In the era of machine learning,
+AI, and large data, I believe this will make data analysis workflows much 
+faster and more efficient.
+
