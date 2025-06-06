@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Fabrício Almeida-Silva">
-<meta name="dcterms.date" content="2022-05-06">
-<meta name="description" content="Learn how to do a painless upgrade of your R version">
+<meta name="dcterms.date" content="2025-06-05">
+<meta name="description" content="Larger-than-memory data access with .parquet files">
 
-<title>Upgrading R version with all your packages – Fabrício Almeida-Silva</title>
+<title>Parquet is the new TSV – Fabrício Almeida-Silva</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -122,7 +122,7 @@ gtag('config', 'G-9TMPT34HZ4', { 'anonymize_ip': true});
 <link rel="stylesheet" href="../../styles.css">
 <meta name="twitter:title" content="Fabrício Almeida-Silva">
 <meta name="twitter:description" content="Hi, I’m Fabrício! Welcome to my personal website and blog.">
-<meta name="twitter:image" content="https://almeidasilvaf.github.io/blog/2022-05-06-upgrading_R/upgrade.gif">
+<meta name="twitter:image" content="https://almeidasilvaf.github.io/blog/2025-06-05-parquet-is-the-new-csv/fast.gif">
 <meta name="twitter:creator" content="@almeidasilvaf">
 <meta name="twitter:site" content="@almeidasilvaf">
 <meta name="twitter:card" content="summary_large_image">
@@ -201,8 +201,10 @@ gtag('config', 'G-9TMPT34HZ4', { 'anonymize_ip': true});
    
   <ul>
   <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation">Motivation</a></li>
-  <li><a href="#taking-a-picture-of-your-current-r-package-universe" id="toc-taking-a-picture-of-your-current-r-package-universe" class="nav-link" data-scroll-target="#taking-a-picture-of-your-current-r-package-universe">‘Taking a picture’ of your current R package universe</a></li>
-  <li><a href="#session-information" id="toc-session-information" class="nav-link" data-scroll-target="#session-information">Session information</a></li>
+  <li><a href="#example-data" id="toc-example-data" class="nav-link" data-scroll-target="#example-data">Example data</a></li>
+  <li><a href="#from-csv-to-parquet" id="toc-from-csv-to-parquet" class="nav-link" data-scroll-target="#from-csv-to-parquet">From CSV to Parquet</a></li>
+  <li><a href="#larger-than-memory-data-access-with-arrow" id="toc-larger-than-memory-data-access-with-arrow" class="nav-link" data-scroll-target="#larger-than-memory-data-access-with-arrow">Larger-than-memory data access with <strong>{arrow}</strong></a></li>
+  <li><a href="#benchmark" id="toc-benchmark" class="nav-link" data-scroll-target="#benchmark">Benchmark</a></li>
   </ul>
 </nav>
     </div>
@@ -211,16 +213,16 @@ gtag('config', 'G-9TMPT34HZ4', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Upgrading R version with all your packages</h1>
+<h1 class="title">Parquet is the new TSV</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">rstats</div>
-    <div class="quarto-category">project management</div>
+    <div class="quarto-category">bioinformatics</div>
+    <div class="quarto-category">database</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    Learn how to do a painless upgrade of your R version
+    Larger-than-memory data access with .parquet files
   </div>
 </div>
 
@@ -237,7 +239,7 @@ gtag('config', 'G-9TMPT34HZ4', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 6, 2022</p>
+      <p class="date">June 5, 2025</p>
     </div>
   </div>
   
@@ -251,182 +253,139 @@ gtag('config', 'G-9TMPT34HZ4', { 'anonymize_ip': true});
 
 <section id="motivation" class="level2">
 <h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
-<p>Have you ever upgraded R and lost all of your packages? As a consequence, you had to install them again one by one. One. By. One. Oh, man… Boring, huh? Here, I will guide you on how to upgrade your R version and reinstall your packages automatically. This way, you can spend your time on what really matters: writing some cool R code! This post is inspired by <a href="https://gist.github.com/jthomasmock/65366b9c1fd750347b9de1d2c80ed827">this Gist code</a>.</p>
-</section>
-<section id="taking-a-picture-of-your-current-r-package-universe" class="level2">
-<h2 class="anchored" data-anchor-id="taking-a-picture-of-your-current-r-package-universe">‘Taking a picture’ of your current R package universe</h2>
-<p>The first thing you need to do before upgrading your R version is to save a list of all packages you have installed. Not only must you have package names, but also from where they were downloaded (e.g., CRAN, Bioconductor, GitHub, etc.). The code below will create a data frame of packages and their sources, and save it as a .csv file in your current working directory.</p>
-<p><strong>NOTE:</strong> You need to have the packages <code>tidyverse</code> and <code>sessioninfo</code> installed.</p>
+<p>For programming languages that store data in memory (e.g.&nbsp;R and Python), working with large data files can be a problem. For example, if you need to subset a few rows from a large table stored in a 5 GB TSV/CSV file, you will first need to read the entire table, then subset the rows you want. If your data is larger than your memory capacity, reading the entire data set is not possible. <a href="https://parquet.apache.org/">Apache Parquet</a> is a column-oriented file format (similar to TSV/CSV) designed for efficient data storage and retrieval, and it can be used by packages such as <a href="https://arrow.apache.org/docs/r/">arrow</a> to analyze larger-than-memory data sets. Here, I will demonstrate the advantages of storing large data in Parquet files (compared to TSV/CSV files), and benchmark data retrieval using Parquet files and other alternatives.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#----Create a data frame with all installed packages and their sources---------</span></span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load required packages</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>all_pkg <span class="ot">&lt;-</span> sessioninfo<span class="sc">::</span><span class="fu">session_info</span>(<span class="st">"installed"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pluck</span>(<span class="st">"packages"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>()</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Classify sources: CRAN, Bioconductor, GitHub, r-universe, and local</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>split_repo <span class="ot">&lt;-</span> all_pkg <span class="sc">|&gt;</span> </span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">repo =</span> <span class="fu">case_when</span>(</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        <span class="fu">str_detect</span>(source, <span class="st">"Bioconductor"</span>) <span class="sc">~</span> <span class="st">"Bioconductor"</span>,</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>        <span class="fu">str_detect</span>(source, <span class="st">"CRAN"</span>) <span class="sc">~</span> <span class="st">"CRAN"</span>,</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>        <span class="fu">str_detect</span>(source, <span class="st">"Github"</span>) <span class="sc">~</span> <span class="st">"GitHub"</span>,</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>        <span class="fu">str_detect</span>(source, <span class="st">"local"</span>) <span class="sc">~</span> <span class="st">"local"</span>,</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>        <span class="fu">str_detect</span>(source, <span class="st">"r-universe"</span>) <span class="sc">~</span> <span class="st">"r-universe"</span>,</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>        <span class="cn">TRUE</span> <span class="sc">~</span> <span class="cn">NA_character_</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    ), <span class="at">.before =</span> <span class="st">"source"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(package, repo)</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(split_repo)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 2
-  package repo        
-  &lt;chr&gt;   &lt;chr&gt;       
-1 abind   CRAN        
-2 ade4    CRAN        
-3 afex    CRAN        
-4 affy    Bioconductor
-5 affyio  Bioconductor
-6 airway  Bioconductor</code></pre>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(arrow)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(duckdb)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-<p>You can then export this data frame to a .csv file as follows:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>split_repo <span class="sc">|&gt;</span> </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">write_csv</span>(<span class="st">"packages.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Now that you have a list of all your packages and their sources, you can install the latest version of R. That will vary according to the operating system you use, so you’d better go to the <a href="https://cran.rstudio.com/">CRAN page</a> and see the instructions on how to upgrade R for your case. In my case, on a Ubuntu 20.04 LTS machine, I just ran:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get update</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get upgrade</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Once you’re done upgrading your R version, open a new R session (now with the latest version) and run the following code to install all your beloved packages:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#----First, install tidyverse, remotes, and BiocManager-------------------------</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(<span class="st">"tidyverse"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(<span class="st">"remotes"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">install.packages</span>(<span class="st">"remotes"</span>)</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(<span class="st">"BiocManager"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">install.packages</span>(<span class="st">"BiocManager"</span>)</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co">#----Read data frame with package names and sources-----------------------------</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>all_pkg <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"packages.csv"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="co">#----Reinstall packages---------------------------------------------------------</span></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="do">## CRAN packages</span></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>cran_pkg <span class="ot">&lt;-</span> all_pkg <span class="sc">|&gt;</span> </span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(repo <span class="sc">==</span> <span class="st">"CRAN"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">pull</span>(package)</span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>cran_pkg <span class="sc">|&gt;</span></span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>()</span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="do">## Bioconductor packages</span></span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>bioc_pkg <span class="ot">&lt;-</span> all_pkg <span class="sc">|&gt;</span></span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">filter</span>(repo <span class="sc">==</span> <span class="st">"Bioconductor"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">pull</span>(package)</span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>bioc_pkg <span class="sc">|&gt;</span></span>
-<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>    BiocManager<span class="sc">::</span><span class="fu">install</span>()</span>
-<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a><span class="do">## R-Universe</span></span>
-<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>runi_pkg <span class="ot">&lt;-</span> all_pkg <span class="sc">|&gt;</span></span>
-<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">filter</span>(repo <span class="sc">==</span> <span class="st">"r-universe"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">pull</span>(package)</span>
-<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>runi_pkg <span class="sc">|&gt;</span></span>
-<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>    <span class="fu">install.packages</span>(<span class="at">repos =</span> <span class="st">"https://ropensci.r-universe.dev"</span>)</span>
-<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a><span class="do">## GitHub packages - only list packages</span></span>
-<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a>gh_pkg <span class="ot">&lt;-</span> all_pkg <span class="sc">|&gt;</span></span>
-<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">filter</span>(repo <span class="sc">==</span> <span class="st">"GitHub"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">pull</span>(package)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>For GitHub packages, I suggest looking at them one by one (there shouldn’t be many of them) and deciding which ones you want to install, as many of them are usually unstable and installed for testing purposes. Once you have identified which ones you want to install, you can do it with <code>remotes::install_github()</code>.</p>
-<p>And that’s all! Whenever you need to upgrade R, just run the same code again and you’re all set. I hope this post helped you!</p>
 </section>
-<section id="session-information" class="level2">
-<h2 class="anchored" data-anchor-id="session-information">Session information</h2>
+<section id="example-data" class="level2">
+<h2 class="anchored" data-anchor-id="example-data">Example data</h2>
+<p><a href="https://bioinformatics.psb.ugent.be/plaza.dev/instances/dicots_05/">PLAZA</a> is a database for plant comparative genomics data. Among many important features and data resources, PLAZA provides orthologous relationships for plant genes using differnent ‘orthology types’. Here, I will use orthologous genes obtained with the best-hit-and-inparalogs (BHI) type. This is a large (3 GB) CSV file containing the orthologs for all genes in all species in PLAZA Dicots 5.0. For example, if you have a gene of interest in <em>Arabidopsis thaliana</em>, you can use this file to find the corresponding (orthologous) gene(s) in other plants for comparative studies.</p>
+<p>Let’s first download the file to a temporary directory.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>sessioninfo<span class="sc">::</span><span class="fu">session_info</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Download file</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">timeout =</span> <span class="fl">1e6</span>) <span class="co"># download might take a while</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>csv_file <span class="ot">&lt;-</span> <span class="fu">file.path</span>(<span class="fu">tempdir</span>(), <span class="st">"plaza_dicots_bhif.csv.gz"</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">url =</span> <span class="st">"https://ftp.psb.ugent.be/pub/plaza/plaza_public_dicots_05/IntegrativeOrthology/integrative_orthology.BHIF.csv.gz"</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">destfile =</span> csv_file</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="from-csv-to-parquet" class="level2">
+<h2 class="anchored" data-anchor-id="from-csv-to-parquet">From CSV to Parquet</h2>
+<p>To create a Parquet file, we could read the CSV file to the R session and export it as .parquet file using the <em><a href="https://CRAN.R-project.org/package=arrow">arrow</a></em> or <em><a href="https://CRAN.R-project.org/package=nanoparquet">nanoparquet</a></em> packages. This works well if you have access to an HPC or a powerful server. If you don’t have access to a machine with more memory, don’t panic: you can use the <em><a href="https://CRAN.R-project.org/package=duckdb">duckdb</a></em> package to create a Parquet file from a CSV file without having to load it first. This can be achieved with the following code:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Directly convert CSV to Parquet using {duckdb}</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(<span class="fu">duckdb</span>())</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>parquet_file <span class="ot">&lt;-</span> <span class="fu">file.path</span>(<span class="fu">tempdir</span>(), <span class="st">"plaza_dicots_bhif.parquet"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>query <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="st">  COPY (SELECT * FROM '"</span>, csv_file, <span class="st">"') </span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="st">  TO '"</span>, parquet_file, <span class="st">"' (FORMAT PARQUET)</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="st">"</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">dbExecute</span>(con, query)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">dbDisconnect</span>(con)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>In terms of storage, a Parquet file is comparable to a gzipped CSV file.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Inspect file sizes</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">Format =</span> <span class="fu">c</span>(<span class="st">"CSV"</span>, <span class="st">"Parquet"</span>),</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">Size =</span> fs<span class="sc">::</span><span class="fu">file_size</span>(<span class="fu">c</span>(csv_file, parquet_file)),</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">row.names =</span> <span class="cn">NULL</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>─ Session info ───────────────────────────────────────────────────────────────
- setting  value
- version  R version 4.4.1 (2024-06-14)
- os       Ubuntu 22.04.4 LTS
- system   x86_64, linux-gnu
- ui       X11
- language (EN)
- collate  en_US.UTF-8
- ctype    en_US.UTF-8
- tz       Europe/Brussels
- date     2025-06-06
- pandoc   3.2 @ /usr/lib/rstudio/resources/app/bin/quarto/bin/tools/x86_64/ (via rmarkdown)
-
-─ Packages ───────────────────────────────────────────────────────────────────
- package     * version date (UTC) lib source
- bit           4.0.5   2022-11-15 [1] CRAN (R 4.4.1)
- bit64         4.0.5   2020-08-30 [1] CRAN (R 4.4.1)
- cli           3.6.3   2024-06-21 [1] CRAN (R 4.4.1)
- colorspace    2.1-0   2023-01-23 [1] CRAN (R 4.4.1)
- crayon        1.5.3   2024-06-20 [1] CRAN (R 4.4.1)
- digest        0.6.36  2024-06-23 [1] CRAN (R 4.4.1)
- dplyr       * 1.1.4   2023-11-17 [1] CRAN (R 4.4.1)
- evaluate      0.24.0  2024-06-10 [1] CRAN (R 4.4.1)
- fastmap       1.2.0   2024-05-15 [1] CRAN (R 4.4.1)
- forcats     * 1.0.0   2023-01-29 [1] CRAN (R 4.4.1)
- generics      0.1.3   2022-07-05 [1] CRAN (R 4.4.1)
- ggplot2     * 3.5.1   2024-04-23 [1] CRAN (R 4.4.1)
- glue          1.8.0   2024-09-30 [1] https://cran.r-universe.dev (R 4.4.1)
- gtable        0.3.5   2024-04-22 [1] CRAN (R 4.4.1)
- hms           1.1.3   2023-03-21 [1] CRAN (R 4.4.1)
- htmltools     0.5.8.1 2024-04-04 [1] CRAN (R 4.4.1)
- htmlwidgets   1.6.4   2023-12-06 [1] CRAN (R 4.4.1)
- jsonlite      1.8.8   2023-12-04 [1] CRAN (R 4.4.1)
- knitr         1.48    2024-07-07 [1] CRAN (R 4.4.1)
- lifecycle     1.0.4   2023-11-07 [1] CRAN (R 4.4.1)
- lubridate   * 1.9.3   2023-09-27 [1] CRAN (R 4.4.1)
- magrittr      2.0.3   2022-03-30 [1] CRAN (R 4.4.1)
- munsell       0.5.1   2024-04-01 [1] CRAN (R 4.4.1)
- pillar        1.10.2  2025-04-05 [1] https://cran.r-universe.dev (R 4.4.1)
- pkgconfig     2.0.3   2019-09-22 [1] CRAN (R 4.4.1)
- purrr       * 1.0.2   2023-08-10 [1] CRAN (R 4.4.1)
- R6            2.5.1   2021-08-19 [1] CRAN (R 4.4.1)
- readr       * 2.1.5   2024-01-10 [1] CRAN (R 4.4.1)
- rlang         1.1.4   2024-06-04 [1] CRAN (R 4.4.1)
- rmarkdown     2.27    2024-05-17 [1] CRAN (R 4.4.1)
- rstudioapi    0.16.0  2024-03-24 [1] CRAN (R 4.4.1)
- scales        1.3.0   2023-11-28 [1] CRAN (R 4.4.1)
- sessioninfo   1.2.2   2021-12-06 [1] CRAN (R 4.4.1)
- stringi       1.8.4   2024-05-06 [1] CRAN (R 4.4.1)
- stringr     * 1.5.1   2023-11-14 [1] CRAN (R 4.4.1)
- tibble      * 3.2.1   2023-03-20 [1] CRAN (R 4.4.1)
- tidyr       * 1.3.1   2024-01-24 [1] CRAN (R 4.4.1)
- tidyselect    1.2.1   2024-03-11 [1] CRAN (R 4.4.1)
- tidyverse   * 2.0.0   2023-02-22 [1] CRAN (R 4.4.1)
- timechange    0.3.0   2024-01-18 [1] CRAN (R 4.4.1)
- tzdb          0.4.0   2023-05-12 [1] CRAN (R 4.4.1)
- utf8          1.2.4   2023-10-22 [1] CRAN (R 4.4.1)
- vctrs         0.6.5   2023-12-01 [1] CRAN (R 4.4.1)
- vroom         1.6.5   2023-12-05 [1] CRAN (R 4.4.1)
- withr         3.0.0   2024-01-16 [1] CRAN (R 4.4.1)
- xfun          0.51    2025-02-19 [1] CRAN (R 4.4.1)
- yaml          2.3.9   2024-07-05 [1] CRAN (R 4.4.1)
-
- [1] /home/faalm/R/x86_64-pc-linux-gnu-library/4.4
- [2] /usr/local/lib/R/site-library
- [3] /usr/lib/R/site-library
- [4] /usr/lib/R/library
-
-──────────────────────────────────────────────────────────────────────────────</code></pre>
+<pre><code>   Format  Size
+1     CSV 3.03G
+2 Parquet 3.67G</code></pre>
 </div>
 </div>
+</section>
+<section id="larger-than-memory-data-access-with-arrow" class="level2">
+<h2 class="anchored" data-anchor-id="larger-than-memory-data-access-with-arrow">Larger-than-memory data access with <strong>{arrow}</strong></h2>
+<p>Once you have tabular data in a Parquet file, you can use the <em><a href="https://CRAN.R-project.org/package=arrow">arrow</a></em> package to ‘connect’ to the file, perform some data transformation (e.g., filter rows, subset columns, summarize data by groups, etc) using <em><a href="https://CRAN.R-project.org/package=tidyverse">tidyverse</a></em> verbs, and read only the output of the data transformation. If your familiar with SQL, this is similar to performing SQL queries without loading the data in memory.</p>
+<p>To demonstrate how this works, we will extract orthologs (i.e., best-hits-and-inparalogs) of the gene <em>AT2G14610</em>, which encodes a pathogenesis-related protein 1 (PR-1) in <em>Arabidopsis thaliana</em>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Connect to the Parquet file</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>bhi <span class="ot">&lt;-</span> arrow<span class="sc">::</span><span class="fu">open_dataset</span>(parquet_file)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>bhi</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>FileSystemDataset with 1 Parquet file
+4 columns
+#query_gene: string
+query_species: string
+orthologous_gene: string
+orthologous_species: string</code></pre>
+</div>
+</div>
+<p>Once we connect to the Parquet file, we can see that it contains a table with four columns named <code>#query_gene</code>, <code>query_species</code>, <code>orthologous_gene</code>, and <code>orthologous_species</code>. Now, we will filter the table to keep only rows that have ‘AT2G14610’ in column <code>#query_gene</code>, and collect the results to the R session.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract best-hits-and-inparalogs of 'AT2G14610'</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>pr1_orthologs <span class="ot">&lt;-</span> bhi <span class="sc">|&gt;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="st">`</span><span class="at">#query_gene</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"AT2G14610"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">collect</span>()</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(pr1_orthologs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 4
+  `#query_gene` query_species orthologous_gene               orthologous_species
+  &lt;chr&gt;         &lt;chr&gt;         &lt;chr&gt;                          &lt;chr&gt;              
+1 AT2G14610     ath           AagrBONN_evm.TU.Sc2ySwM_228.2… aag                
+2 AT2G14610     ath           Aa31LG2G16880                  aar                
+3 AT2G14610     ath           Aa31LG2G16870                  aar                
+4 AT2G14610     ath           Atru.chr5.2212                 acertr             
+5 AT2G14610     ath           Actinidia00340                 ach                
+6 AT2G14610     ath           AL3G46130                      aly                </code></pre>
+</div>
+</div>
+<p>Brilliant, isn’t it? Using Parquet files, we can seamlessly subset a table that is too large to fit in memory, solving the problem of larger-than-memory data analysis.</p>
+</section>
+<section id="benchmark" class="level2">
+<h2 class="anchored" data-anchor-id="benchmark">Benchmark</h2>
+<p>Now, you might be asking yourself:</p>
+<blockquote class="blockquote">
+<p>Do I need Parquet files? Why not extract the rows I want from the CSV file using Bash code?</p>
+</blockquote>
+<p>That is indeed possible. In your terminal, you can use Bash code to read the CSV file line by line and search for rows that match our condition (i.e., ‘AT2G14610’ in column <code>#query_gene</code>). The Bash code would look something like this:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">zcat</span> file.csv.gz <span class="kw">|</span> <span class="fu">grep</span> <span class="at">-E</span> <span class="st">'^#query|^AT2G14610'</span> <span class="op">&gt;</span> filtered.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Let’s compare the performance of the Bash-based approach with the <em><a href="https://CRAN.R-project.org/package=arrow">arrow</a></em>-based approach. Of note, the .csv.gz file from PLAZA is actually a TSV file, not CSV, but that doesn’t impact performance.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Wrapper function for the Bash-based approach</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>filter_bash <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    outfile <span class="ot">&lt;-</span> <span class="fu">file.path</span>(<span class="fu">tempdir</span>(), <span class="st">"output.tsv"</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    args <span class="ot">&lt;-</span> <span class="fu">c</span>(csv_file, <span class="st">" | grep -E '^#query|^AT2G14610' &gt; "</span>, outfile)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">system2</span>(<span class="st">"zcat"</span>, <span class="at">args =</span> args)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    df <span class="ot">&lt;-</span> <span class="fu">read_tsv</span>(outfile, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span> <span class="fu">as.data.frame</span>()</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(df)</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Benchmark</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>bnch <span class="ot">&lt;-</span> bench<span class="sc">::</span><span class="fu">mark</span>(</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">arrow =</span> bhi <span class="sc">|&gt;</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>        <span class="fu">filter</span>(<span class="st">`</span><span class="at">#query_gene</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"AT2G14610"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>        <span class="fu">collect</span>() <span class="sc">|&gt;</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>        <span class="fu">as.data.frame</span>(),</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">bash =</span> <span class="fu">filter_bash</span>()</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>bnch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 6
+  expression      min   median `itr/sec` mem_alloc `gc/sec`
+  &lt;bch:expr&gt; &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;
+1 arrow        29.8ms   33.8ms   27.2       58.6KB     4.53
+2 bash          58.3s    58.3s    0.0171     1.8MB     0   </code></pre>
+</div>
+</div>
+<p>The benchmark shows that the <em><a href="https://CRAN.R-project.org/package=arrow">arrow</a></em>-based approach (using Parquet files) is <strong>much</strong> faster than the Bash approach (milliseconds vs one minute!). Hence, developers and maintainers of databases that provide users with large data files should consider providing Parquet files besides traditional CSV/TSV files. In the era of machine learning, AI, and large data, I believe this will make data analysis workflows much faster and more efficient.</p>
 
 
 </section>
@@ -831,35 +790,6 @@ gtag('config', 'G-9TMPT34HZ4', { 'anonymize_ip': true});
     }
   });
   </script>
-<input type="hidden" id="giscus-base-theme" value="light">
-<input type="hidden" id="giscus-alt-theme" value="dark">
-<script>
-  function loadGiscus() {
-    // Function to get the theme based on body class
-    const getTheme = () => {
-      let baseTheme = document.getElementById('giscus-base-theme').value;
-      let altTheme = document.getElementById('giscus-alt-theme').value;
-      return document.body.classList.contains('quarto-dark') ? altTheme : baseTheme;
-    };
-    const script = document.createElement("script");
-    script.src = "https://giscus.app/client.js";
-    script.async = true;
-    script.dataset.repo = "almeidasilvaf/blogcomments";
-    script.dataset.repoId = "R_kgDOJuYlZg";
-    script.dataset.category = "General";
-    script.dataset.categoryId = "DIC_kwDOJuYlZs4CXJi8";
-    script.dataset.mapping = "title";
-    script.dataset.reactionsEnabled = "1";
-    script.dataset.emitMetadata = "0";
-    script.dataset.inputPosition = "top";
-    script.dataset.theme = getTheme();
-    script.dataset.lang = "en";
-    script.crossOrigin = "anonymous";
-    // Append the script to the desired div instead of at the end of the body
-    document.getElementById("quarto-content").appendChild(script);
-  }
-  loadGiscus();
-</script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
