@@ -1,5 +1,9 @@
 [
   {
+    "listing": "/software/index.html",
+    "items": []
+  },
+  {
     "listing": "/talks/index.html",
     "items": [
       "/talks/eurobioc2022/index.html",
@@ -7,10 +11,6 @@
       "/talks/pgce2021/index.html",
       "/talks/bioc2021/index.html"
     ]
-  },
-  {
-    "listing": "/software/index.html",
-    "items": []
   },
   {
     "listing": "/blog/index.html",
