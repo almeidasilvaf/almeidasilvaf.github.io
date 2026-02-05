@@ -25,7 +25,7 @@ about:
 ```
 
 
-I am a PhD student in Bioinformatics at Ghent University (Belgium) supervised by 
+I am a postdoctoral fellow at Ghent University (Belgium) supervised by 
 [Dr. Yves Van de Peer](https://www.vandepeerlab.be/), and I conduct my research
 at the VIB Center for Plant Systems Biology.
 I am particularly interested in using and developing network-based approaches 

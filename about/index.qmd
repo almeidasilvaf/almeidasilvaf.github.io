@@ -60,17 +60,29 @@ In February 2022, I moved to Belgium to start my PhD in Bioinformatics at
 Ghent University under the supervision of
 [Dr. Yves Van de Peer](https://scholar.google.com/citations?user=tBs2BVMAAAAJ&hl=en),
 at the VIB Center for Plant Systems Biology.
-Since then, I've been studying the impact of gene and genome duplications
+During my PhD, I've studied the impact of gene and genome duplications
 on plant gene regulatory networks. For that, I use a combination of different
 approaches, including evolutionary genomics, high-dimensional (mostly 
-transcriptomic) data analyses, and network science. Besides, I often find myself
-in a position where I cannot find software tools to do what I want, so I end
-up developing such tools myself. I am the developer and maintainer 
-of >10 R packages, most of them available on [Bioconductor](https://bioconductor.org/), 
-as well as web applications.
+transcriptomic) data analyses, and network science. 
 
 ::: {.column-page}
 ![Aerial footage of the Technology Park in Ghent. Highlighted in the middle (in white/blue and gray) are the buildings of the VIB Center for Plant Systems Biology, where the Van de Peer lab is physically located. The Technology Park also hosts other Ghent University buildings, VIB centers, and biotech/pharma companies such as BASF, Sanofi, and Syngenta.](PSB.jpg){width='100%'}
 :::
 
+---
+
+In January 2026, I defended my PhD and started a new position as a postdoctoral
+researcher in the same lab where I did my PhD. Since then, I have been working
+on the evolution of plant traits from a regulatory lens. My major goal is
+to establish a framework to study (plant) genome evolution in the context
+of gene regulatory network rewiring, investigating changes in regulatory 
+interactions (network edges, as opposed to traditional approaches that focus on
+changes in network nodes and gene copy number variation) that shaped the 
+evolution of important traits.
+
+Besides, I often find myself in a position where I cannot find software 
+tools to do what I want, so I end up developing such tools myself. I am 
+the developer and maintainer of >10 R packages, most of them available 
+on [Bioconductor](https://bioconductor.org/), as well as web applications
+and databases.
 
