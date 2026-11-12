@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.11.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -38,14 +41,15 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-8742b8963c481c219800355d5bfb5c31.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-5f30b2dbb9d20cfc9741fe128b9320ce.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -97,12 +101,6 @@ ul.task-list li input[type="checkbox"] {
       window['quarto-listing-loaded']();
     }
   });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
   </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-9TMPT34HZ4"></script>
 
@@ -115,7 +113,7 @@ gtag('config', 'G-9TMPT34HZ4', { 'anonymize_ip': true});
 </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -147,17 +145,17 @@ window.Quarto = {
 <link rel="stylesheet" href="../styles.css">
 <meta name="twitter:title" content="Fabrício Almeida-Silva">
 <meta name="twitter:description" content="Hi, I’m Fabrício! Welcome to my personal website and blog.">
-<meta name="twitter:image" content="https://almeidasilvaf.github.io/talks/img/logo.png">
+<meta name="twitter:image" content="https://almeidasilvaf.github.io/img/logo.png">
 <meta name="twitter:creator" content="@almeidasilvaf">
 <meta name="twitter:site" content="@almeidasilvaf">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Site">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
@@ -168,8 +166,7 @@ window.Quarto = {
     <span class="navbar-title">Fabrício Almeida-Silva</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -214,6 +211,7 @@ window.Quarto = {
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
+            <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -225,7 +223,7 @@ window.Quarto = {
         
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content" tabindex="-1">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -252,22 +250,24 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="dGFsayUyQ0V1cm9CaW9jMjAyMg==" data-listing-date-sort="1663113600000" data-listing-file-modified-sort="1778581716648" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="9">
-<div class="thumbnail"><a href="../talks/eurobioc2022/index.html" class="no-external">
+<div class="quarto-post image-right" data-index="0" data-categories="dGFsayUyQ0V1cm9CaW9jMjAyMg==" data-listing-date-sort="1663113600000" data-listing-file-modified-sort="1794503424712" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="9">
+<div class="thumbnail"><a href="../talks/eurobioc2022/index.html" class="no-external-icon">
 
 <img loading="lazy" src="../talks/eurobioc2022/featured_eurobioc2022.png" class="thumbnail-image">
 
 </a></div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="../talks/eurobioc2022/index.html" class="no-external">Inference and analysis of synteny networks with syntenet</a>
+<a href="../talks/eurobioc2022/index.html" class="no-external-icon">Inference and analysis of synteny networks with syntenet</a>
 </h3>
-<div class="delink listing-description"><a href="../talks/eurobioc2022/index.html" class="no-external">
+<div class="listing-description">
+<a href="../talks/eurobioc2022/index.html" class="no-external-icon">
 <p>Workshop at #EuroBioc2022, the European Bioconductor annual conference</p>
-</a></div>
+</a>
+</div>
 </div>
 <div class="metadata">
-<a href="../talks/eurobioc2022/index.html" class="no-external">
+<a href="../talks/eurobioc2022/index.html" class="no-external-icon">
 <div class="listing-date">
 Sep 14, 2022
 </div>
@@ -277,22 +277,24 @@ Fabrício Almeida-Silva
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="dGFsayUyQ1NCVjIwMjE=" data-listing-date-sort="1637539200000" data-listing-file-modified-sort="1778581716650" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="6">
-<div class="thumbnail"><a href="../talks/sbv2021/index.html" class="no-external">
+<div class="quarto-post image-right" data-index="1" data-categories="dGFsayUyQ1NCVjIwMjE=" data-listing-date-sort="1637539200000" data-listing-file-modified-sort="1794503424712" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="6">
+<div class="thumbnail"><a href="../talks/sbv2021/index.html" class="no-external-icon">
 
 <img loading="lazy" src="../talks/sbv2021/featured_sbv2021.png" class="thumbnail-image">
 
 </a></div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="../talks/sbv2021/index.html" class="no-external">Bioinformatics in Modern Biology: computational genomics as a tool to unravel the soybean genome and gene regulation</a>
+<a href="../talks/sbv2021/index.html" class="no-external-icon">Bioinformatics in Modern Biology: computational genomics as a tool to unravel the soybean genome and gene regulation</a>
 </h3>
-<div class="delink listing-description"><a href="../talks/sbv2021/index.html" class="no-external">
+<div class="listing-description">
+<a href="../talks/sbv2021/index.html" class="no-external-icon">
 <p>Invited speaker</p>
-</a></div>
+</a>
+</div>
 </div>
 <div class="metadata">
-<a href="../talks/sbv2021/index.html" class="no-external">
+<a href="../talks/sbv2021/index.html" class="no-external-icon">
 <div class="listing-date">
 Nov 22, 2021
 </div>
@@ -302,22 +304,24 @@ Fabrício Almeida-Silva
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="dGFsayUyQ1BHQ0UyMDIx" data-listing-date-sort="1634601600000" data-listing-file-modified-sort="1778581716650" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="8">
-<div class="thumbnail"><a href="../talks/pgce2021/index.html" class="no-external">
+<div class="quarto-post image-right" data-index="2" data-categories="dGFsayUyQ1BHQ0UyMDIx" data-listing-date-sort="1634601600000" data-listing-file-modified-sort="1794503424712" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="8">
+<div class="thumbnail"><a href="../talks/pgce2021/index.html" class="no-external-icon">
 
 <img loading="lazy" src="../talks/pgce2021/featured_pgce2021.jpeg" class="thumbnail-image">
 
 </a></div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="../talks/pgce2021/index.html" class="no-external">Prioritizing soybean resistance genes against fungal diseases by integrating GWAS and gene coexpression networks</a>
+<a href="../talks/pgce2021/index.html" class="no-external-icon">Prioritizing soybean resistance genes against fungal diseases by integrating GWAS and gene coexpression networks</a>
 </h3>
-<div class="delink listing-description"><a href="../talks/pgce2021/index.html" class="no-external">
+<div class="listing-description">
+<a href="../talks/pgce2021/index.html" class="no-external-icon">
 <p>Oral session at the 2021’s Plant Genomes in a Changing Environment conference</p>
-</a></div>
+</a>
+</div>
 </div>
 <div class="metadata">
-<a href="../talks/pgce2021/index.html" class="no-external">
+<a href="../talks/pgce2021/index.html" class="no-external-icon">
 <div class="listing-date">
 Oct 19, 2021
 </div>
@@ -327,22 +331,24 @@ Fabrício Almeida-Silva
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="dGFsayUyQ0V1cm9CaW9jMjAyMQ==" data-listing-date-sort="1628208000000" data-listing-file-modified-sort="1778581716648" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="6">
-<div class="thumbnail"><a href="../talks/bioc2021/index.html" class="no-external">
+<div class="quarto-post image-right" data-index="3" data-categories="dGFsayUyQ0V1cm9CaW9jMjAyMQ==" data-listing-date-sort="1628208000000" data-listing-file-modified-sort="1794503424711" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="6">
+<div class="thumbnail"><a href="../talks/bioc2021/index.html" class="no-external-icon">
 
 <img loading="lazy" src="../talks/bioc2021/featured_bioc2021.png" class="thumbnail-image">
 
 </a></div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="../talks/bioc2021/index.html" class="no-external">cageminer: mining candidate genes by integrating GWAS and gene coexpression networks</a>
+<a href="../talks/bioc2021/index.html" class="no-external-icon">cageminer: mining candidate genes by integrating GWAS and gene coexpression networks</a>
 </h3>
-<div class="delink listing-description"><a href="../talks/bioc2021/index.html" class="no-external">
+<div class="listing-description">
+<a href="../talks/bioc2021/index.html" class="no-external-icon">
 <p>Lightning Talk at #Bioc2021, the Bioconductor annual conference</p>
-</a></div>
+</a>
+</div>
 </div>
 <div class="metadata">
-<a href="../talks/bioc2021/index.html" class="no-external">
+<a href="../talks/bioc2021/index.html" class="no-external-icon">
 <div class="listing-date">
 Aug 6, 2021
 </div>
@@ -433,7 +439,8 @@ Fabrício Almeida-Silva
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
       // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
       for (var i=0; i<links.length; i++) {
         const link = links[i];
         if (!isInternal(link.href)) {
@@ -442,8 +449,69 @@ Fabrício Almeida-Silva
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+          if (!link.classList.contains('no-external-icon')) {
+          }
         }
       }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
       const config = {
         allowHTML: true,
@@ -457,6 +525,7 @@ Fabrício Almeida-Silva
         interactiveBorder: 10,
         theme: 'quarto',
         placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
       };
       if (contentFn) {
         config.content = contentFn;
@@ -619,44 +688,54 @@ Fabrício Almeida-Silva
           const lineIds = lines.map((line) => {
             return targetCell + "-" + line;
           })
-          let top = null;
-          let height = null;
-          let parent = null;
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
           if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
             }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
             }
+            placeBand(gutterDiv, el, lastEl);
             selectedAnnoteEl = annoteEl;
           }
         };
@@ -754,6 +833,9 @@ Fabrício Almeida-Silva
       }
     }
   });
+  </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
   </script>
 </div> <!-- /content -->
 <footer class="footer">
